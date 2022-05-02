@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15062d583d7897e47b69f901ec9b4c4c, type: 3}
+  m_Name: AnimatronicAnimations
+  m_EditorClassIdentifier: 
+  AnimationSets:
+  - frameName: ClassicEndo
+    animations:
+    - animationName: Tpose
+      animation: {fileID: 1827226128182048838, guid: 0de791eac406fe34bae473ba434c6042,
+        type: 3}
+    - animationName: Lean
+      animation: {fileID: 1827226128182048838, guid: 5ff1e3f019495de429edc4fdefe8c0a8,
+        type: 3}
+    - animationName: Walk
+      animation: {fileID: 8923347377697688250, guid: 0de791eac406fe34bae473ba434c6042,
+        type: 3}

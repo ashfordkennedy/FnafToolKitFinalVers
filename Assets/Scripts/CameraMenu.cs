@@ -23,7 +23,11 @@ public class CameraMenu : EditorMenuAbstract
 
     }
 
-
+    public void ToggleCameraPreview(bool enable){
+    targetCamera.gameobject.setActive(enable);    
+    }
+    
+    
     // Start is called before the first frame update
     void Start()
     {

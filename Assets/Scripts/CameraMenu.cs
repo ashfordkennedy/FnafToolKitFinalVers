@@ -24,7 +24,7 @@ public class CameraMenu : EditorMenuAbstract
     }
 
     public void ToggleCameraPreview(bool enable){
-    targetCamera.gameobject.setActive(enable);    
+    targetCamera.gameObject.SetActive(enable);    
     }
     
     

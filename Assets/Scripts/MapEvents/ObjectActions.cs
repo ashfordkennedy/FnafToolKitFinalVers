@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEditor.SceneManagement;
+//using UnityEditor;
+//using UnityEditor.SceneManagement;
 using UnityEngine.Events;
 public class ObjectActions : MonoBehaviour
 {

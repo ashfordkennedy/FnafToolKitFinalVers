@@ -14,7 +14,7 @@ public class NightAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.LeftAlt))
         {
             DisableAI();
             StartAnimatronicAi(0);

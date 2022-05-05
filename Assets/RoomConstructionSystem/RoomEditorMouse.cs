@@ -463,7 +463,7 @@ public class RoomEditorMouse : MonoBehaviour
             if (Input.GetMouseButton(0) && CellErasableCheck() == true && lastClicked <= Time.time - 0.05f)
             {
                 lastClicked = Time.time;
-                EditorController.Instance.DeRegisterRoom(EditorController.Instance.SelectedRoom);
+                //EditorController.Instance.DeRegisterRoom(EditorController.Instance.SelectedRoom);
                 print(hit.collider.name + "was marked for erasure" );
                 hit.collider.gameObject.GetComponent<RoomCell>().EraseCell();
             }

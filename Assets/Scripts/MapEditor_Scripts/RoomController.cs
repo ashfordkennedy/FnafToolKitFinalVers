@@ -475,7 +475,7 @@ public class RoomController : MonoBehaviour
 
 
             //testcode
-            SwapRoomEditMode(false);
+           // SwapRoomEditMode(false);
         }
         else
         {

@@ -98,6 +98,7 @@ MonoBehaviour:
   decorType: 0
   InternalName: Chair
   SwatchID: 0
+  meshRenderer: {fileID: 5589514646371908641}
 --- !u!65 &2717286103003242706
 BoxCollider:
   m_ObjectHideFlags: 0

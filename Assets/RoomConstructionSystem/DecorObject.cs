@@ -13,9 +13,11 @@ public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera 
 
 public class DecorObject : MonoBehaviour
 {
+    public bool selected = false;
     public DecorObjectType decorType = DecorObjectType.Basic;
     public string InternalName;
     public int SwatchID;
+    public Renderer meshRenderer;
     public static List<Dropdown.OptionData> conditions = new List<Dropdown.OptionData>
     {   new Dropdown.OptionData("None"),
     };
@@ -45,37 +47,33 @@ public class DecorObject : MonoBehaviour
     }
 
 
-    public virtual void EditorSelect()
+    public virtual void EditorSelect(Material SelectMaterial)
     {
-        // ObjectTransformController.ObjectTransformGizmo.gameObject.SetActive(true);
-        // ObjectTransformController.ObjectTransformGizmo.TargetTransformObject = this.gameObject;
-
-        /* enable new object placer here
-        if(ObjectTransformController.ObjectTransformGizmo.TargetTransformObject == this.gameObject)
+        if (selected == false)
         {
-            ObjectTransformController.ObjectTransformGizmo.OpenTransformController(false, null);
+            selected = true;
+            Material[] newMaterialArray = meshRenderer.materials;
+            List<Material> newMaterials = newMaterialArray.ToList<Material>();
+            newMaterials.Add(SelectMaterial);
+            meshRenderer.materials = newMaterials.ToArray();
+            print("OBJECT SELECTED");
         }
-        else
-        {
-            SwatchUI.Instance.OpenSwatchPanel(InternalName, this);
-            ObjectTransformController.ObjectTransformGizmo.OpenTransformController(true, this);
-
-        }
-
-        */
-
-
-       // ObjectTransformController.ObjectTransformGizmo.StartCoroutine("DisplayTransformUI",true);
-       // ObjectSetup();
-
-
-
-        //  this.transform.position = GridSnap.SnapPosition(this.transform.position, 1);
     }
 
     public virtual void EditorDeselect()
     {
-      //  ObjectTransformController.ObjectTransformGizmo.OpenTransformController(false, null);
+
+        if (selected == true) {
+            Material[] newMaterialArray = meshRenderer.materials;
+            List<Material> newMaterials = newMaterialArray.ToList<Material>();
+            newMaterials.RemoveAt(newMaterials.Count - 1);
+            meshRenderer.materials = newMaterials.ToArray();
+            
+            selected = false;
+            print("OBJECT DESELECTED");
+        }
+        
+       
     }
 
 

@@ -30,9 +30,9 @@ public class EditorAnimatronic : DecorObject
 
     private Vector3 startPos = new Vector3();
     private Quaternion startRot = new Quaternion();
-    public override void EditorSelect()
+    public override void EditorSelect(Material SelectMaterial)
     {
-        base.EditorSelect();
+        base.EditorSelect(SelectMaterial);
         if (AnimatronicMenu.instance.MenuOpen == false)
         {
             AnimatronicMenu.instance.OpenMenu(this);
@@ -85,7 +85,7 @@ public class EditorAnimatronic : DecorObject
     {
         var endomats = new Material[2];
         endomats[0] = mats[0];
-        // endomats[1] = mats[1];
+        endomats[1] = mats[1];
 
         _endoRenderer.materials = endomats;
         print("swapping animatronic swatch");
@@ -95,7 +95,7 @@ public class EditorAnimatronic : DecorObject
         SwatchID = swatchid;
         if (_skinRenderer != null)
         {
-            _skinRenderer.material = mats[1];
+            _skinRenderer.material = endomats[1];
         }
         //  _endoRenderer.materials = 
 

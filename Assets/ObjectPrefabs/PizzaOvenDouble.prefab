@@ -111,3 +111,4 @@ MonoBehaviour:
   decorType: 0
   InternalName: DoublePizzaOven
   SwatchID: 0
+  meshRenderer: {fileID: 6173292696303543088}

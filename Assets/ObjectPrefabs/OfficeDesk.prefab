@@ -111,3 +111,4 @@ MonoBehaviour:
   decorType: 0
   InternalName: desk
   SwatchID: 0
+  meshRenderer: {fileID: 5079520135383460748}

@@ -60,9 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93b3fff82f30594882d1c2dbd3024df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
   decorType: 0
   InternalName: DoorFrameS
   SwatchID: 0
+  meshRenderer: {fileID: 3735351188597544443}
 --- !u!33 &7764619441994598499
 MeshFilter:
   m_ObjectHideFlags: 0

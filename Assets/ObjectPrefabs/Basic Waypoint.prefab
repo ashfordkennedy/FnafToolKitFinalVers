@@ -143,6 +143,7 @@ MonoBehaviour:
   decorType: 4
   InternalName: TestWaypoint
   SwatchID: 0
+  meshRenderer: {fileID: 6000325762357799994}
   Occupied: 0
   text: {fileID: 6000325762357799993}
   TestReference: {fileID: 0}

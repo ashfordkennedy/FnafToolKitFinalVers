@@ -111,3 +111,4 @@ MonoBehaviour:
   decorType: 0
   InternalName: KitchenSide
   SwatchID: 0
+  meshRenderer: {fileID: 3130755598340992784}

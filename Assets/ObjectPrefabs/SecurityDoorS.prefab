@@ -178,58 +178,6 @@ MonoBehaviour:
   OnRightClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &7154609637461205750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8037568947152931322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1296334, y: 0.47, z: 4.403366}
-  m_Center: {x: -0.0000002384187, y: -0.15333472, z: 12.887439}
---- !u!114 &7154609637461205751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8037568947152931322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc60afc3054e8cf4682e48bbbd9db145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonRenderer: {fileID: 8398037030917728303}
-  defaultMaterial: {fileID: 2100000, guid: 299f6423f90627948b7467967ce3ef4f, type: 2}
-  buttonData:
-  - IsEnabled: 0
-    MatIndexTarget: 0
-    ButtonEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7154609635976778911}
-          m_TargetAssemblyTypeName: DecorSecurityDoor, Assembly-CSharp
-          m_MethodName: ToggleDoor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnMaterial: {fileID: 2100000, guid: 6433e77c29ecd2a4daf3dddfbc1efe28, type: 2}
-  - IsEnabled: 0
-    MatIndexTarget: 2
-    ButtonEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    OnMaterial: {fileID: 2100000, guid: 4cd6c2b4dbf76ee4585a6d46ec85196d, type: 2}
 --- !u!1 &7154609635696768450
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +354,7 @@ MonoBehaviour:
   decorType: 1
   InternalName: SecurityDoorS
   SwatchID: 0
+  meshRenderer: {fileID: 7154609637110334783}
   PowerDrain: 0.05
   StartOpen: 1
   IsOpen: 1
@@ -651,6 +600,58 @@ MonoBehaviour:
   OnRightClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &7154609637461205750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8037568947152931322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1296334, y: 0.47, z: 4.403366}
+  m_Center: {x: -0.0000002384187, y: -0.15333472, z: 12.887439}
+--- !u!114 &7154609637461205751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8037568947152931322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc60afc3054e8cf4682e48bbbd9db145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonRenderer: {fileID: 8398037030917728303}
+  defaultMaterial: {fileID: 2100000, guid: 299f6423f90627948b7467967ce3ef4f, type: 2}
+  buttonData:
+  - IsEnabled: 0
+    MatIndexTarget: 0
+    ButtonEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7154609635976778911}
+          m_TargetAssemblyTypeName: DecorSecurityDoor, Assembly-CSharp
+          m_MethodName: ToggleDoor
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnMaterial: {fileID: 2100000, guid: 6433e77c29ecd2a4daf3dddfbc1efe28, type: 2}
+  - IsEnabled: 0
+    MatIndexTarget: 2
+    ButtonEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnMaterial: {fileID: 2100000, guid: 4cd6c2b4dbf76ee4585a6d46ec85196d, type: 2}
 --- !u!1 &8987552492480805408
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,15 +970,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7154609635470603435}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7260082923153560384 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad75e86de3dd2bc489854ba0909800ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 7154609635470603435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &8398037030917728303 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ad75e86de3dd2bc489854ba0909800ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 7154609635470603435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7260082923153560384 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad75e86de3dd2bc489854ba0909800ac,
     type: 3}
   m_PrefabInstance: {fileID: 7154609635470603435}
   m_PrefabAsset: {fileID: 0}

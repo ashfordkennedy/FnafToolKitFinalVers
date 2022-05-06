@@ -11,9 +11,9 @@ public class Decor_Camera : DecorObject
 
 
 
-    public override void EditorSelect()
+    public override void EditorSelect(Material SelectMaterial)
     {
-        base.EditorSelect();
+        base.EditorSelect(SelectMaterial);
 
 
         if (CameraMenu.instance.MenuOpen == false)

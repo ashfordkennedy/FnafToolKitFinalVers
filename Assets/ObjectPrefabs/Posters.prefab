@@ -111,3 +111,4 @@ MonoBehaviour:
   decorType: 0
   InternalName: Poster1
   SwatchID: 0
+  meshRenderer: {fileID: 1585855619493075383}

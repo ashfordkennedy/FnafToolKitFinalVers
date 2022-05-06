@@ -347,6 +347,7 @@ MonoBehaviour:
   decorType: 2
   InternalName: Light2
   SwatchID: 0
+  meshRenderer: {fileID: 1814703314386289885}
   light: {fileID: 1814703314955677097}
 --- !u!65 &1814703315471707836
 BoxCollider:

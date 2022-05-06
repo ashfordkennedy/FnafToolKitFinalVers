@@ -523,6 +523,7 @@ MonoBehaviour:
   decorType: 1
   InternalName: SecurityDoorM
   SwatchID: 0
+  meshRenderer: {fileID: 3978104146769868237}
   PowerDrain: 0.05
   StartOpen: 1
   IsOpen: 1

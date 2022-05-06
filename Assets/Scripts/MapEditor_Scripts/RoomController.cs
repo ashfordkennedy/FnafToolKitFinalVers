@@ -480,6 +480,7 @@ public class RoomController : MonoBehaviour
         else
         {
             Map_Editor.DeRegisterRoom(this);
+            RoomSettingsUI.Instance.CloseMenu();
             DestroyRoom();
 
         }

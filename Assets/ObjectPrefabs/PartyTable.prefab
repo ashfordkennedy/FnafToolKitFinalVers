@@ -98,6 +98,7 @@ MonoBehaviour:
   decorType: 0
   InternalName: PartyTable
   SwatchID: 0
+  meshRenderer: {fileID: 7267433766685622643}
 --- !u!65 &1452016289533359411
 BoxCollider:
   m_ObjectHideFlags: 0

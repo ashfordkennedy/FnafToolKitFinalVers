@@ -98,6 +98,7 @@ MonoBehaviour:
   decorType: 0
   InternalName: PizzaBox
   SwatchID: 0
+  meshRenderer: {fileID: 7522749045919390997}
 --- !u!65 &539179570002205423
 BoxCollider:
   m_ObjectHideFlags: 0

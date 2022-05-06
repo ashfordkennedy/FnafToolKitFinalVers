@@ -14,8 +14,10 @@ public class ObjectPlacer : EditorMenuAbstract
     public bool _freePlacement = false;
     private bool _Snap;
     private float clickHeld = 0;
+    private float lastClicked = 5f;
     public float SnapSize = 0.01f;
     public float rotationDegrees { get; private set; }
+    [SerializeField]public Material _selectedMaterial;
 
     [Header("LayerMasks")]
     public LayerMask objectMask;
@@ -29,6 +31,7 @@ public class ObjectPlacer : EditorMenuAbstract
     {
         instance = this;
         rotationDegrees = 1f;
+        lastClicked = Time.time;
     
     }
     // Start is called before the first frame update
@@ -54,10 +57,13 @@ public class ObjectPlacer : EditorMenuAbstract
 
      public void SelectObject(DecorObject target)
     {
+       // target.EditorSelect(_selectedMaterial);
         _freePlacement = false;
         PlaceObjects();
         transformGizmo.position = target.gameObject.transform.position;
+        placementContainer.position = target.gameObject.transform.position;
         AddToSelected(target);
+        TransformMenu.instance.SetSelectCounter();
     }
 
     public override void CloseMenu()
@@ -80,18 +86,30 @@ public class ObjectPlacer : EditorMenuAbstract
     /// <param name="target"></param>
     public void AddToSelected(DecorObject target)
     {
-        
-            if (target.transform.IsChildOf(placementContainer))
+        target.EditorSelect(_selectedMaterial);
+        if (target.transform.IsChildOf(placementContainer))
             {
                 target.transform.SetParent(null);
             }
             else
             {
                 target.transform.SetParent(placementContainer);
-            target.transform.localPosition = new Vector3(0, target.transform.localPosition.y, 0);
-                target.gameObject.layer = 2;
+            //target.transform.localPosition = new Vector3(0, target.transform.localPosition.y, 0);
+             
+        // Untag me later you stupid cunt 
+          target.gameObject.layer = 2;
             }
-        
+
+        TransformMenu.instance.SetSelectCounter();
+    }
+
+
+    public void CloneObject()
+    {
+        GameObject cloneObject = placementContainer.GetChild(0).gameObject;
+        PlaceObjects();
+        SpawnNewObject(cloneObject,true);
+
     }
 
 
@@ -107,7 +125,8 @@ public class ObjectPlacer : EditorMenuAbstract
         newobject.transform.localPosition = Vector3.zero;
         newobject.transform.rotation = this.transform.rotation;
         newobject.layer = 2;
-        if(MenuOpen == false)
+        TransformMenu.instance.SetSelectCounter();
+        if (MenuOpen == false)
         {
             OpenMenu();
         }
@@ -126,6 +145,7 @@ public class ObjectPlacer : EditorMenuAbstract
         newobject.transform.localPosition = Vector3.zero;
         newobject.transform.rotation = this.transform.rotation;
         newobject.layer = 2;
+        TransformMenu.instance.SetSelectCounter();
         if (MenuOpen == false)
         {
             OpenMenu();
@@ -144,9 +164,32 @@ public class ObjectPlacer : EditorMenuAbstract
             var child = placementContainer.GetChild(0);
             child.SetParent(null);
             child.gameObject.layer = 12;
-            child.GetComponent<DecorObject>().ObjectSetup();
+
+            DecorObject decor = child.GetComponent<DecorObject>();
+            decor.ObjectSetup();
+            decor.EditorDeselect();
         }
     }
+
+    public void PlaceObject(DecorObject target)
+    {
+        print("place object called");  
+            target.transform.SetParent(null);
+            target.gameObject.layer = 12;
+           
+            target.ObjectSetup();
+            target.EditorDeselect(); 
+        if(placementContainer.childCount == 0)
+        {
+            CloseMenu();
+        }
+        else
+        {
+            TransformMenu.instance.SetSelectCounter();
+        }
+    }
+
+
 
     public void DeleteObjects()
     {
@@ -236,7 +279,7 @@ public class ObjectPlacer : EditorMenuAbstract
     {
        if (MouseOverUICheck() == false && _freePlacement == true)
         {
-        print("mouse move triggered");
+       // print("mouse move triggered");
             RaycastHit hit;
             Ray ray = EditorCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -247,7 +290,7 @@ public class ObjectPlacer : EditorMenuAbstract
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, BuildCellLayerMask))
                     {
                         Transform objectHit = hit.transform;
-                    print("raycast hitting floor");
+                   // print("raycast hitting floor");
                     var BuildPrintPosition = GridSnap.SnapPosition(hit.point, SnapSize);
                        
                         //offset upwards to prevent floor trapping.
@@ -266,7 +309,7 @@ public class ObjectPlacer : EditorMenuAbstract
             }
             transformGizmo.position = placementContainer.position;
             TransformMenu.instance.SetFields(placementContainer);
-        print("switch cleared");
+      //  print("switch cleared");
          }
     }
 
@@ -280,12 +323,22 @@ public class ObjectPlacer : EditorMenuAbstract
         RaycastHit hit;
         Ray ray = EditorCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, objectMask))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, objectMask) && Time.time > lastClicked + 0.2f)
         {
+            lastClicked = Time.time;
             Transform objectHit = hit.transform;
             var target = objectHit.transform.GetComponent<DecorObject>();
 
-            AddToSelected(target);
+            switch (target.selected)
+            {
+                case true:
+                PlaceObject(target);
+                    break;
+                case false:
+                AddToSelected(target);
+                    break;
+            }
+           
         }
             
     }

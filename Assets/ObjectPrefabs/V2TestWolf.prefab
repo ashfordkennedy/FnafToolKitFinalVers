@@ -152,9 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34572a10c98d4d4ab26945141d5bf48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
   decorType: 3
   InternalName: A_V2TestWolf
   SwatchID: 0
+  meshRenderer: {fileID: 159717926666905558}
   _pointOverlay: {fileID: 412401912289744407}
   AiLevelData: 
   AggressionData: 
@@ -164,6 +166,7 @@ MonoBehaviour:
   endoType: 0
   AiLevel: 0
   Agression: 0
+  nextWaypointId: 0
   animations: {fileID: 11400000, guid: 1c352f6238c2d4b4d97630c6d5053ead, type: 2}
   animatior: {fileID: 2040672255}
   OverrideController: {fileID: 22100000, guid: 69c465492521f4146bad6fe6f7e0c8f5, type: 2}

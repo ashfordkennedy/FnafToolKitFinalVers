@@ -141,4 +141,10 @@ public class TransformMenu : EditorMenuAbstract
         SelectionCounter.text = string.Format("{0} OBJECTS SELECTED", mousePlacementContainer.childCount);
         print(string.Format("{0} OBJECTS SELECTED", mousePlacementContainer.childCount));
     }
+
+    public void CloneObject()
+    {
+        ObjectPlacer.instance.CloneObject();
+        SetFields(mousePlacementContainer);
+    }
 }

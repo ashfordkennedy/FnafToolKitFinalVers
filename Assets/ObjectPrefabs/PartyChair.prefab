@@ -98,6 +98,7 @@ MonoBehaviour:
   decorType: 0
   InternalName: PartyChair
   SwatchID: 0
+  meshRenderer: {fileID: 3081981216908152093}
 --- !u!65 &1583783176551691202
 BoxCollider:
   m_ObjectHideFlags: 0

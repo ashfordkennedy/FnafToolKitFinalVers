@@ -17,9 +17,9 @@ public class DecorLighting : DecorObject
     public bool _activeOnStart { get; private set; } = true;
     public float _powerDrain { get; private set; } = 0f;
 
-    public override void EditorSelect()
+    public override void EditorSelect(Material SelectMaterial)
     {
-        base.EditorSelect();
+        base.EditorSelect(SelectMaterial);
         LightSettingUI.Instance.SetTargetLight(this);
        LightSettingUI.Instance.ToggleLightUI(true);
     }

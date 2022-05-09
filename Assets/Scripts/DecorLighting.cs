@@ -20,15 +20,15 @@ public class DecorLighting : DecorObject
     public override void EditorSelect(Material SelectMaterial)
     {
         base.EditorSelect(SelectMaterial);
-        LightSettingUI.Instance.SetTargetLight(this);
-       LightSettingUI.Instance.ToggleLightUI(true);
+       // LightSettingUI.Instance.SetTargetLight(this);
+      // LightSettingUI.Instance.ToggleLightUI(true);
     }
 
     public override void EditorDeselect()
     {
         base.EditorDeselect();
-        LightSettingUI.Instance.SetTargetLight(null);
-        LightSettingUI.Instance.ToggleLightUI(false);
+       // LightSettingUI.Instance.SetTargetLight(null);
+       // LightSettingUI.Instance.ToggleLightUI(false);
     }
 
 

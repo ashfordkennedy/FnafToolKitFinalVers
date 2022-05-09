@@ -33,10 +33,12 @@ public class EditorAnimatronic : DecorObject
     public override void EditorSelect(Material SelectMaterial)
     {
         base.EditorSelect(SelectMaterial);
+        /*
         if (AnimatronicMenu.instance.MenuOpen == false)
         {
             AnimatronicMenu.instance.OpenMenu(this);
         }
+        */
     }
 
     /// <summary>
@@ -54,8 +56,10 @@ public class EditorAnimatronic : DecorObject
     {
         base.EditorDeselect();
         //ObjectTransformController.ObjectTransformGizmo.OpenTransformController(false, null);
+        /*
         SetLineRenderer(false);
         AnimatronicMenu.instance.CloseMenu();
+        */
     }
 
 

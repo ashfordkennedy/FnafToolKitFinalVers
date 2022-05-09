@@ -32,10 +32,17 @@ public class WaypointManager : MonoBehaviour
     /// <param name="waypoint"></param>
     public void RegisterWaypoint(AnimatronicWaypoint waypoint)
     {
-        int newIndex = waypoints.Count + 1;
-        waypoints.Add(waypoint);
-        waypoint.name = "Waypoint " + newIndex;
-        RefreshDictionary();
+        if (waypoints.Contains(waypoint) == false)
+        {
+            int newIndex = waypoints.Count + 1;
+            waypoints.Add(waypoint);
+            waypoint.name = "Waypoint " + newIndex;
+            RefreshDictionary();
+        }
+        else
+        {
+            print("Waypoint Exists. Ignoring register request");
+        }
     }
 
 

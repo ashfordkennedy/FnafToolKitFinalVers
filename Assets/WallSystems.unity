@@ -54992,10 +54992,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 42326751}
   m_HandleRect: {fileID: 1707349108}
   m_Direction: 0
-  m_MinValue: -3
-  m_MaxValue: 3
+  m_MinValue: -5
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: -0.15
+  m_Value: 7.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -110229,7 +110229,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 2
+  m_Mode: 1
   m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -110269,7 +110269,7 @@ MonoBehaviour:
     m_ObsoleteSphereInfiniteProjection: 0
     m_ObsoleteBoxInfiniteProjection: 0
     m_Shape: 0
-    m_BoxSize: {x: 70, y: 70, z: 70}
+    m_BoxSize: {x: 499.88, y: 70, z: 502.88943}
     m_SphereRadius: 1
 --- !u!65 &2016710503
 BoxCollider:
@@ -110341,7 +110341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016710499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 209.99998, y: 5, z: 165}
+  m_LocalPosition: {x: 240.69226, y: 5, z: 226.12334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111246,7 +111246,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bfc1e30debe62b743b273af5eecaeebf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfc1e30debe62b743b273af5eecaeebf, type: 3}

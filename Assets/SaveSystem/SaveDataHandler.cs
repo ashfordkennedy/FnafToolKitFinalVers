@@ -116,11 +116,14 @@ public class SaveDataHandler : MonoBehaviour
         List<SavedObject> decorObjs = new List<SavedObject>();
 
         // generate map decor list
-        for (int i = 0; i < EditorController.Instance.MapDecor.Count; i++)
+        if (EditorController.Instance.MapDecor.Count > 0)
         {
-            decorObjs.Add(EditorController.Instance.MapDecor[i].CompileObjectData());
+            for (int i = 0; i < EditorController.Instance.MapDecor.Count; i++)
+            {
+                decorObjs.Add(EditorController.Instance.MapDecor[i].CompileObjectData());
 
 
+            }
         }
 
     #endregion

@@ -109,6 +109,7 @@ public class NightManager : MonoBehaviour
         StopCoroutine(PowerProcessing());
         print("ended night");
 
+
     }
 
 

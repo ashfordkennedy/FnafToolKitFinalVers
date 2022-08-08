@@ -240,16 +240,22 @@ public class ObjectPlacer : EditorMenuAbstract
    
     }
 
+    void OnFreePlacement()
+    {
+        SetFreePlacement();
+    }
+
     void OnGridSnap(InputValue value)
     {
+        print(value.Get<float>());
         switch (value.Get<float>())
         {
             case 1:
-                _Snap = false;
+                _Snap = true;
                 break;
 
-            case 2:
-                _Snap = true;
+            case 0:
+                _Snap = false;
                 break;
         }
     }

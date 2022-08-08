@@ -146,18 +146,6 @@ MonoBehaviour:
     Menusprite: {fileID: 5696811465416703826, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 6
-  - name: desk
-    InternalName: desk
-    editorTab: 0
-    Swatches: []
-    Description: A poorly optimised desk left over for debugging. Will it get a remodel?
-      Well you may be waiting a while.
-    Price: 100
-    Object: {fileID: 6792205224089722704, guid: 0eef4ae264c93224696ca738e0accd36,
-      type: 3}
-    Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
-      type: 3}
-    ObjectId: 7
   - name: Poster1
     InternalName: Poster1
     editorTab: 0
@@ -170,6 +158,23 @@ MonoBehaviour:
     Menusprite: {fileID: -2625536876281230515, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 8
+  - name: Wooden Desk
+    InternalName: DeskWood1
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -8417364657316478350, guid: 3198af888000b434ea971828a80851a0, type: 3}
+      material:
+      - {fileID: 2100000, guid: e5f76922d6ba28f48bf349509d1d669d, type: 2}
+      Swatch: {fileID: 4051917486004866227, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A preloved desk that oozes character (among other things)
+    Price: 100
+    Object: {fileID: 7601538977882554148, guid: 32f52c973ce3bf34bb06cb5f30853c22,
+      type: 3}
+    Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 7
   - name: Security Door
     InternalName: SecurityDoorS
     editorTab: 1

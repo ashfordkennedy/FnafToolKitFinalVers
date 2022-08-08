@@ -4,6 +4,7 @@ using UnityEngine;
 //using UnityEditor;
 //using UnityEditor.SceneManagement;
 using UnityEngine.Events;
+/*
 public class ObjectActions : MonoBehaviour
 {
     public List<KeyValuePair<string, dynamic>> Events;
@@ -47,14 +48,24 @@ public class ObjectActions : MonoBehaviour
 
 
 
+public enum ObjectActionType {Float,Bool,Transform}
+public enum ObjectAction_FloatCondition {equal, minus, plus, divide, times}
+public enum ObjectAction_BoolCondition {True,False,Switch}
+[System.Serializable]
+public abstract class ObjectAction
+{
+    public string Name = "";
+    public string ActionIdentifier = "None";
+}
 
-
-
-
-public struct ObjectAction
+public class ObjectAction_Bool : ObjectAction
 {
 
+    ObjectAction_BoolCondition SetState = ObjectAction_BoolCondition.True;
+
 }
+
+
 
 
 

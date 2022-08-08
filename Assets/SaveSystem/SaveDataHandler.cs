@@ -4,8 +4,6 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 public enum FileType {Local,Community}
 public class SaveDataHandler : MonoBehaviour
@@ -19,6 +17,7 @@ public class SaveDataHandler : MonoBehaviour
 
 
     [SerializeField]public SaveDataScriptableObject SaveData = null;
+    
   
     public string demosavename = "";
     public MapSaveFile testsavefull;

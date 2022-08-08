@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using ObjectActionEvents;
 public class DecorSecurityDoor : DecorObject
 {
     public float PowerDrain = 0.05f;
@@ -10,14 +11,28 @@ public class DecorSecurityDoor : DecorObject
     public bool IsOpen = true;
     [SerializeField] Animator DoorAnimator;
     [SerializeField] AudioClip DoorSFX;
-    new public static List<Dropdown.OptionData> conditions = new List<Dropdown.OptionData> {
-        new Dropdown.OptionData("Open"),
-        new Dropdown.OptionData("Closed"),
+
+    new private static List<ObjectActionIndex> _objectActions = new List<ObjectActionIndex>
+        {
+        new ObjectActionIndex("SetDoorState","Set Door State",ObjectActionType.SetBool),
+        new ObjectActionIndex("SetDoorLock","Lock Door",ObjectActionType.SetBool),
+        new ObjectActionIndex("SetDoorPowerDrain", "Set Power Drain", ObjectActionType.SetFloat)
     };
 
-    public override List<Dropdown.OptionData> GetConditionOptions()
+     private static List<Dropdown.OptionData> _conditions = new List<Dropdown.OptionData> {
+        new Dropdown.OptionData("Open"),
+        new Dropdown.OptionData("Closed"),
+        };
+
+
+    public override List<ObjectActionIndex> GetObjectActions()
     {
-        return conditions;
+        return _objectActions;
+    }
+
+    public override List<Dropdown.OptionData> GetWaypointConditionOptions()
+    {
+        return _conditions;
     }
 
     public override waypointConditionSetting GetConditionEnum(string condition)

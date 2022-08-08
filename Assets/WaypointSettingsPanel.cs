@@ -62,5 +62,17 @@ public class WaypointSettingsPanel : EditorMenuAbstract
     {
         target.UpdateName(inputField.text);
     }
-    
+
+    public void EditOnOccupiedEvent()
+    {
+        ObjectActionsMenu.instance.SetTargetActionSet(target.OnOccupied);
+        ObjectActionsMenu.instance.OpenMenu();
+    }
+
+    public void EditOnunoccupiedEvent()
+    {
+        ObjectActionsMenu.instance.SetTargetActionSet(target.OnUnoccupied);
+        ObjectActionsMenu.instance.OpenMenu();
+    }
+
 }

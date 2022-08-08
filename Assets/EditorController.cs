@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public enum EditorMouseMode {Build,Erase,NewRoom,Select, Wall, Window, Door, Off, DoorCenter, DoorLeft, DoorRight,waypointSelect,ObjectSelect }
+public enum EditorMouseMode {Build,Erase,NewRoom,Select, Wall, Window, Door, Off, DoorCenter, DoorLeft, DoorRight,waypointSelect,ObjectSelect,ActionSelect }
 public class EditorController : MonoBehaviour
 {
     public static EditorController Instance;
@@ -44,7 +44,7 @@ public class EditorController : MonoBehaviour
     private void Start()
     {
         if (SaveData.LoadedFile != null) {
-            if (SaveData.LoadedFile.LevelEnvironmentData.Roomdata.Count > 0)
+            if (SaveData.LoadedFile.MapName != "")
             {
                 StartCoroutine("RepopulateMap");
             }

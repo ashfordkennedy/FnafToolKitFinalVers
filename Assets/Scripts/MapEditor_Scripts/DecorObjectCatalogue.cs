@@ -35,7 +35,20 @@ public class DecorObjectCatalogue : ScriptableObject
 
 
 
+    public string GetDecorObjectName(string internalName)
+    {
+        int id = -1;
+       if(ObjectDictionary.TryGetValue(internalName,out id))
+        {
+           return MapObjects[id].name;
+        }
+        else
+        {
+            return "Decoration";
+        }
 
+
+    }
 
 
 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
-public class DecorButton : MonoBehaviour //DecorObject
+using ObjectActionEvents;
+public class DecorButton : DecorObject
 {
     [SerializeField] private MeshRenderer buttonRenderer;
     [SerializeField] private Material defaultMaterial;
@@ -35,7 +36,44 @@ public class DecorButton : MonoBehaviour //DecorObject
         buttonData[ButtonID].IsEnabled = !buttonData[ButtonID].IsEnabled;
     }
 
-   
+    public ObjectActionSet ButtonActionSet;
+    public UnityEvent ButtonOnEvent;
+
+    public DecorLighting lights;
+    private void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ButtonActionSet.objectActions.Add(new ChangeLightSettingsAction(lights, Color.red, 10, 30, 100, true));
+            ButtonActionSet.GenerateUnityEvent(ButtonOnEvent);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            ButtonOnEvent.Invoke();
+        }
+    }
+
+    private static List<ObjectActionIndex> _objectActions = new List<ObjectActionIndex>
+        {
+        new ObjectActionIndex("None","No Actions Available",ObjectActionType.none),
+
+    };
+
+
+
+
+
+
+
+
+
+
 
 }
 

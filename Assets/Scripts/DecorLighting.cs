@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
-
+using ObjectActionEvents;
 public class DecorLighting : DecorObject
 {
 
@@ -16,6 +16,24 @@ public class DecorLighting : DecorObject
     public bool _active { get; private set; } = true;
     public bool _activeOnStart { get; private set; } = true;
     public float _powerDrain { get; private set; } = 0f;
+
+
+    [SerializeField] static DecorLighting()
+    {
+        ObjectActions = new List<ObjectActionIndex>
+    {   
+        new ObjectActionIndex("SetLightIntensity","Set Intensity",ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetLightRange","Set Range",ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetLightVolume","Set Volume",ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetLightOn","Light On/Off",ObjectActionType.SetBool)
+        };
+    }
+
+    public override List<ObjectActionIndex> GetObjectActions()
+    {
+        return ObjectActions;
+    }
+
 
     public override void EditorSelect(Material SelectMaterial)
     {
@@ -147,6 +165,15 @@ public class DecorLighting : DecorObject
         light.color = value;
     }
 
+
+    public void ActionEvent_SetLight(ChangeLightSettingsAction targetAction)
+    {
+        SetVolume(targetAction.volume);
+        SetIntensity(targetAction.intensity);
+        SetColour(targetAction.newColor);
+        SetRange(targetAction.range);
+        LightToggle(targetAction.OnOff);
+    }
 }
 
 

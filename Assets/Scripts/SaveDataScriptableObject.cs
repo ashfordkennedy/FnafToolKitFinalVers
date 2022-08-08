@@ -19,6 +19,8 @@ public class SaveDataScriptableObject : ScriptableObject
     public MapSaveFile SelectedFile;
 
     public MapSaveFile LoadedFile = null;
+
+    [SerializeField] public MapProgressData mapProgressData;
     /// <summary>
     /// Sets up scriptableObject for use
     /// </summary>
@@ -31,7 +33,7 @@ public class SaveDataScriptableObject : ScriptableObject
         Directory.CreateDirectory(SavedMapDirectory);
 
         PopulateMapLists();
-
+        mapProgressData.CheckForDirectory();
     }
 
 
@@ -112,8 +114,6 @@ public class SaveDataScriptableObject : ScriptableObject
         MapSaveFile MapFile = (MapSaveFile)bf.Deserialize(file);
         MapFile.Directory = Directory;
         file.Close();
-
-
         return MapFile;
     }
 

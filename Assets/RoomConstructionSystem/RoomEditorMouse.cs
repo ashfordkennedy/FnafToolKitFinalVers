@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
 
 /// <summary>
 /// Processing for mouse Interactions with the world
@@ -93,24 +94,6 @@ public class RoomEditorMouse : MonoBehaviour
         Vector2 axis = value.Get<Vector2>();
         print("rotating, value is " + axis);
 
-
- /*
-            v += axis.y * CameraTurnSpeed * Time.deltaTime;
-            h += axis.x * CameraTurnSpeed * Time.deltaTime;
-
-            v = Mathf.Clamp(v, -35f, 48f);
-
-            while (h < 0f)
-            {
-                h += 360f;
-            }
-            while (h >= 360f)
-            {
-                h -= 360f;
-            }
-
-            cameraContainer.transform.eulerAngles = new Vector3(v, h, 0f);
-            */
             if (axis.x != 0 || axis.y != 0)
             {          
 
@@ -285,12 +268,39 @@ public class RoomEditorMouse : MonoBehaviour
 
                     break;
 
+                case EditorMouseMode.ActionSelect:
+                    ActionSelectHandler();
+                    break;
+
 
             }
 
         }
     }
 
+    private void ActionSelectHandler()
+    {
+        RaycastHit hit;
+        Ray ray = EditorCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity) && Input.GetMouseButtonDown(0))
+        {
+
+            DecorObject newTarget = null;
+            switch (hit.transform.gameObject.layer)
+            {
+                // decor Object
+                case 12:
+                    if ((newTarget = hit.transform.gameObject.GetComponentInParent<DecorObject>()) != null)
+                    {
+                        ObjectActionsMenu.instance.SetActionSelectTarget(newTarget);
+                        ChangeMouseMode(3);
+                    }
+
+                    break;
+            }
+        }
+    }
+    
 
     void SelectWaypointHandler()
     {
@@ -498,7 +508,7 @@ public class RoomEditorMouse : MonoBehaviour
 
         CellBuildingCursor.gameObject.SetActive(false);
 
-        Cursor.SetCursor(_mouseIcons[newMouseMode], Vector2.zero, CursorMode.ForceSoftware);
+      //  Cursor.SetCursor(_mouseIcons[newMouseMode], Vector2.zero, CursorMode.ForceSoftware);
         ///performs specific closing actions, may not be needed
         switch (this.mouseMode)
         {
@@ -541,7 +551,7 @@ public class RoomEditorMouse : MonoBehaviour
                 break;
 
             case EditorMouseMode.waypointSelect:
-
+              //  this.mouseMode = EditorMouseMode.waypointSelect;
                 break;
 
         }

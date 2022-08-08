@@ -108,7 +108,11 @@ public class NightManager : MonoBehaviour
     {
         StopCoroutine(PowerProcessing());
         print("ended night");
-
+        var mapFile = SaveDataHandler.SaveHandler.SaveData.SelectedFile;
+        if(mapFile != null)
+        {
+            SaveDataHandler.SaveHandler.SaveData.mapProgressData.CompleteNight(mapFile);
+        }
     }
 
 

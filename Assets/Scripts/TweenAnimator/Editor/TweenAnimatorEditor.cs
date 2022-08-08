@@ -19,6 +19,13 @@ public class TweenEdtorAnimator : Editor
 
         m_ExpandUIOptions = EditorGUILayout.BeginFoldoutHeaderGroup(m_ExpandUIOptions, "UI animations");
 
+
+        EditorGUILayout.LabelField("Click generate animation to store the current animation ");
+        EditorGUILayout.LabelField("commands in the objects sequence value");
+        if (GUILayout.Button("GenerateAnimation"))
+        {
+            targetObject.tweenSequence = targetObject.GenerateTween();
+        }
         if (m_ExpandUIOptions)
         {
             ExtendedUI_Functions.DisplayUITools(targetObject.animationCommands);

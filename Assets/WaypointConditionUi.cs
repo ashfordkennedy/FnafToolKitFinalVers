@@ -99,7 +99,7 @@ public class WaypointConditionUi : MonoBehaviour
         {
             targetObject = condition.target;
             objectName.text = targetObject.name;
-            RefreshConditionField(targetObject.GetConditionOptions());
+            RefreshConditionField(targetObject.GetWaypointConditionOptions());
 
             int conditionid = 0;
 

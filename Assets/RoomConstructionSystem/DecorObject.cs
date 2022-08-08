@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+using ObjectActionEvents;
 public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera };
 
 /// <summary>
@@ -18,13 +18,26 @@ public class DecorObject : MonoBehaviour
     public string InternalName;
     public int SwatchID;
     public Renderer meshRenderer;
-    public static List<Dropdown.OptionData> conditions = new List<Dropdown.OptionData>
+    public static List<Dropdown.OptionData> WaypointConditions = new List<Dropdown.OptionData>
     {   new Dropdown.OptionData("None"),
     };
 
-    public virtual List<Dropdown.OptionData> GetConditionOptions()
+    public static List<ObjectActionIndex> ObjectActions = new List<ObjectActionIndex>
+    {   new ObjectActionIndex("None","None",ObjectActionType.none),
+        new ObjectActionIndex("SetLightIntensity","Set Intensity",ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetLightOn","Light On/Off",ObjectActionType.SetBool)
+    };
+
+
+    public virtual List<Dropdown.OptionData> GetWaypointConditionOptions()
     {
-        return conditions;
+        return WaypointConditions;
+    }
+
+    public virtual List<ObjectActionIndex> GetObjectActions()
+    {
+
+        return ObjectActions;
     }
 
     public virtual waypointConditionSetting GetConditionEnum(string condition)
@@ -72,8 +85,6 @@ public class DecorObject : MonoBehaviour
             selected = false;
             print("OBJECT DESELECTED");
         }
-        
-       
     }
 
 
@@ -180,12 +191,15 @@ public class WaypointSaveData : ObjectSaveData
     public string Name;
     public int targetItemID;
     public int waypointID;
-    
+    public SavableObjectActionSet OnOccupied;
+    public SavableObjectActionSet OnUnccupied;
 
-    public WaypointSaveData(ObjectSaveDataType dataType, string Name,int targetItemID):base (dataType)
+    public WaypointSaveData(ObjectSaveDataType dataType, string Name,int targetItemID, ObjectActionSet OccupiedEvent, ObjectActionSet UnoccupiedEvent):base (dataType)
     {
         this.Name = Name;
         this.DataType = dataType;
         this.targetItemID = targetItemID;
+        this.OnOccupied = new SavableObjectActionSet(OccupiedEvent);
+        this.OnUnccupied = new SavableObjectActionSet(UnoccupiedEvent);
     }
 }

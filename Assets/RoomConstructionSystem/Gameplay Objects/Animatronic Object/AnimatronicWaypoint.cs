@@ -9,7 +9,8 @@ public class AnimatronicWaypoint : DecorObject
 
     public DecorObject TestReference;
 
-
+    public ObjectActionSet OnOccupied = new ObjectActionSet("OnOccupied");
+    public ObjectActionSet OnUnoccupied = new ObjectActionSet("OnUnoccupied");
 
 
     public override void EditorSelect(Material SelectMaterial)
@@ -54,7 +55,7 @@ public class AnimatronicWaypoint : DecorObject
     public override SavedObject CompileObjectData()
     {
         var id = EditorController.Instance.MapDecor.IndexOf(TestReference);
-        SavedObject savedObject = new SavedObject(InternalName, SwatchID, new WaypointSaveData(ObjectSaveDataType.Waypoint,text.text,id),new SavedTransform(this.transform.position, this.transform.rotation.eulerAngles, this.transform.localScale));
+        SavedObject savedObject = new SavedObject(InternalName, SwatchID, new WaypointSaveData(ObjectSaveDataType.Waypoint,text.text,id,OnOccupied,OnUnoccupied),new SavedTransform(this.transform.position, this.transform.rotation.eulerAngles, this.transform.localScale));
         print(this.gameObject.transform.rotation);
         print("savedWAYPOINT");
         return savedObject;
@@ -70,6 +71,10 @@ public class AnimatronicWaypoint : DecorObject
         {
             this.TestReference = EditorController.Instance.MapDecor[waypointData.targetItemID];
         }
+        OnOccupied = new ObjectActionSet(waypointData.OnOccupied);
+        OnUnoccupied = new ObjectActionSet(waypointData.OnUnccupied);
+        print(waypointData.OnOccupied.ActionSetName);
+        print(waypointData.OnOccupied.objectActions.Count);
         print("waypointDataComplete");
     }
 

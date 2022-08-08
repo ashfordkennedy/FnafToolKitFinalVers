@@ -50,8 +50,6 @@ public class SaveMenu : EditorMenuAbstract
     void PopulateFileList()
     {
         ClearList();
-
-
         var FileList = _saveData.LocalMaps;
 
         for (int i = 0; i < FileList.Count; i++)

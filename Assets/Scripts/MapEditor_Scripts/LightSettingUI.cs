@@ -71,9 +71,25 @@ public class LightSettingUI : EditorMenuAbstract
             AudioManager.Audio_M.PlayUIClick();
             TargetLight.SetColour(LightColourPresets[ColourToggle.transform.GetSiblingIndex()]);
         }
-
         }
 
+    public void OpenColorPicker()
+    {
+        ColourSelector.instance.CloseMenu();
+        ColourSelector.instance.updateEvent.AddListener(RecieveColorSelectorColour);
+        ColourSelector.instance.OpenMenu();
+    }
+
+    public void RecieveColorSelectorColour()
+    {
+        TargetLight.SetColour(ColourSelector.instance.tempColour);
+    }
+
+
+    /// <summary>
+    /// Menu function to enable/diable the light
+    /// </summary>
+    /// <param name="toggle"></param>
     public void ToggleLight(Toggle toggle)
     {
         TargetLight.LightToggle(toggle.isOn);

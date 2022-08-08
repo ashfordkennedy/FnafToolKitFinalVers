@@ -26,6 +26,7 @@ public class TooltipMenu : EditorMenuAbstract
         while (Time.time != 0)
         {
             tooltipTransform.position = Input.mousePosition;
+            FitOnScreen();
             yield return new WaitForSecondsRealtime(0.1f);
            yield return null;
         }
@@ -38,6 +39,18 @@ public class TooltipMenu : EditorMenuAbstract
         StopCoroutine(RepositionTooltip());
         tooltipText.text = "";
        CloseMenu();
+    }
+
+    public void FitOnScreen()
+    {
+        float width = Screen.width;
+        float Xpos = Input.mousePosition.x;
+        float ScreenPos = Mathf.InverseLerp(0, width, Xpos);
+        var newPivot = new Vector2(0,0);
+        newPivot.x = (ScreenPos > 5 ) ? 1 : 0;
+        tooltipTransform.pivot = newPivot;
+
+       // print(Xpos);
     }
 
     // Start is called before the first frame update

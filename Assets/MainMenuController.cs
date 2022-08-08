@@ -20,6 +20,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] TMP_Text MapNameText;
     [SerializeField] Text CreatorText;
     [SerializeField]SaveDataScriptableObject SaveData;
+    [SerializeField] Button[] NightButtons;
+    [SerializeField] TMP_Text nightSelectText;
+    private int selectedNight = 0;
     // Start is called before the first frame update
 
     private void Awake()
@@ -171,6 +174,7 @@ public class MainMenuController : MonoBehaviour
 
     public void LoadEditMode()
     {
+        print("edit mode start called");
         StartCoroutine("LoadEditModeMap");
     }
 
@@ -184,6 +188,15 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadSceneAsync("WallSystems", LoadSceneMode.Single);
 
         yield return null;
+    }
+
+    public void SetTargetNight(Transform transform)
+    {
+        int id = transform.GetSiblingIndex();
+
+        nightSelectText.text = "LOAD NIGHT " + (id + 1);
+        selectedNight = id;
+
     }
 
 

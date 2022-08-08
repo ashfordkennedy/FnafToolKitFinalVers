@@ -16,7 +16,7 @@ namespace UIAnimation {
 
         public bool playOnEnable = false;
         public float startDelay = 0f;
-        public Sequence tweenSequence;
+        public Sequence tweenSequence = null;
 
 
         [SerializeReference] public List<TweenAnimation_Abstract> animationCommands = new List<TweenAnimation_Abstract>();
@@ -24,9 +24,13 @@ namespace UIAnimation {
 
         private void OnEnable()
         {
+            
             DOTween.Init();
-            tweenSequence = DOTween.Sequence();
-            tweenSequence = ExtendedUI_Functions.ProcessAnimatorData(animationCommands);
+            if (tweenSequence == null)
+            {
+                tweenSequence = DOTween.Sequence();
+                tweenSequence = ExtendedUI_Functions.ProcessAnimatorData(animationCommands);
+            }
 
             if (playOnEnable == true)
             {
@@ -55,6 +59,11 @@ namespace UIAnimation {
 
         }
 
+        public Sequence GenerateTween()
+        {
+
+            return ExtendedUI_Functions.ProcessAnimatorData(animationCommands);
+        }
 
         public void ReverseAnimation()
         {

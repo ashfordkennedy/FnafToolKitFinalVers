@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using ObjectActionEvents;
 
 public enum EditorMouseMode {Build,Erase,NewRoom,Select, Wall, Window, Door, Off, DoorCenter, DoorLeft, DoorRight,waypointSelect,ObjectSelect,ActionSelect }
 public class EditorController : MonoBehaviour
@@ -32,8 +33,16 @@ public class EditorController : MonoBehaviour
     [SerializeField] SaveDataScriptableObject SaveData;
 
     public RoomCell[,] CellRegistry = new RoomCell[46, 46];
+    public GameObject NewRoomPrefab;
 
 
+    public List<ObjectActionIndex> ObjectActions = new List<ObjectActionIndex>
+    {   
+        new ObjectActionIndex("SetGlobalPower","Set Global Power", ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetGlobalPower","Set Global Power", ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetGlobalPower","Set Global Power", ObjectActionType.SetFloat),
+        new ObjectActionIndex("SetLightOn","Light On/Off", ObjectActionType.SetBool)
+        };    
 
     private void Awake()
     {
@@ -466,8 +475,17 @@ public class EditorController : MonoBehaviour
         {
             Rooms[i].SwapRoomEditMode(false);
         }
+    }
 
-
+    public void CreateRoom(RoomCell NewCell)
+    {
+        RoomController NewCtrl = Instantiate(NewRoomPrefab).GetComponent<RoomController>();
+        SelectedRoom = NewCtrl;
+        NewCell.transform.SetParent(NewCtrl.EditModeContainer.transform, true);
+        
+        NewRoomSelectHandler(NewCtrl);
+        RegisterNewRoom(NewCtrl);
+        RoomSettingsUI.Instance.OpenMenu();
     }
 
 }

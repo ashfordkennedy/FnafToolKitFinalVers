@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class AnimatronicWaypoint : DecorObject
 {
     public bool Occupied = false;
@@ -12,6 +12,8 @@ public class AnimatronicWaypoint : DecorObject
     public ObjectActionSet OnOccupied = new ObjectActionSet("OnOccupied");
     public ObjectActionSet OnUnoccupied = new ObjectActionSet("OnUnoccupied");
 
+    public UnityEvent OnOccupiedEvent = new UnityEvent();
+    public UnityEvent OnUnocupiedEvent = new UnityEvent();
 
     public override void EditorSelect(Material SelectMaterial)
     {
@@ -92,7 +94,12 @@ public class AnimatronicWaypoint : DecorObject
         
     }
 
-
+    public override void NightStartSetup()
+    {
+        OnOccupied.GenerateUnityEvent(OnOccupiedEvent);
+        OnUnoccupied.GenerateUnityEvent(OnUnocupiedEvent);
+        print("Night start up called on waypoint");
+    }
 
     void DeactivateWaypoint()
     {

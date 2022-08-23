@@ -23,16 +23,6 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] Button[] NightButtons;
     [SerializeField] TMP_Text nightSelectText;
     private int selectedNight = 0;
-    // Start is called before the first frame update
-
-    private void Awake()
-    {
-       
-    }
-
-
-
-
 
 
     void Start()
@@ -43,16 +33,6 @@ public class MainMenuController : MonoBehaviour
           LoadingScreen.LoadScreen.LoadScreenToggle(false);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
-
-
 
     public void UpdateLevelPreivew(GameObject SelectedLevel)
     {

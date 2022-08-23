@@ -127,11 +127,4 @@ public class FileSelector : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-
-
-
-    }
 }

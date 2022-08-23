@@ -11,6 +11,10 @@ public class DecorButton : DecorObject
      
     public List<SwitchButton> buttonData;
 
+    public bool panelEnabled = true;
+    public bool startEnabled = true;
+
+
     public void ToggleButton(int ButtonID)
     {
 
@@ -36,8 +40,11 @@ public class DecorButton : DecorObject
         buttonData[ButtonID].IsEnabled = !buttonData[ButtonID].IsEnabled;
     }
 
-    public ObjectActionSet ButtonActionSet;
-    public UnityEvent ButtonOnEvent;
+    public ObjectActionSet ButtonOnActionSet = new ObjectActionSet("ButtonOn");
+    public ObjectActionSet ButtonOffActionSet = new ObjectActionSet("ButtonOff");
+
+    public UnityEvent ButtonOnEvent = new UnityEvent();
+    public UnityEvent ButtonOffEvent = new UnityEvent();
 
     public DecorLighting lights;
     private void Start()
@@ -45,18 +52,23 @@ public class DecorButton : DecorObject
         
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ButtonActionSet.objectActions.Add(new ChangeLightSettingsAction(lights, Color.red, 10, 30, 100, true));
-            ButtonActionSet.GenerateUnityEvent(ButtonOnEvent);
-        }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ButtonOnEvent.Invoke();
-        }
+    public override void NightStartSetup()
+    {
+        ButtonOnActionSet.GenerateUnityEvent(ButtonOnEvent);
+        ButtonOffActionSet.GenerateUnityEvent(ButtonOnEvent);
+    }
+
+    public void EditButtonOnEvent()
+    {
+        ObjectActionsMenu.instance.SetTargetActionSet(ButtonOnActionSet);
+        ObjectActionsMenu.instance.OpenMenu();
+    }
+
+    public void EditButtonOffEvent()
+    {
+        ObjectActionsMenu.instance.SetTargetActionSet(ButtonOffActionSet);
+        ObjectActionsMenu.instance.OpenMenu();
     }
 
     private static List<ObjectActionIndex> _objectActions = new List<ObjectActionIndex>

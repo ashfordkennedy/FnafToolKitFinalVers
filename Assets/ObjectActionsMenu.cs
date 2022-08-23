@@ -40,11 +40,17 @@ public class ObjectActionsMenu : EditorMenuAbstract
 
     }
 
+    public override void OpenMenu()
+    {
+        TargetGlobalActions();
+        base.OpenMenu();
+    }
+
 
     public void SetActionSelectTarget(DecorObject NewTarget)
     {
         ActionSelectionTarget = NewTarget;
-        RefreshActionSelectList();
+        RefreshActionSelectList(ActionSelectionTarget.GetObjectActions());
         ToggleActionSelectMenu(true);
 
         SelectionTargetDisplay.text = decorCatalogue.GetDecorObjectName(ActionSelectionTarget.InternalName);
@@ -66,19 +72,19 @@ public class ObjectActionsMenu : EditorMenuAbstract
     /// <summary>
     /// refreshes the selectable action list to reflect the current target object
     /// </summary>
-    public void RefreshActionSelectList()
+    public void RefreshActionSelectList(List<ObjectActionIndex> actions)
     {
         if(ActionSelectionTarget != null)
         {
-            var actionTags = ActionSelectionTarget.GetObjectActions();
+            //var actions = ActionSelectionTarget.GetObjectActions();
 
-            int tagCount = actionTags.Count -1;
+            int tagCount = actions.Count -1;
             for (int i = 0; i < ListingButtons.Count; i++)
             {
                 if(i<= tagCount)
                 {                
                     ListingButtons[i].gameObject.SetActive(true);
-                    ListingButtons[i].SetListing(actionTags[i]);
+                    ListingButtons[i].SetListing(actions[i]);
                 }
                 else
                 {
@@ -163,6 +169,12 @@ public class ObjectActionsMenu : EditorMenuAbstract
 
 
         }
+    }
+
+
+    public void TargetGlobalActions()
+    {
+        RefreshActionSelectList(EditorController.Instance.ObjectActions);
     }
 
 }

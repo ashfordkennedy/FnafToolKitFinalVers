@@ -27,7 +27,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: components.Array.size
-    value: 7
+    value: 6
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: components.Array.data[0]
@@ -58,10 +58,5 @@ Preset:
     propertyPath: components.Array.data[5]
     value: 
     objectReference: {fileID: 823346662957470912, guid: d99d546a63ef25f41a91a636cc46fe51,
-      type: 2}
-  - target: {fileID: 0}
-    propertyPath: components.Array.data[6]
-    value: 
-    objectReference: {fileID: 1179945379450879267, guid: d99d546a63ef25f41a91a636cc46fe51,
       type: 2}
   m_ExcludedProperties: []

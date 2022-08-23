@@ -578,82 +578,83 @@ public class RoomEditorMouse : MonoBehaviour
 
                 CanBuild = CellBuildableCheck();
 
+            switch (objectHit.gameObject.layer)
+            {
+                //build grid
+                case 11:
 
-                if (Input.GetMouseButton(0) && CanBuild == true && lastClicked <= Time.time -0.05f)
-                {
-                lastClicked = Time.time;
-                AudioManager.Audio_M.PlayBuildSound();
-                RoomCell NewCell = Instantiate(RoomCellPrefab).GetComponent<RoomCell>();
-                
-                    NewCell.gameObject.transform.position = BuildPrintPosition;
-                BuildParticles.transform.position = BuildPrintPosition;
-                BuildParticles.Play();
-
-
-
-
-
-                // building a new room. Sets up room controller objects
-                    if (EditorController.Instance.SelectedRoom == null)
+                    if (Input.GetMouseButton(0) && CanBuild == true && lastClicked <= Time.time - 0.05f)
                     {
-                    DeselectLastObject();
+                        lastClicked = Time.time;
+                        AudioManager.Audio_M.PlayBuildSound();
+                        RoomCell NewCell = Instantiate(RoomCellPrefab).GetComponent<RoomCell>();
 
-                        var NewCtrl = new GameObject().gameObject.AddComponent<RoomController>();
-                        NewCtrl.gameObject.transform.position = new Vector3(0, 0, 0);
-
-                 
-
-                    var newRoomRenderer = new GameObject("CombinedRoom");
-                  var newfilter =  newRoomRenderer.gameObject.AddComponent<MeshFilter>();
-                    NewCtrl.CombinedRoomRenderer = newRoomRenderer.gameObject.AddComponent<MeshRenderer>();
-                    
-                    newRoomRenderer.transform.SetParent(NewCtrl.transform);
-                    newfilter.gameObject.layer = 13;
-                    newfilter.gameObject.AddComponent<MeshCollider>();
-                    NewCtrl.CombinedRoomMesh = newfilter;
-
-
-                    var newContainer = new GameObject("EditCell Container");
-                    newContainer.transform.SetParent(NewCtrl.transform);
-                    
-                    NewCtrl.EditModeContainer = newContainer;
-
-                    EditorController.Instance.RegisterNewRoom(NewCtrl);                  
-                        NewCell.Room_Ctrl = NewCtrl;
-                        EditorController.Instance.SelectedRoom = NewCtrl;
-                        NewCell.transform.SetParent(NewCtrl.EditModeContainer.transform, true);
-                    RoomSettingsUI.Instance.OpenMenu();
+                        NewCell.gameObject.transform.position = BuildPrintPosition;
+                        BuildParticles.transform.position = BuildPrintPosition;
+                        BuildParticles.Play();
 
 
 
-                        // NewCell.gameObject.transform.localPosition = new Vector3(0, 0, 0);
-                        // NewCell.CellID = new Vector2Int(0, 0);   old id assign
 
-                        int Xdistance = (int)NewCell.transform.localPosition.x / EditorController.Instance.MapGridScale;
-                        int Zdistance = (int)NewCell.transform.localPosition.z / EditorController.Instance.MapGridScale;
-                       // Debug.Log("Distance from origin is x = " + Xdistance + " Z = " + Zdistance);
-                        NewCell.CellID = new Vector2Int(Xdistance, Zdistance);
+                        //What the absolute fuck was I thinking, just use the damn prefab. good god, you idiot!!!
 
-                    EditorController.Instance.NewRoomSelectHandler(NewCtrl);
+                        // build a new room, none are selected. Sets up room controller objects
+                        if (EditorController.Instance.SelectedRoom == null)
+                        {
+                            DeselectLastObject();
+
+
+                            int Xdistance = (int)NewCell.transform.localPosition.x / EditorController.Instance.MapGridScale;
+                            int Zdistance = (int)NewCell.transform.localPosition.z / EditorController.Instance.MapGridScale;
+                            // Debug.Log("Distance from origin is x = " + Xdistance + " Z = " + Zdistance);
+                            NewCell.CellID = new Vector2Int(Xdistance, Zdistance);
+
+                            EditorController.Instance.CreateRoom(NewCell);
+                        }
+
+
+                        // just instantiates and adds to room
+                        else
+                        {
+                            NewCell.Room_Ctrl = EditorController.Instance.SelectedRoom;
+                            NewCell.transform.SetParent(EditorController.Instance.SelectedRoom.EditModeContainer.transform, true);
+
+                            var RoomCenter = EditorController.Instance.SelectedRoom.transform.localPosition;
+                            int Xdistance = (int)NewCell.transform.localPosition.x / EditorController.Instance.MapGridScale;
+                            int Zdistance = (int)NewCell.transform.localPosition.z / EditorController.Instance.MapGridScale;
+                            //  Debug.Log("Distance from origin is x = " + Xdistance + " Z = " + Zdistance);
+                            NewCell.CellID = new Vector2Int(Xdistance, Zdistance);
+
+                        }
+                        NewCell.CellInitialize();
+                    }
+
+                    break;
+
+                    // floor
+                case 8:
+
+                    if(Input.GetMouseButton(0) && CanBuild == false && lastClicked <= Time.time - 0.05f)
+                    {
+
+                        lastClicked = Time.time;
+                        AudioManager.Audio_M.PlayBuildSound();
+                        RoomCell NewCell = Instantiate(RoomCellPrefab).GetComponent<RoomCell>();
+
+                        NewCell.gameObject.transform.position = BuildPrintPosition;
+                        BuildParticles.transform.position = BuildPrintPosition;
+                        BuildParticles.Play();
+
+
                     }
 
 
-                    // just instantiates and adds to room
-                    else
-                    {
-                        NewCell.Room_Ctrl = EditorController.Instance.SelectedRoom;
-                        NewCell.transform.SetParent(EditorController.Instance.SelectedRoom.EditModeContainer.transform, true);
 
-                        var RoomCenter = EditorController.Instance.SelectedRoom.transform.localPosition;
-                        int Xdistance = (int)NewCell.transform.localPosition.x / EditorController.Instance.MapGridScale;
-                        int Zdistance = (int)NewCell.transform.localPosition.z / EditorController.Instance.MapGridScale;
-                      //  Debug.Log("Distance from origin is x = " + Xdistance + " Z = " + Zdistance);
-                        NewCell.CellID = new Vector2Int(Xdistance, Zdistance);
-                
-                    }
-                    NewCell.CellInitialize();
-                }
-                // }
+                    break;
+
+
+            }
+            
 
 
 

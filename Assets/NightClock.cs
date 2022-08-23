@@ -73,6 +73,10 @@ public class NightClock : MonoBehaviour
 
         NightManager.instance.EndNight();
         EndOfNightCanvas.SetActive(true);
+        yield return new WaitForSeconds(5);
+        EndOfNightCanvas.SetActive(false);
+        NightManager.instance.EndNight();
+        PlayModeController.instance.EndPlayMode();
         yield return null;
     }
 

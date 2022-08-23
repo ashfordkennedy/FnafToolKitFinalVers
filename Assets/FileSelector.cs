@@ -110,8 +110,9 @@ public class FileSelector : MonoBehaviour
         ofn.title = menuMessage;
         ofn.defExt = fileType;
         ofn.flags = 0x00080000 | 0x00001000 | 0x00000800 | 0x00000200 | 0x00000008;//OFN_EXPLORER|OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST| OFN_ALLOWMULTISELECT|OFN_NOCHANGEDIR
+        int testflag = 23 | 32453 | 34532 | 232;
 
-
+  
         if (DllTest.GetSaveFileName(ofn))
         {
             Debug.Log("Selected file with full path: {0}" + ofn.file);

@@ -388,6 +388,35 @@ MonoBehaviour:
     Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 12
+  - name: Buttons
+    InternalName: A_Buttons
+    editorTab: 2
+    Swatches:
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: dce153b1658c0df4fa37e327d31f37c8, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: f55d19fc964bd3246bca8e57b226ba39, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 6465a6e9924c1c849a660f005272db41, type: 2}
+      Swatch: {fileID: 6135253547919058009, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: The updated, to scale test wolf animatronic
+    Price: 3000
+    Object: {fileID: 7796780186692685546, guid: fac884468be5bbf488e24bd0670d19b0,
+      type: 3}
+    Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 12
   - name: Party Table Set
     InternalName: PartyTableSet1
     editorTab: 0
@@ -565,5 +594,17 @@ MonoBehaviour:
     Object: {fileID: 8445881539494725114, guid: 3e87cf99d9b17eb41bf7fe97280868f3,
       type: 3}
     Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+  - name: Classic mode start
+    InternalName: ClassicModeStart
+    editorTab: 1
+    Swatches: []
+    Description: A marker determining where the player will sit during night mode
+      and the main camera rotation bounds
+    Price: 0
+    Object: {fileID: 7593692059289874572, guid: b6f0b80610e47c44eb3cb12025bb43ae,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
       type: 3}
     ObjectId: 13

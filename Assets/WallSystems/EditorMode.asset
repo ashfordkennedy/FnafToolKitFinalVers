@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
   m_Name: Exposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -203,8 +203,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   exposure:
-    m_OverrideState: 1
-    m_Value: 10
+    m_OverrideState: 0
+    m_Value: 0
   multiplier:
     m_OverrideState: 1
     m_Value: 0
@@ -248,8 +248,8 @@ MonoBehaviour:
     showAlpha: 0
     showEyeDropper: 1
   gradientDiffusion:
-    m_OverrideState: 1
-    m_Value: 8.2
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   - {fileID: -5631090596889817918}
   - {fileID: -3843352152368940750}
   - {fileID: -3939526135310865083}
+  - {fileID: 8445387898565217356}
 --- !u!114 &5814872253347357928
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -366,3 +367,64 @@ MonoBehaviour:
     m_Value: 8
     min: 1
     max: 32
+--- !u!114 &8445387898565217356
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  maximumVelocity:
+    m_OverrideState: 0
+    m_Value: 200
+    min: 0
+    max: 1500
+  minimumVelocity:
+    m_OverrideState: 0
+    m_Value: 2
+    min: 0
+    max: 64
+  cameraMotionBlur:
+    m_OverrideState: 0
+    m_Value: 1
+  specialCameraClampMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cameraVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+    min: 0
+    max: 0.3
+  cameraTranslationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+    min: 0
+    max: 0.3
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+    min: 0
+    max: 0.3
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 20
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 8
+    min: 2

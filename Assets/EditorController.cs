@@ -440,7 +440,7 @@ public class EditorController : MonoBehaviour
     public void DeregisterCell(Vector2Int pos)
     {
         CellRegistry[pos.x, pos.y] = null;
-
+        CameraMapGenerator.instance.EraseCell(pos);
     }
 
     public void CenterToRoom(Transform target)

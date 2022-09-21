@@ -2,7 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
+
+/// <summary>
+/// WallState Describes the mesh variant to be used by the formatter so that its edges conform with surrounding walls and can easily be merged.
+/// </summary>
 public enum WallState {Empty,Straight,LeftCorner,RightCorner,BothCorner }
+
+/// <summary>
+/// WallType describes the wall variant to use when generating.
+/// A variant is characterised by the walls purpose, (blank, door etc.) not how it should relate to surrounding walls  (See WallState)
+/// </summary>
 public enum WallType {Blank,Window,Door,Vent, DoorLeft,DoorCenter,DoorRight }
 public class WallComponent : MonoBehaviour
 {

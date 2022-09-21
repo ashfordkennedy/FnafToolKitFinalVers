@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using ObjectActionEvents;
-public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera };
+public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera, ClassicStart };
 
 /// <summary>
 /// Decor object is a base class for all objects
@@ -137,7 +137,7 @@ public class DecorObject : MonoBehaviour
     }
 }
 
-public enum ObjectSaveDataType {none,Light,Waypoint,Animatronic }
+public enum ObjectSaveDataType {none,Light,Waypoint,Animatronic, ClassicStart }
 
 
 [System.Serializable]

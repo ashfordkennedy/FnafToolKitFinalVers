@@ -378,7 +378,7 @@ public class ObjectPlacer : EditorMenuAbstract
                 }
 
 
-
+               // hit.po
                 StartCoroutine(ClickHold(axis));
 
 
@@ -390,6 +390,10 @@ public class ObjectPlacer : EditorMenuAbstract
     IEnumerator ClickHold(AxisMode axisMode)
     {
         print("click held");
+
+        //Stash transform
+
+
         while (clickHeld != 0)
         {
             //drag loop 

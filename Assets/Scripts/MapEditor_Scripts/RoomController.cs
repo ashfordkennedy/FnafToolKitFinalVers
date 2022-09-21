@@ -102,7 +102,7 @@ public class RoomController : MonoBehaviour
 
         CornerFormatter(x, y);
         RoomCells[x, y].UpdateMaterial(EditorController.Instance.WallSets[WallSet].MaterialSets[WallSkin].material, EditorController.Instance.Floors[FloorSet].material);
-
+        CameraMapGenerator.instance.DrawCell(new Vector2Int(x, y), RoomCells[x, y]);
     }
 
 
@@ -140,6 +140,8 @@ public class RoomController : MonoBehaviour
                     CornerFormatter(x, y);
 
                     RoomCells[x, y].UpdateMaterial(EditorController.Instance.WallSets[WallSet].MaterialSets[WallSkin].material, EditorController.Instance.Floors[FloorSet].material);
+
+                    CameraMapGenerator.instance.DrawCell(new Vector2Int(x, y), RoomCells[x, y]);
                 }
 
             }
@@ -147,6 +149,7 @@ public class RoomController : MonoBehaviour
 
     }
 
+    WallState r = WallState.BothCorner;
     /// <summary>
     /// Checks cell walls siblings for activity and swap for mergable mesh piece if present
     /// </summary>
@@ -467,7 +470,7 @@ public class RoomController : MonoBehaviour
       RoomCells[CellID.x, CellID.y] = null;
         CellCount--;
     Debug.Log("RoomCellDeregistered");
-    
+        CameraMapGenerator.instance.EraseCell(CellID);
         if (CellCount > 0)
         {
             SurroundingWallCheck(CellID);
@@ -479,7 +482,7 @@ public class RoomController : MonoBehaviour
         }
         else
         {
-            Map_Editor.DeRegisterRoom(this);
+            CameraMapGenerator.instance.EraseCell(CellID);
             RoomSettingsUI.Instance.CloseMenu();
             DestroyRoom();
 
@@ -490,8 +493,10 @@ public class RoomController : MonoBehaviour
 
     public void DestroyRoom()
     {
+        CameraMapGenerator.instance.BlankMap();
         EditorController.Instance.DeRegisterRoom(this);
         Destroy(this.gameObject);
+        CameraMapGenerator.instance.RedrawMap();
     }
 
 

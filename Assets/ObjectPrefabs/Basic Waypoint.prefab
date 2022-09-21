@@ -154,6 +154,12 @@ MonoBehaviour:
   OnUnoccupied:
     ActionSetName: OnUnoccupied
     objectActions: []
+  OnOccupiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnocupiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   references:
     version: 1
 --- !u!1 &6000325762357799991
@@ -323,7 +329,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f,
     type: 3}
   m_Color: {r: 0.3495283, g: 0.49761787, b: 0.735849, a: 1}

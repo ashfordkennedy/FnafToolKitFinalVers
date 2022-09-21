@@ -5,27 +5,19 @@ using UnityEngine.EventSystems;
 public abstract class EditorMenuAbstract : MonoBehaviour
 {
     public GameObject UICanvas;
-
-    private bool _menuOpen;
-
-    public bool MenuOpen
-    {
-        get { return _menuOpen; }
-
-    }
+    public bool MenuOpen { get; private set; }
 
     public virtual void OpenMenu()
     {
         UICanvas.SetActive(true);
-        _menuOpen = true;
+        MenuOpen = true;
     }
 
     public virtual void CloseMenu()
     {
        UICanvas.SetActive(false);
-        _menuOpen = false;
+        MenuOpen = false;
     }
-
 
     public virtual void ToggleMenu()
     {

@@ -227,6 +227,8 @@ public class LightData
     public bool activeOnStart = true;
     public bool active = true;
 
+
+
     public LightData(float intensity, float volume, Color colour)
     {
         this.Intensity = intensity;

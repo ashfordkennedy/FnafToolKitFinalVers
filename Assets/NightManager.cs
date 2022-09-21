@@ -90,10 +90,7 @@ public class NightManager : MonoBehaviour
     /// Starts the night
     /// </summary>
     public void BeginNight()
-    {
-      
-
-
+    {    
 
         powerLoss = 0f;
         UpdatePowerDisplay();
@@ -169,6 +166,7 @@ public class NightSettings
     public float totalPower = 5f;
     public SaveableColour fogColor = new SaveableColour(0,0,0);
     public float fogIntensity = -0.15f;
+
 
     public NightSettings(int starthour = 12, int endhour = 6, float basepowerloss = 0.05f, float totalpower = 5f, float hourLength = 30f, Color fogColor = new Color(), float fogIntensity = -0.15f)
     {

@@ -24,3 +24,26 @@ MonoBehaviour:
     - animationName: Walk
       animation: {fileID: 8923347377697688250, guid: 0de791eac406fe34bae473ba434c6042,
         type: 3}
+  - frameName: Buttons
+    animations:
+    - animationName: Default
+      animation: {fileID: 1827226128182048838, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}
+    - animationName: Lean 1
+      animation: {fileID: 1389121407789637250, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}
+    - animationName: Lean 2
+      animation: {fileID: -5385352278738347863, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}
+    - animationName: Lying Down
+      animation: {fileID: 5278880877335644531, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}
+    - animationName: Slumped Over
+      animation: {fileID: 4854180139978558704, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}
+    - animationName: Standing
+      animation: {fileID: -5405653242291790180, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}
+    - animationName: Camera Gaze
+      animation: {fileID: -5399242247433995347, guid: 9ea56f1d1cb2a354785f62f1fdaa2481,
+        type: 3}

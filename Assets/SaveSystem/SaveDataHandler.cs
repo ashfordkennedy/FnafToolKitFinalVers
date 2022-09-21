@@ -258,6 +258,7 @@ public class MapSaveFile
     public LevelConstructionData LevelEnvironmentData;
     public List<SavedObject> DecorList;
     public List<NightSettings> NightSettings;
+    public PlayerStats playerStats;
 
     public MapSaveFile(string MapImage, string mapName, string Creator, string Bio, LevelConstructionData ConstructData, List<SavedObject> decorList, List<NightSettings> NightSettings, bool editable, string Directory)
     {
@@ -276,6 +277,12 @@ public class MapSaveFile
 
 
 
+[Serializable]
+public class PlayerStats
+{
+    public float upperBound = 45f;
+    public float lowerBound = 45f;
+}
 
 
 
@@ -435,7 +442,7 @@ public class SavedObject
 [Serializable]
 public class SavedLight : SavedObject
 {
-    
+
 
 
     public SavedLight(string internalName,int swatch, ObjectSaveData objectData, SavedTransform positiondata) : base(internalName,swatch,objectData, positiondata)

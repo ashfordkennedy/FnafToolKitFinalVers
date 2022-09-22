@@ -278,11 +278,11 @@ public class EditorController : MonoBehaviour
     }
 
 
-    void RecreateObjectSettings(int ObjIndex, SavedObject objectData)
+    void RecreateObjectSettings(int ObjIndex, SavedObject savedObject)
     {
         DecorObject obj = MapDecor[ObjIndex];
 
-            switch (objectData.ObjectData.DataType)
+            switch (savedObject.ObjectData.DataType)
             {
 
 
@@ -295,7 +295,7 @@ public class EditorController : MonoBehaviour
 
 
                  LightData LD = new LightData(10, 5, new Color());
-                 var LSD = objectData.ObjectData as LightSaveData;
+                 var LSD = savedObject.ObjectData as LightSaveData;
                  L.RestoreLightSave(LSD.lightData);
                     break;
 
@@ -305,16 +305,24 @@ public class EditorController : MonoBehaviour
 
                 var W = obj as AnimatronicWaypoint;
 
-                WaypointSaveData WSD = objectData.ObjectData as WaypointSaveData;
+                WaypointSaveData WSD = savedObject.ObjectData as WaypointSaveData;
                 W.RestoreWaypointData(WSD);
                 break;
 
             case ObjectSaveDataType.Animatronic:
                 print("restoringAnimatronic");
                 var A = obj as EditorAnimatronic;
-                AnimatronicData ASD = objectData.ObjectData as AnimatronicData;
+                AnimatronicData ASD = savedObject.ObjectData as AnimatronicData;
                 A.RestoreAnimatronicData(ASD);
                 break;
+
+            case ObjectSaveDataType.ClassicStart:
+                var Cs = obj as DecorClassicStart;
+                ClassicStartData CSD = savedObject.ObjectData as ClassicStartData;
+                Cs.RestoreObjectData(CSD);
+
+                break;
+
             }
         }
 

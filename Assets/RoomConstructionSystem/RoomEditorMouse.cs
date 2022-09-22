@@ -196,7 +196,7 @@ public class RoomEditorMouse : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseMenuController.instance.OpenCloseMenu(!PauseMenuController.instance.menuOpen);
+            PauseMenuController.instance.ToggleMenu();
         }
 
 

@@ -3,24 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-public class PauseMenuController : MonoBehaviour
+using TMPro;
+public class PauseMenuController : EditorMenuAbstract
 {
     public static PauseMenuController instance;
-    public bool menuOpen = false;
-    [SerializeField] GameObject MenuObject;
+    public MenuTip[] tips;
 
+    [SerializeField] TMP_Text _tipTitle;
+    [SerializeField] TMP_Text _tipBody;
     private void Awake()
     {
         instance = this;
     }
 
-
-    public void OpenCloseMenu(bool Opening)
+    public override void OpenMenu()
     {
-        
-                MenuObject.SetActive(Opening);
-                menuOpen = Opening;         
+        UpdateTip();
+        base.OpenMenu();
+    }
+
+
+
+
+    private void UpdateTip()
+    {
+        int id = Random.Range(0, tips.Length);
+        MenuTip tip = tips[id];
+
+        _tipTitle.text = tip.title;
+        _tipBody.text = tip.tip;
 
     }
 
@@ -43,5 +54,17 @@ public class PauseMenuController : MonoBehaviour
 
         yield return null;
     }
+
+
+
    
+}
+
+
+[System.Serializable]
+public struct MenuTip
+{
+    public string title;
+    [TextArea]public string tip;
+
 }

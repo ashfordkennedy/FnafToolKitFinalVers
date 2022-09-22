@@ -19,6 +19,10 @@ public class ObjectPlacer : EditorMenuAbstract
     public float rotationDegrees { get; private set; }
     [SerializeField]public Material _selectedMaterial;
 
+
+    private float verticalSnapSize = 0.2f;
+    [SerializeField] float _ScreenIncrements = 42;
+
     [Header("LayerMasks")]
     public LayerMask objectMask;
     public LayerMask BuildCellLayerMask;
@@ -32,6 +36,8 @@ public class ObjectPlacer : EditorMenuAbstract
         instance = this;
         rotationDegrees = 1f;
         lastClicked = Time.time;
+
+        verticalSnapSize = Screen.height / _ScreenIncrements;
     
     }
     // Start is called before the first frame update
@@ -392,7 +398,7 @@ public class ObjectPlacer : EditorMenuAbstract
         print("click held");
 
         //Stash transform
-
+        float startY = Input.mousePosition.y;
 
         while (clickHeld != 0)
         {
@@ -416,6 +422,11 @@ public class ObjectPlacer : EditorMenuAbstract
                         break;
 
                     case AxisMode.Y:
+
+                        Newpos = RoundPosition(new Vector3(placementContainer.position.x, placementContainer.position.y, placementContainer.position.z), 0.01f);
+
+                        float Yoffset = startY - Input.mousePosition.y;
+                        Newpos.y = (Yoffset * -1 );
 
                         break;
                   
@@ -449,7 +460,6 @@ public class ObjectPlacer : EditorMenuAbstract
                 throw new UnityException("factor argument must be above 0");
 
             float x = Mathf.Round(input.x / factor) * factor;
-            //float y = Mathf.Round(input.y / factor) * factor;
             float y = Mathf.Round(input.y / factor) * factor;
             float z = Mathf.Round(input.z / factor) * factor;
 

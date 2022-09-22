@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 7593692059289874574}
   - component: {fileID: 7593692059289874575}
   - component: {fileID: 7593692059289874569}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ClassicModeStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

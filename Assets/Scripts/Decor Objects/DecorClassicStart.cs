@@ -32,6 +32,9 @@ public class DecorClassicStart : DecorObject
     }
 
 
+    
+
+
     public void StartPreview()
     {
         
@@ -56,6 +59,15 @@ public class DecorClassicStart : DecorObject
 
     }
 
+    public void RestoreObjectData(ClassicStartData startData)
+    {
+        this.ActiveNights = startData.activeNights;
+        this.lowerBound = startData.lowerBound;
+        this.upperBound = startData.upperBound;
+
+        
+
+    }
 
     public override SavedObject CompileObjectData()
     {
@@ -68,6 +80,7 @@ public class DecorClassicStart : DecorObject
 
 
 
+[System.Serializable]
 public class ClassicStartData : ObjectSaveData
 {
     public bool[] activeNights = new bool[7];
@@ -75,7 +88,8 @@ public class ClassicStartData : ObjectSaveData
     public float upperBound = 90;
     public ClassicStartData(ObjectSaveDataType dataType, bool[] activeNights, float lowerBound, float upperBound) : base(dataType)
     {
-        this.DataType = ObjectSaveDataType.ClassicStart;
+        base.DataType = ObjectSaveDataType.ClassicStart;
+        //this.DataType = ObjectSaveDataType.ClassicStart;
         this.activeNights = activeNights;
     }
 

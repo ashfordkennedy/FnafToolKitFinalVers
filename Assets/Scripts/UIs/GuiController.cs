@@ -48,6 +48,14 @@ public class GuiController : MonoBehaviour
 
     }
 
+    public void DisableNightGui()
+    {
+        canvasGroup.interactable = false;
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
+
+    }
+
     private void Awake()
     {
         instance = this;

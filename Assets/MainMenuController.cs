@@ -212,6 +212,12 @@ public class MainMenuController : MonoBehaviour
     }
 
 
+    public void OpenMapFolder()
+    {
+        SaveData.OpenSaveFolder(file_Type);
+    }
+
+
 
     /*
 

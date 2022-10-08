@@ -37,8 +37,9 @@ public class DecorClassicStart : DecorObject
 
     public void StartPreview()
     {
-        
-
+        PlayerController_Classic.instance.BeginPreview(this.transform,lowerBound,upperBound);
+        GuiController.instance.InitialiseNightGui();
+        GuiController.instance.EnableOfficeHudGui(true);
         StartCoroutine(PreviewExit());
 
     }
@@ -56,7 +57,9 @@ public class DecorClassicStart : DecorObject
 
     public void StopPreview()
     {
-
+        PlayerController_Classic.instance.EndPreview();
+        GuiController.instance.EnableOfficeHudGui(false);
+        GuiController.instance.DisableNightGui();
     }
 
     public void RestoreObjectData(ClassicStartData startData)
@@ -90,6 +93,9 @@ public class ClassicStartData : ObjectSaveData
     {
         base.DataType = ObjectSaveDataType.ClassicStart;
         //this.DataType = ObjectSaveDataType.ClassicStart;
+        this.activeNights = activeNights;
+        this.upperBound = upperBound;
+        this.lowerBound = lowerBound;
         this.activeNights = activeNights;
     }
 

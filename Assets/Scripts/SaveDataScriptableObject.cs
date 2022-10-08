@@ -36,6 +36,43 @@ public class SaveDataScriptableObject : ScriptableObject
         mapProgressData.CheckForDirectory();
     }
 
+    public void OpenSaveFolder(FileType fileType)
+    {
+        string directory = CommunityMapDirectory;
+        switch (fileType)
+        {
+
+            case FileType.Community:
+                directory = CommunityMapDirectory;
+                break;
+
+            case FileType.Local:
+                directory = SavedMapDirectory;
+                break;
+
+
+
+
+        }
+
+                if (Directory.Exists(directory))
+                {
+                    try
+                    {
+                     string newPath = directory.Replace(@"/", @"\");
+                     System.Diagnostics.Process.Start("explorer.exe","/select," + newPath);              
+                    }
+                    catch (Exception)
+                    {
+                        Debug.LogAssertion("access denied!");
+                        throw;
+                    }
+                }
+        
+               
+    }
+    
+
 
     /// <summary>
     /// Finds, filters and creates file Info listings, UI List population is handled seperately

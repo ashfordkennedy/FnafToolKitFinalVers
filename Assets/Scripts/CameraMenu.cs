@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class CameraMenu : EditorMenuAbstract
 {
     public static CameraMenu instance;
-    private Decor_Camera targetCamera;
+    [SerializeField] private Decor_Camera targetCamera;
     [SerializeField] private TMP_InputField _nameField;
     private void Awake()
     {
@@ -23,11 +24,17 @@ public class CameraMenu : EditorMenuAbstract
 
     }
 
-    public void ToggleCameraPreview(bool enable){
-    targetCamera.gameObject.SetActive(enable);    
+    public void ToggleCameraPreview(Toggle toggle){
+    targetCamera.camera.enabled = toggle.isOn; 
+    
     }
-    
-    
+
+    public void ToggleCameraPreview(bool enable)
+    {
+        targetCamera.camera.enabled = enable;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

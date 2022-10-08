@@ -17,6 +17,12 @@ public class PlayerController_Classic : MonoBehaviour
     [SerializeField] private float _currentRotation = 0;
     [SerializeField] private float _rotateSpeedMultiplier = 2;
     [SerializeField] Camera _controllerCamera;
+
+
+    private Quaternion tempRotation;
+    private Vector3 tempPosition;
+
+
     private void Awake()
     {
         instance = this;
@@ -70,11 +76,33 @@ public class PlayerController_Classic : MonoBehaviour
             _currentRotation += speed;
         }
     }
+
+    private void SetTempTransform()
+    {
+        tempRotation = this.transform.rotation;
+        tempPosition = this.transform.position;
+    }
+
+    private void RestoreTransform()
+    {
+        this.transform.rotation = tempRotation;
+        this.transform.position = tempPosition;
+    }
             
 
-    public void BeginPreview()
+    public void BeginPreview(Transform startObject, float lowerBound, float upperBound)
     {
+        SetTempTransform();
+        SetRotationBounds(lowerBound, upperBound);
+        SetTransform(startObject);
         _controllerCamera.gameObject.SetActive(true);
 
+    }
+
+    public void EndPreview()
+    {
+
+        RestoreTransform();
+        _controllerCamera.gameObject.SetActive(false);
     }
 }

@@ -10,11 +10,16 @@ public class DecorButton : DecorObject
     [SerializeField] private Material defaultMaterial;
      
     public List<SwitchButton> buttonData;
-
+    public List<UnityEvent> ButtonOnEvents;
+    public List<UnityEvent> ButtonOffEvents;
     public bool panelEnabled = true;
     public bool startEnabled = true;
 
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="ButtonID"></param>
     public void ToggleButton(int ButtonID)
     {
 
@@ -24,27 +29,24 @@ public class DecorButton : DecorObject
             case false:
                 
                 index[buttonData[ButtonID].MatIndexTarget] = buttonData[ButtonID].OnMaterial;
-                
-               
+                ButtonOnEvents[ButtonID].Invoke();
+
                 break;
 
             case true:
                 
                 index[buttonData[ButtonID].MatIndexTarget] = defaultMaterial;
-                
+                ButtonOffEvents[ButtonID].Invoke();
                 break;
         }
 
         buttonRenderer.materials = index;
-        buttonData[ButtonID].ButtonEvent.Invoke();
         buttonData[ButtonID].IsEnabled = !buttonData[ButtonID].IsEnabled;
     }
 
-    public ObjectActionSet ButtonOnActionSet = new ObjectActionSet("ButtonOn");
-    public ObjectActionSet ButtonOffActionSet = new ObjectActionSet("ButtonOff");
+    
 
-    public UnityEvent ButtonOnEvent = new UnityEvent();
-    public UnityEvent ButtonOffEvent = new UnityEvent();
+   
 
     public DecorLighting lights;
     private void Start()
@@ -55,21 +57,11 @@ public class DecorButton : DecorObject
 
     public override void NightStartSetup()
     {
-        ButtonOnActionSet.GenerateUnityEvent(ButtonOnEvent);
-        ButtonOffActionSet.GenerateUnityEvent(ButtonOnEvent);
+      //  ButtonOnActionSet.GenerateUnityEvent(ButtonOnEvent);
+      //  ButtonOffActionSet.GenerateUnityEvent(ButtonOnEvent);
     }
 
-    public void EditButtonOnEvent()
-    {
-        ObjectActionsMenu.instance.SetTargetActionSet(ButtonOnActionSet);
-        ObjectActionsMenu.instance.OpenMenu();
-    }
-
-    public void EditButtonOffEvent()
-    {
-        ObjectActionsMenu.instance.SetTargetActionSet(ButtonOffActionSet);
-        ObjectActionsMenu.instance.OpenMenu();
-    }
+   
 
     private static List<ObjectActionIndex> _objectActions = new List<ObjectActionIndex>
         {
@@ -79,6 +71,21 @@ public class DecorButton : DecorObject
 
 
 
+    public override SavedObject CompileObjectData()
+    {
+
+        var buttons = new ButtonSaveData(ObjectSaveDataType.ButtonSwitch, buttonData);
+
+
+
+       var savedObject = new SavedObject(this.InternalName,this.SwatchID,buttons,new SavedTransform(this.transform));
+
+
+        return savedObject;
+    }
+
+
+
 
 
 
@@ -88,15 +95,35 @@ public class DecorButton : DecorObject
 
 
 }
+
+public class ButtonSaveData : ObjectSaveData
+{
+    public List<SwitchButton> ButtonData;
+    public List<SavableObjectActionSet> ButtonOnActionSet;
+    public List<SavableObjectActionSet> ButtonOffActionSet;
+    public ButtonSaveData(ObjectSaveDataType dataType, List<SwitchButton> buttons) : base(dataType)
+    {
+        this.DataType = ObjectSaveDataType.ButtonSwitch;
+        this.ButtonData = buttons;
+      
+    }
+
+}
+
 
 [System.Serializable]
 public class SwitchButton
 {
-   public bool IsEnabled = false;
+    public bool IsEnabled = false;
     public int MatIndexTarget = 0;
-    public UnityEvent ButtonEvent;
     public Material OnMaterial;
+
+    public ObjectActionSet ButtonOnActionSet = new ObjectActionSet("ButtonOn");
+    public ObjectActionSet ButtonOffActionSet = new ObjectActionSet("ButtonOff");
 }
+
+
+
 
 
 

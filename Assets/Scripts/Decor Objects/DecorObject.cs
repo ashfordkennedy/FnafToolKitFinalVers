@@ -137,7 +137,7 @@ public class DecorObject : MonoBehaviour
     }
 }
 
-public enum ObjectSaveDataType {none,Light,Waypoint,Animatronic, ClassicStart }
+public enum ObjectSaveDataType {none,Light,Waypoint,Animatronic, ClassicStart, ButtonSwitch }
 
 
 [System.Serializable]

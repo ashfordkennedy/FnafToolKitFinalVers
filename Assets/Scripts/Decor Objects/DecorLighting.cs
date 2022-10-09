@@ -58,14 +58,8 @@ public class DecorLighting : DecorObject
 
     public override SavedObject CompileObjectData()
     {
-
-       // var lightdata = this.GetComponentInChildren<HDAdditionalLightData>();
-        var light = new LightData(_intensity, _volume, _color,_range,_powerDrain,_activeOnStart,_active);
-
-
-        SavedLight Data = new SavedLight(InternalName,SwatchID, new LightSaveData(ObjectSaveDataType.Light,light), new SavedTransform(this.transform.position, this.transform.rotation.eulerAngles, this.transform.localScale));
-      var lig =  Data.ObjectData as LightSaveData;
-        print("Light data " +" " + lig.lightData.Intensity + " "   + lig.lightData.Colour.ToColor());
+        var lightData = new LightData(_intensity, _volume, _color,_range,_powerDrain,_activeOnStart,_active);
+        SavedLight Data = new SavedLight(InternalName,SwatchID, new LightSaveData(ObjectSaveDataType.Light,lightData), new SavedTransform(this.transform));
         return Data;
     }
 

@@ -48,6 +48,7 @@ MonoBehaviour:
     Menusprite: {fileID: 3147117153359372007, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 0
+    DecorTabType: 48
   - name: Double Door Frame
     InternalName: DoorFrameD
     editorTab: 0
@@ -84,6 +85,7 @@ MonoBehaviour:
     Menusprite: {fileID: -7592173143594474155, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 1
+    DecorTabType: 0
   - name: Chair
     InternalName: Chair
     editorTab: 0
@@ -97,6 +99,7 @@ MonoBehaviour:
     Menusprite: {fileID: -8894057469729715593, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 2
+    DecorTabType: 0
   - name: Sofa
     InternalName: Sofa
     editorTab: 0
@@ -110,6 +113,7 @@ MonoBehaviour:
     Menusprite: {fileID: 3473067488844627539, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 3
+    DecorTabType: 0
   - name: Light1
     InternalName: Light1
     editorTab: 0
@@ -122,6 +126,7 @@ MonoBehaviour:
     Menusprite: {fileID: -6533504416836700589, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 4
+    DecorTabType: 0
   - name: Light2
     InternalName: Light2
     editorTab: 0
@@ -134,6 +139,7 @@ MonoBehaviour:
     Menusprite: {fileID: -4878780369741212085, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 5
+    DecorTabType: 0
   - name: Light3
     InternalName: Light3
     editorTab: 0
@@ -146,6 +152,7 @@ MonoBehaviour:
     Menusprite: {fileID: 5696811465416703826, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 6
+    DecorTabType: 0
   - name: Poster1
     InternalName: Poster1
     editorTab: 0
@@ -158,6 +165,7 @@ MonoBehaviour:
     Menusprite: {fileID: -2625536876281230515, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 8
+    DecorTabType: 0
   - name: Wooden Desk
     InternalName: DeskWood1
     editorTab: 0
@@ -175,6 +183,7 @@ MonoBehaviour:
     Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 7
+    DecorTabType: 0
   - name: Security Door
     InternalName: SecurityDoorS
     editorTab: 1
@@ -212,6 +221,7 @@ MonoBehaviour:
     Menusprite: {fileID: 720586757817451359, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 9
+    DecorTabType: 0
   - name: Security Door M
     InternalName: SecurityDoorM
     editorTab: 1
@@ -248,6 +258,7 @@ MonoBehaviour:
     Menusprite: {fileID: -1248516885935246668, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Party Table old
     InternalName: PartyTableold
     editorTab: 0
@@ -283,6 +294,7 @@ MonoBehaviour:
     Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 10
+    DecorTabType: 0
   - name: Pizza Ovens
     InternalName: DoublePizzaOven
     editorTab: 0
@@ -295,6 +307,7 @@ MonoBehaviour:
     Menusprite: {fileID: -3105660766707295509, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 12
+    DecorTabType: 0
   - name: TestWaypoint
     InternalName: TestWaypoint
     editorTab: 1
@@ -308,6 +321,7 @@ MonoBehaviour:
     Menusprite: {fileID: -8595885172875719181, guid: 1cbf10f8760899d439ce4f1b1f78891f,
       type: 3}
     ObjectId: 11
+    DecorTabType: 0
   - name: Test Wolf
     InternalName: A_TestWolf
     editorTab: 2
@@ -360,6 +374,7 @@ MonoBehaviour:
     Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 12
+    DecorTabType: 0
   - name: V2.0 Test Wolf
     InternalName: A_V2TestWolf
     editorTab: 2
@@ -388,6 +403,7 @@ MonoBehaviour:
     Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 12
+    DecorTabType: 0
   - name: Buttons
     InternalName: A_Buttons
     editorTab: 2
@@ -417,6 +433,7 @@ MonoBehaviour:
     Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 12
+    DecorTabType: 0
   - name: Party Table Set
     InternalName: PartyTableSet1
     editorTab: 0
@@ -439,6 +456,7 @@ MonoBehaviour:
     Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Party Chair
     InternalName: PartyChair
     editorTab: 0
@@ -492,6 +510,7 @@ MonoBehaviour:
     Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Party Table
     InternalName: PartyTable
     editorTab: 0
@@ -527,6 +546,7 @@ MonoBehaviour:
     Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Kitchen Sink
     InternalName: KitchenSink
     editorTab: 0
@@ -538,6 +558,7 @@ MonoBehaviour:
     Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Kitchen Side
     InternalName: KitchenSide
     editorTab: 0
@@ -549,6 +570,7 @@ MonoBehaviour:
     Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Pizza Box
     InternalName: PizzaBox
     editorTab: 0
@@ -596,6 +618,7 @@ MonoBehaviour:
     Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0
   - name: Classic mode start
     InternalName: ClassicModeStart
     editorTab: 1
@@ -608,3 +631,4 @@ MonoBehaviour:
     Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
       type: 3}
     ObjectId: 13
+    DecorTabType: 0

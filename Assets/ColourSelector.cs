@@ -36,10 +36,7 @@ public class ColourSelector : EditorMenuAbstract
     public override void CloseMenu()
     {
         base.CloseMenu();
-        if (updateEvent.GetPersistentEventCount() > 0)
-        {
-            updateEvent.RemoveAllListeners();
-        }
+        updateEvent.RemoveAllListeners();       
     }
 
     public void SelectPresetColour(Transform target)

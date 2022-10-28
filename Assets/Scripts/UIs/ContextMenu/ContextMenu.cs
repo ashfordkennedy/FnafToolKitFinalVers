@@ -264,6 +264,12 @@ public class ContextMenu : MonoBehaviour
 
                 break;
 
+            case ContextMenuActions.ButtonPanel:
+                var ButTarget = target.GetComponent<DecorButton>();
+                ButtonMenu.instance.SetTarget(ButTarget);
+                ButtonMenu.instance.OpenMenu();
+                break;
+
         }
         
 
@@ -303,6 +309,10 @@ public class ContextMenu : MonoBehaviour
                 MenuSet = 6;
                 break;
 
+            case DecorObjectType.Button:
+                MenuSet = 7;
+                break;
+
         }
 
         return MenuSet;
@@ -320,7 +330,9 @@ public class ContextMenuActionSet
 public enum ContextMenuActions
 {
     Select, EraseCell, NewCell, NewRoom, RoomList, WallDefault,
-    WallDoor, WallLeftDoor, WallCenterDoor, WallRightDoor, Transform, Swatch, Waypoint, Light, Animatronic, Delete, ClassicPlayer
+    WallDoor, WallLeftDoor, WallCenterDoor, WallRightDoor, Transform, Swatch, Waypoint, Light, Animatronic, Delete, ClassicPlayer,
+    ButtonPanel
+        
 };
 
 [System.Serializable]
@@ -329,7 +341,7 @@ public class ContextMenuOption
     /// <summary>
     /// The Internal name is used as the send message value when triggering the MenuOption
     /// </summary>
-    public ContextMenuActions ActionType;
-    public string name;    
+    public string name;
+    public ContextMenuActions ActionType;    
     public Sprite sprite;
 }

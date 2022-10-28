@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using ObjectActionEvents;
-public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera, ClassicStart };
+public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera, ClassicStart, Button };
 
 /// <summary>
 /// Decor object is a base class for all objects

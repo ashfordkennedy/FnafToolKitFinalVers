@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
+[Flags]
 public enum DecorTheme { }
-public enum DecorType {Door,Window,Seating,Surface,Wall }
+
+[Flags]
+public enum DecorType {Door = 1,Window = 2,Seating = 4,Surface = 8,Wall = 16,Light = 32}
 
 
 [CreateAssetMenu(fileName = "ObjectCatalogue", menuName = "ScriptableObjects/ObjectCatalogue")]
@@ -13,8 +17,6 @@ public class DecorObjectCatalogue : ScriptableObject
     [Header("Map Object Settings")]
     public List<MapObject> MapObjects;
     public Dictionary<string, int> ObjectDictionary = new Dictionary<string, int>();
-
-
 
     public void WriteDictionary()
     {

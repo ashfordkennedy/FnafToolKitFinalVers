@@ -514,6 +514,7 @@ public class MapObject
     public GameObject Object;
     public Sprite Menusprite;
     public int ObjectId;
+    public DecorType DecorTabType;
 
 }
 

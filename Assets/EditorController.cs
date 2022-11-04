@@ -55,7 +55,7 @@ public class EditorController : MonoBehaviour
         if (SaveData.LoadedFile != null) {
             if (SaveData.LoadedFile.MapName != "")
             {
-                StartCoroutine("RepopulateMap");
+                StartCoroutine(RepopulateMap());
             }
         }
         else
@@ -222,6 +222,7 @@ public class EditorController : MonoBehaviour
         {
             RecreateObjects(FileData.DecorList[i]);
         }
+
         for (int i = 0; i < FileData.DecorList.Count; i++)
         {
             RecreateObjectSettings(i, FileData.DecorList[i]);
@@ -292,9 +293,6 @@ public class EditorController : MonoBehaviour
 
             case ObjectSaveDataType.Light:
                   var L = obj as DecorLighting;
-
-
-                 LightData LD = new LightData(10, 5, new Color());
                  var LSD = savedObject.ObjectData as LightSaveData;
                  L.RestoreLightSave(LSD.lightData);
                     break;
@@ -320,7 +318,12 @@ public class EditorController : MonoBehaviour
                 var Cs = obj as DecorClassicStart;
                 ClassicStartData CSD = savedObject.ObjectData as ClassicStartData;
                 Cs.RestoreObjectData(CSD);
+                break;
 
+            case ObjectSaveDataType.ButtonSwitch:
+                var button = obj as DecorButton;
+                ButtonSaveData BSD = savedObject.ObjectData as ButtonSaveData;
+                button.RestoreObjectSave(BSD);
                 break;
 
             }

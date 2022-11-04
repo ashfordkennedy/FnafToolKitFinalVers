@@ -150,6 +150,18 @@ public class ObjectActionsMenu : EditorMenuAbstract
 
     }
 
+    public void RemoveAction(Transform actionUiPanel)
+    {
+        int id = actionUiPanel.GetSiblingIndex();
+        targetActionSet.objectActions.RemoveAt(id);
+        RefreshActionList();
+    }
+
+    public void CenterToTarget(BaseObjectActionUI target)
+    {
+        EditorController.Instance.CenterToRoom(target.targetObject.transform);
+    }
+
    
 
 

@@ -9,7 +9,7 @@ public class ButtonMenu : EditorMenuAbstract
 {
     public static ButtonMenu instance;
     private DecorButton target;
-    private int SelectedButton;
+    private int SelectedButton = 0;
     [SerializeField] TMP_Text buttonHeaderText;
 
     [SerializeField] GameObject[] EventButtons;
@@ -28,7 +28,8 @@ public class ButtonMenu : EditorMenuAbstract
     {
         DisableButtons();
         EnableButtons();
-
+        SelectedButton = 0;
+        LoadButtonValues(0);
         base.OpenMenu();
 
     }
@@ -78,7 +79,7 @@ public class ButtonMenu : EditorMenuAbstract
 
     public void DisplayNextButton()
     {
-        int max = target.buttonData.Count;
+        int max = target.buttonData.Count -1;
         if (SelectedButton == max)
         {
             SelectedButton = 0;
@@ -120,6 +121,20 @@ public class ButtonMenu : EditorMenuAbstract
         ObjectActionsMenu.instance.OpenMenu();
     }
 
+    public void EditButtonEnableEvent()
+    {
+        ObjectActionSet targetSet = target.buttonData[SelectedButton].ButtonEnabledActionSet;
+        ObjectActionsMenu.instance.SetTargetActionSet(targetSet);
+        ObjectActionsMenu.instance.OpenMenu();
+    }
+
+    public void EditButtonDisableEvent()
+    {
+        ObjectActionSet targetSet = target.buttonData[SelectedButton].ButtonDisabledActionSet;
+        ObjectActionsMenu.instance.SetTargetActionSet(targetSet);
+        ObjectActionsMenu.instance.OpenMenu();
+    }
+
 
     public void SetButtonTag(TMP_InputField input)
     {
@@ -157,6 +172,7 @@ public class ButtonMenu : EditorMenuAbstract
     public void RecieveColorSelectorColour(ButtonState buttonState, Image button)
     {
         Color newColor = ColourSelector.instance.tempColour;
+        newColor = new Color(newColor.r * 6, newColor.g * 6, newColor.b * 6);
 
         button.color = newColor;
         var buttonData = target.buttonData[SelectedButton];

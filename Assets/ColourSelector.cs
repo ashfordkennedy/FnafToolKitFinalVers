@@ -15,8 +15,10 @@ public class ColourSelector : EditorMenuAbstract
     [SerializeField] Slider _saturationSlider;
     [SerializeField] Slider _brightnessSlider;
 
+    [SerializeField] GameObject _sliderContainer;
+
      public Color tempColour { get; private set; }
-    private int SelectedPreset = 0;
+    private int SelectedPreset = -1;
     /// <summary>
     /// called each time the ui is altered. menus using colour picker should assign methods that will return tempColour for their own
     /// update needs.
@@ -29,8 +31,9 @@ public class ColourSelector : EditorMenuAbstract
 
     public override void OpenMenu()
     {
+        SetTarget(-1);
         base.OpenMenu();
-        SelectPresetColour(0);
+       // SelectPresetColour(0);
     }
 
     public override void CloseMenu()
@@ -39,10 +42,25 @@ public class ColourSelector : EditorMenuAbstract
         updateEvent.RemoveAllListeners();       
     }
 
+    public void SetTarget(int id)
+    {
+        SelectedPreset = id;
+
+        if(id == -1)
+        {
+            _sliderContainer.SetActive(false);       
+        }
+        else
+        {
+            _sliderContainer.SetActive(true);
+        }
+
+    }
+
     public void SelectPresetColour(Transform target)
     {
       int id = target.GetSiblingIndex();
-        SelectedPreset = id;
+       SetTarget(id);
         tempColour = ColourPreset[id].image.color;
         float H;
         float S;

@@ -65,7 +65,6 @@ namespace ObjectActionEvents.Savables
             this.ActionName = action.actionName;
             this.boolType = action.BoolActionType;
         }
-
     }
 
     [Serializable]

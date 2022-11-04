@@ -632,3 +632,15 @@ MonoBehaviour:
       type: 3}
     ObjectId: 13
     DecorTabType: 0
+  - name: Classic Two-Button Panel
+    InternalName: Fnaf1Button
+    editorTab: 1
+    Swatches: []
+    Description: A simple button set with two buttons.
+    Price: 0
+    Object: {fileID: 5819322043673823769, guid: 48dd1d6c98492d94c88e1722b2ff7dae,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 16

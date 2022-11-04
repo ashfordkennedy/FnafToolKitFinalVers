@@ -11,9 +11,9 @@ public class DecorButton : DecorObject
     [SerializeField] private Material defaultMaterial;
 
     [SerializeField] private DecorButton _linkedButton = null;
-    public List<SwitchButton> buttonData;
-    public List<UnityEvent> ButtonOnEvents;
-    public List<UnityEvent> ButtonOffEvents;
+    public List<SwitchButton> buttonData = new List<SwitchButton>();
+    public List<UnityEvent> ButtonOnEvents = new List<UnityEvent>();
+    public List<UnityEvent> ButtonOffEvents = new List<UnityEvent>();
     public bool panelEnabled = true;
     public bool startEnabled = true;
 
@@ -88,18 +88,25 @@ public class DecorButton : DecorObject
 
     public override void NightStartSetup()
     {
-      //  ButtonOnActionSet.GenerateUnityEvent(ButtonOnEvent);
-      //  ButtonOffActionSet.GenerateUnityEvent(ButtonOnEvent);
-    }
+        for (int i = 0; i < buttonData.Count; i++)
+        {
+            buttonData[i].WipeEvents();
+            buttonData[i].GenerateEvents();
+        }
+        }
 
     /// <summary>
-    /// safely nullifies the other objects reference to this object.
+    /// safely nullifies the other objects reference to this object. Called by the other button
     /// </summary>
     public void DeregisterLinkedObects()
     {
         _linkedButton = null;
     }
 
+
+    /// <summary>
+    /// Destroy the object but also call the unlink function to stop null reference exception
+    /// </summary>
     public override void DestroyObject()
     {
         _linkedButton.DeregisterLinkedObects();
@@ -132,7 +139,28 @@ public class DecorButton : DecorObject
     }
 
 
+    public void RestoreObjectSave(ButtonSaveData saveData)
+    {
+        for (int i = 0; i < saveData.buttonEnabled.Count; i++)
+        {
+            buttonData[i].IsEnabled = saveData.buttonEnabled[i];
+            buttonData[i].SetButtonColor(saveData.OffColors[i].ToColor(), ButtonState.Off);
+            buttonData[i].SetButtonColor(saveData.OnColors[i].ToColor(), ButtonState.On);
+            buttonData[i].SetButtonColor(saveData.LockedColors[i].ToColor(), ButtonState.Locked);
 
+            buttonData[i].SetButtonTag(saveData.nameTags[i]);
+
+
+           // print(($"button data {i} exists, no excuse for an error here, {buttonData.Count} button data fields existing here"));
+
+
+            buttonData[i].ButtonDisabledActionSet = new ObjectActionSet(saveData.buttonDisabledActionSet[i]);
+            buttonData[i].ButtonEnabledActionSet = new ObjectActionSet(saveData.buttonEnabledActionSet[i]);
+            buttonData[i].ButtonOnActionSet = new ObjectActionSet(saveData.buttonOnActionSet[i]);
+            buttonData[i].ButtonOffActionSet = new ObjectActionSet(saveData.buttonOffActionSet[i]);
+            
+        }
+    }
 
    
 
@@ -143,18 +171,51 @@ public class DecorButton : DecorObject
 
 }
 
+/// <summary>
+/// button save data stores switch button values in lists to be recreated later. (Stores only relevant information so no savable switchButton class was needed)
+/// </summary>
+ [System.Serializable]
 public class ButtonSaveData : ObjectSaveData
 {
-    public List<SwitchButton> ButtonData;
-    public List<SavableObjectActionSet> ButtonOnActionSet;
-    public List<SavableObjectActionSet> ButtonOffActionSet;
-    public List<SavableObjectActionSet> ButtonEnabledActionSet;
-    public List<SavableObjectActionSet> ButtonDisabledActionSet;
-    public string nameTag = "";
+    
+    public List<SavableObjectActionSet> buttonOnActionSet = new List<SavableObjectActionSet>();
+    public List<SavableObjectActionSet> buttonOffActionSet = new List<SavableObjectActionSet>();
+    public List<SavableObjectActionSet> buttonEnabledActionSet = new List<SavableObjectActionSet>();
+    public List<SavableObjectActionSet> buttonDisabledActionSet = new List<SavableObjectActionSet>();
+    public List<string> nameTags = new List<string>();
+    public List<SaveableColour> OnColors = new List<SaveableColour>();
+    public List<SaveableColour> OffColors = new List<SaveableColour>();
+    public List<SaveableColour> LockedColors = new List<SaveableColour>();
+    public List<bool> buttonEnabled = new List<bool>();
+    
+
     public ButtonSaveData(ObjectSaveDataType dataType, List<SwitchButton> buttons) : base(dataType)
     {
         this.DataType = ObjectSaveDataType.ButtonSwitch;
-        this.ButtonData = buttons;
+
+        for (int i = 0; i < buttons.Count; i++)
+        {
+
+            var onActionSet = new SavableObjectActionSet(buttons[i].ButtonOnActionSet);
+            buttonOnActionSet.Add(onActionSet);
+
+            var offActionSet = new SavableObjectActionSet(buttons[i].ButtonOffActionSet);
+            buttonOffActionSet.Add(offActionSet);
+
+            var enabledActionSet = new SavableObjectActionSet(buttons[i].ButtonEnabledActionSet);
+            buttonEnabledActionSet.Add(enabledActionSet);
+
+            var disabledActionSet = new SavableObjectActionSet(buttons[i].ButtonDisabledActionSet);
+            buttonDisabledActionSet.Add(disabledActionSet);
+
+            nameTags.Add(buttons[i].GetTag());
+
+            OnColors.Add(new SaveableColour(buttons[i].OnColor));
+            OffColors.Add(new SaveableColour(buttons[i].OffColor));
+            LockedColors.Add(new SaveableColour(buttons[i].LockedColor));
+            buttonEnabled.Add(buttons[i].IsEnabled);
+
+        }
       
     }
 

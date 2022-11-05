@@ -164,7 +164,7 @@ public class NightSettings
     public int endHour = 6;
     public float basePowerLoss = 0.05f;
     public float totalPower = 5f;
-    public SaveableColour fogColor = new SaveableColour(0,0,0);
+    public SavableColour fogColor = new SavableColour(0,0,0);
     public float fogIntensity = -0.15f;
 
 
@@ -175,7 +175,7 @@ public class NightSettings
         this.basePowerLoss = basepowerloss;
         this.totalPower = totalpower;
         this.hourLength = hourLength;
-        this.fogColor = new SaveableColour(fogColor);
+        this.fogColor = new SavableColour(fogColor);
         this.fogIntensity = fogIntensity;
     }
 

@@ -28,7 +28,7 @@ namespace ObjectActionEvents
     #region ObjectActions
 
 
-    public enum ObjectActionType { none, SetFloat, SetBool, SetLight }
+    public enum ObjectActionType { none, SetFloat, SetBool,SetColor, SetLight }
 
     /// <summary>
     /// An object action is a task performed as part of an event in-game. this base class is useless, with its children containing their own
@@ -172,13 +172,14 @@ namespace ObjectActionEvents
     [Serializable]
     public class SetBoolAction : ObjectAction
     {
-        public SetBoolActionType BoolActionType = SetBoolActionType.Off;
-        
+        public SetBoolActionType boolActionType = SetBoolActionType.Off;
+
 
         public SetBoolAction(string ActionTag, SetBoolActionType boolActionType, DecorObject target, string actionName)
         {
+            this.ObjectActionType = ObjectActionType.SetBool;
             this.ActionTag = ActionTag;
-            this.BoolActionType = boolActionType;
+            this.boolActionType = boolActionType;
             this.TargetObject = target;
             this.actionName = actionName;
 
@@ -190,12 +191,58 @@ namespace ObjectActionEvents
             this.actionName = targetAction.ActionName;
             this.TargetObject = EditorController.Instance.MapDecor[targetAction.targetID];
             this.ObjectActionType = targetAction.ActionType;
-            this.BoolActionType = targetAction.boolType;
+            this.boolActionType = targetAction.boolType;
         }
 
+        public override void GenerateEventMethod(UnityEvent TargetEvent)
+        {
+            switch (this.ActionTag)
+            {
+                case "SetLightOn":
+
+                    break;
+            }
+
+        }
     }
 
 
+
+    public enum SetColorActionType {Instant,Gradual }
+    [Serializable]
+    public class SetColorAction : ObjectAction
+    {
+        public SetColorActionType colorActionType = SetColorActionType.Instant;
+        public float transitionTime = 1f;
+        public Color color = Color.white;
+
+
+        public SetColorAction(string ActionTag,SetColorActionType colorActionType, DecorObject target, string actionName, Color color, float transitionTime = 1f)
+        {
+            this.ObjectActionType = ObjectActionType.SetColor;
+            this.ActionTag = ActionTag;
+            this.colorActionType = colorActionType;
+            this.TargetObject = target;
+            this.actionName = actionName;
+            this.transitionTime = transitionTime;
+            this.color = color;
+        }
+
+        public SetColorAction(SavableColorAction targetAction)
+        {
+            this.ActionTag = targetAction.ActionTag;
+            this.actionName = targetAction.ActionName;
+            this.TargetObject = EditorController.Instance.MapDecor[targetAction.targetID];
+            this.ObjectActionType = targetAction.ActionType;
+            this.colorActionType = targetAction.colorActionType;
+            this.transitionTime = targetAction.transitionTime;
+            this.color = targetAction.color.ToColor();
+        }
+
+
+
+
+    }
 
 
 

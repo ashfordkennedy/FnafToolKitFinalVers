@@ -173,13 +173,13 @@ public class DecorLighting : DecorObject
 
 
 [System.Serializable]
-public class SaveableColour
+public class SavableColour
 {
     float R;
     float G;
     float B;
 
-    public SaveableColour(float r, float g, float b)
+    public SavableColour(float r, float g, float b)
     {
         this.R = r;
         this.G = g;
@@ -187,7 +187,7 @@ public class SaveableColour
 
     }
 
-    public SaveableColour(Color color)
+    public SavableColour(Color color)
     {
         this.R = color.r;
         this.G = color.g;
@@ -200,11 +200,11 @@ public class SaveableColour
         return new Color(R, G, B);
     }
 
-    public static SaveableColour ToSavableColour(Color color)
+    public static SavableColour ToSavableColour(Color color)
     {
-       var coltest = new SaveableColour(color);
+       var coltest = new SavableColour(color);
         Debug.Log("saved color is " + coltest.R + " " + coltest.G + " " + coltest.B);
-        return new SaveableColour(color.r, color.g, color.b);
+        return new SavableColour(color.r, color.g, color.b);
     }
 
 }
@@ -215,7 +215,7 @@ public class LightData
 {
     public float Intensity = 1f;
     public float Volume = 1f;
-    public SaveableColour Colour;
+    public SavableColour Colour;
     public float Range = 10;
     public float Power = 0f;
     public bool activeOnStart = true;
@@ -227,7 +227,7 @@ public class LightData
     {
         this.Intensity = intensity;
         this.Volume = volume;
-        this.Colour = SaveableColour.ToSavableColour(colour);
+        this.Colour = SavableColour.ToSavableColour(colour);
         this.Range = 10f;
     }
 
@@ -235,7 +235,7 @@ public class LightData
     {
         this.Intensity = intensity;
         this.Volume = volume;
-        this.Colour = SaveableColour.ToSavableColour(colour);
+        this.Colour = SavableColour.ToSavableColour(colour);
         this.Range = range;
     }
 
@@ -243,7 +243,7 @@ public class LightData
     {
         this.Intensity = intensity;
         this.Volume = volume;
-        this.Colour = new SaveableColour(colour);
+        this.Colour = new SavableColour(colour);
         this.Range = range;
         this.active = active;
         this.activeOnStart = activeonstart;

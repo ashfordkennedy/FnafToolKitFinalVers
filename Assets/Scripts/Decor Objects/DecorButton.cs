@@ -183,9 +183,9 @@ public class ButtonSaveData : ObjectSaveData
     public List<SavableObjectActionSet> buttonEnabledActionSet = new List<SavableObjectActionSet>();
     public List<SavableObjectActionSet> buttonDisabledActionSet = new List<SavableObjectActionSet>();
     public List<string> nameTags = new List<string>();
-    public List<SaveableColour> OnColors = new List<SaveableColour>();
-    public List<SaveableColour> OffColors = new List<SaveableColour>();
-    public List<SaveableColour> LockedColors = new List<SaveableColour>();
+    public List<SavableColour> OnColors = new List<SavableColour>();
+    public List<SavableColour> OffColors = new List<SavableColour>();
+    public List<SavableColour> LockedColors = new List<SavableColour>();
     public List<bool> buttonEnabled = new List<bool>();
     
 
@@ -210,9 +210,9 @@ public class ButtonSaveData : ObjectSaveData
 
             nameTags.Add(buttons[i].GetTag());
 
-            OnColors.Add(new SaveableColour(buttons[i].OnColor));
-            OffColors.Add(new SaveableColour(buttons[i].OffColor));
-            LockedColors.Add(new SaveableColour(buttons[i].LockedColor));
+            OnColors.Add(new SavableColour(buttons[i].OnColor));
+            OffColors.Add(new SavableColour(buttons[i].OffColor));
+            LockedColors.Add(new SavableColour(buttons[i].LockedColor));
             buttonEnabled.Add(buttons[i].IsEnabled);
 
         }

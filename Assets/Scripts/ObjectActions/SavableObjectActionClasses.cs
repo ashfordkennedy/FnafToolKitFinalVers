@@ -63,9 +63,30 @@ namespace ObjectActionEvents.Savables
             this.ActionTag = action.ActionTag;
             this.ActionType = ObjectActionType.SetBool;
             this.ActionName = action.actionName;
-            this.boolType = action.BoolActionType;
+            this.boolType = action.boolActionType;
         }
     }
+
+    [Serializable]
+    public class SavableColorAction : SavableObjectAction
+    {
+        public SetColorActionType colorActionType = SetColorActionType.Instant;
+        public float transitionTime = 1f;
+        public SavableColour color = new SavableColour(Color.white);
+
+
+        public SavableColorAction(SetColorAction action)
+        {
+            this.targetID = EditorController.Instance.MapDecor.IndexOf(action.TargetObject);
+            this.ActionTag = action.ActionTag;
+            this.ActionType = ObjectActionType.SetColor;
+            this.ActionName = action.actionName;
+            this.colorActionType = action.colorActionType;
+            this.color = new SavableColour(action.color);
+        }
+
+    }
+
 
     [Serializable]
     public class ChangeLightSettingsActionSavable : SavableObjectAction

@@ -184,7 +184,7 @@ public class NightSettingsPanel : EditorMenuAbstract
     public void SetFogColor(Transform button)
     {
         int id = button.GetSiblingIndex();
-        nightSettings.fogColor = new SaveableColour(LightColours[id]);
+        nightSettings.fogColor = new SavableColour(LightColours[id]);
 
        if (sceneVolume.TryGet<Fog>(out var fog)){
             fog.color.value = LightColours[id];

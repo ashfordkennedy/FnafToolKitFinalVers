@@ -31,6 +31,7 @@ public class ObjectActionsMenu : EditorMenuAbstract
     private void Awake()
     {
         instance = this;
+        TargetGlobalActions();
     }
 
 
@@ -95,13 +96,17 @@ public class ObjectActionsMenu : EditorMenuAbstract
     }
 
 
-    /// adds an action to the display
+    /// adds an action to the display. called by the object Action listing UI element
     internal void AddAction(ObjectActionType actiontype, string actionTag, string actionText)
     {
         switch (actiontype)
         {
             case ObjectActionType.SetFloat:
                 targetActionSet.objectActions.Add(new SetFloatAction(actionTag,SetFloatActionType.equal,0,ActionSelectionTarget, actionText));
+                break;
+
+            case ObjectActionType.SetBool:
+                targetActionSet.objectActions.Add(new SetBoolAction(actionTag, SetBoolActionType.Off, ActionSelectionTarget, actionText));
                 break;
         }
 
@@ -119,15 +124,16 @@ public class ObjectActionsMenu : EditorMenuAbstract
         {
             case ObjectActionType.SetBool:
                 template = Instantiate(BoolTemplate, ActionListContainer);
-                template.GetComponent<FloatActionUI>().RestoreActionUi(newAction);
+                template.GetComponent<BoolActionUI>().RestoreActionUi(newAction);
                 template.SetActive(true);
+                print("instantiating bool action UI");
                 break;
 
             case ObjectActionType.SetFloat:
                  template = Instantiate(FloatTemplate, ActionListContainer);
                 template.GetComponent<FloatActionUI>().RestoreActionUi(newAction);
                 template.SetActive(true);
-                print("instantiating the desired ui now");
+                print("instantiating float action UI");
                 break;
 
         }

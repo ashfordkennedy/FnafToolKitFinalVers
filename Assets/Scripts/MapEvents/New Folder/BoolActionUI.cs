@@ -20,7 +20,7 @@ public class BoolActionUI : BaseObjectActionUI
         SetBoolAction target = targetAction as SetBoolAction;
 
         target.ActionTag = ActionTag;
-        target.BoolActionType = operatorType;
+        target.boolActionType = operatorType;
 
     }
 
@@ -35,10 +35,11 @@ public class BoolActionUI : BaseObjectActionUI
         targetAction = target;
 
         ActionTag = target.ActionTag;
-        operatorType = target.BoolActionType;
+        operatorType = target.boolActionType;
 
         //restore Display
         ActionNameDisplay.text = target.actionName;
+        operators.SetAllTogglesOff(false);
         toggles[(int)operatorType].Select();
     }
 

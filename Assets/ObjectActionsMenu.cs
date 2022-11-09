@@ -28,6 +28,7 @@ public class ObjectActionsMenu : EditorMenuAbstract
 
     [SerializeField] TMP_Text SelectionTargetDisplay;
     [SerializeField] DecorObjectCatalogue decorCatalogue;
+    private int targetActionIndex = -1;
     private void Awake()
     {
         instance = this;
@@ -60,7 +61,7 @@ public class ObjectActionsMenu : EditorMenuAbstract
     public void SetTargetActionSet(ObjectActionSet NewTarget)
     {
         targetActionSet = NewTarget;
-        RefreshActionList();
+        RefreshTargetActionList();
     }
 
     
@@ -110,7 +111,15 @@ public class ObjectActionsMenu : EditorMenuAbstract
                 break;
         }
 
-        RefreshActionList();
+        //RefreshActionList();
+    }
+
+
+    internal void EditAction(Transform action)
+    {
+        int id = action.GetSiblingIndex();
+
+
     }
 
     /// <summary>
@@ -139,8 +148,10 @@ public class ObjectActionsMenu : EditorMenuAbstract
         }
     }
 
-
-    internal void RefreshActionList()
+    /// <summary>
+    /// Recreate the Action task list to reflect the target action set
+    /// </summary>
+    internal void RefreshTargetActionList()
     {
         foreach (Transform child in ActionListContainer.transform)
         {
@@ -160,7 +171,7 @@ public class ObjectActionsMenu : EditorMenuAbstract
     {
         int id = actionUiPanel.GetSiblingIndex();
         targetActionSet.objectActions.RemoveAt(id);
-        RefreshActionList();
+        RefreshTargetActionList();
     }
 
     public void CenterToTarget(BaseObjectActionUI target)

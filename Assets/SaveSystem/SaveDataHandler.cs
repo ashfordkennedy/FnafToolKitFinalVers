@@ -32,6 +32,7 @@ public class SaveDataHandler : MonoBehaviour
        // {
             SaveHandler = this;
             SaveData.GenerateData();
+       
          //   DontDestroyOnLoad(this.gameObject);
        // }
 

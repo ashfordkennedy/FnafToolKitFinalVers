@@ -30,11 +30,12 @@ public class PlayModeController : MonoBehaviour
         NightManager.instance.BeginNight();
         NightClock.instance.SetClockSettings(new NightSettings(24,6,0.05f,5,10));
         NightClock.instance.ToggleClock(true);
+      //  PlayerController_Classic.instance.BeginNight();
     }
 
 
     /// <summary>
-    /// Debug method, cancles the night and resumes editor
+    /// Debug method, cancels the night and resumes editor
     /// </summary>
     public void EndPlayMode()
     {

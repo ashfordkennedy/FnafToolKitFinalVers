@@ -17,7 +17,7 @@ public class EditorAnimatronic : DecorObject
 
     [Header("nights data")]
     [SerializeField] internal int AiLevel = 0;
-    [SerializeField] internal int Agression = 0;
+    [SerializeField] internal int Aggression = 0;
 
     [SerializeField] internal int nextWaypointId = 0;
    
@@ -30,6 +30,19 @@ public class EditorAnimatronic : DecorObject
 
     private Vector3 startPos = new Vector3();
     private Quaternion startRot = new Quaternion();
+
+
+    public override void ObjectSetup()
+    {
+        base.ObjectSetup();
+        NightManager.instance.NightSetup.AddListener(NightSetup);
+        AiLevelData.Add(1);  AiLevelData.Add(3); AiLevelData.Add(4); AiLevelData.Add(7); AiLevelData.Add(15); AiLevelData.Add(18); AiLevelData.Add(20);
+        AggressionData.Add(1); AggressionData.Add(1); AggressionData.Add(1); AggressionData.Add(1); AggressionData.Add(1); AggressionData.Add(1); AggressionData.Add(1);
+
+    }
+
+
+
     public override void EditorSelect(Material SelectMaterial)
     {
         base.EditorSelect(SelectMaterial);
@@ -48,8 +61,9 @@ public class EditorAnimatronic : DecorObject
     public void NightSetup(int targetNight)
     {
         AiLevel = AiLevelData[targetNight];
-        AiLevel = AggressionData[targetNight];
+        Aggression = AggressionData[targetNight];
         print(InternalName + " has been loaded with their night data");
+        StartCoroutine(AnimatronicBrain());
     }
 
     public override void EditorDeselect()
@@ -62,12 +76,14 @@ public class EditorAnimatronic : DecorObject
         */
     }
 
+    
+
 
     public override SavedObject CompileObjectData()
     {
 
         var data = new AnimatronicData(ObjectSaveDataType.Animatronic, this);
-        var animatronic = new SavedAnimatronic(InternalName, SwatchID, data, new SavedTransform(this.transform.position, this.transform.rotation.eulerAngles, this.transform.localScale));
+        var animatronic = new SavedAnimatronic(InternalName, SwatchID, data, new SavedTransform(this.transform));
 
         return animatronic;
     }
@@ -251,7 +267,7 @@ public class EditorAnimatronic : DecorObject
 
     public TargetWaypointData GetNextWaypoint()
     {
-        if (nextWaypointId != -1)
+        if (nextWaypointId < waypoints.Count)
         {
 
             return waypoints[nextWaypointId];
@@ -280,16 +296,49 @@ public class EditorAnimatronic : DecorObject
     }
 
     public bool SetAnimatronicWaypoint(TargetWaypointData waypoint)
-    {       
-        this.gameObject.transform.position = waypoint.waypoint.transform.position;
-        this.gameObject.transform.rotation = waypoint.waypoint.transform.rotation;
+    {
+        int waypointId = waypoints.IndexOf(waypoint);
+        nextWaypointId = waypointId + 1;
 
-        AnimationClip clip;
+        if (nextWaypointId <= waypoints.Count) {
 
-        clip = animations.AnimationSets[endoType].animations[waypoint.condition.AnimationId].animation;
-        OverrideController["V2EndoTestPose"] = clip;
-        animatior.Play("PoseTest", 0);
-        return true;
+            this.gameObject.transform.position = waypoint.waypoint.transform.position;
+            this.gameObject.transform.rotation = waypoint.waypoint.transform.rotation;
+
+            AnimationClip clip;
+
+            clip = animations.AnimationSets[endoType].animations[waypoint.condition.AnimationId].animation;
+            OverrideController["V2EndoTestPose"] = clip;
+            animatior.Play("PoseTest", 0);
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
+
+    public IEnumerator AnimatronicBrain()
+    {
+        bool readyForJumpscare = false;
+        while (readyForJumpscare == false)
+        {
+            yield return new WaitForSeconds(Aggression + 7);
+            var waypoint = GetNextWaypoint();
+            if (waypoint != null)
+            {
+                SetAnimatronicWaypoint(waypoint);
+            }
+            else
+            {
+                readyForJumpscare = true;
+                print("do jumpscare");
+            }
+            yield return null;
+        }
+
+        yield return null;
     }
 
 

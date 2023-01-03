@@ -426,5 +426,5 @@ MonoBehaviour:
     max: 20
   m_SampleCount:
     m_OverrideState: 0
-    m_Value: 8
+    m_Value: 4
     min: 2

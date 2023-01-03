@@ -110,7 +110,7 @@ public class DecorObject : MonoBehaviour
 
     public virtual void ObjectSetup()
     {
-        print("objectsetup " + InternalName);
+        print("object registered " + InternalName);
         EditorController.Instance.RegisterDecorObject(this);
        
     }

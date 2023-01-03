@@ -96,18 +96,26 @@ public class SaveDataScriptableObject : ScriptableObject
 
                 if (MapsRaw[i].Extension == ".FVLev" && MapsRaw.Length > 0)
                 {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    FileStream file = File.Open(SavedMapDirectory + "/" + MapsRaw[i].Name, FileMode.Open);
-                    MapSaveFile MapFile = (MapSaveFile)bf.Deserialize(file);
+                    try
+                    {
+                        BinaryFormatter bf = new BinaryFormatter();
+                        FileStream file = File.Open(SavedMapDirectory + "/" + MapsRaw[i].Name, FileMode.Open);
+                        MapSaveFile MapFile = (MapSaveFile)bf.Deserialize(file);
 
-                    MapFile.Directory = SavedMapDirectory + "/" + MapsRaw[i].Name + ".FVLev";
-                    FileInfo FD = MapsRaw[i];
-
-
-                    LocalMaps.Add(new FilePreview(FD.CreationTime.ToShortDateString(), FD.LastWriteTime.ToShortDateString(), MapFile.PreviewImage, MapFile.MapName, "" + MapFile.MapCreator, MapsRaw[i].Directory.FullName + "/" + MapsRaw[i].Name));
-                    file.Close();
+                        MapFile.Directory = SavedMapDirectory + "/" + MapsRaw[i].Name + ".FVLev";
+                        FileInfo FD = MapsRaw[i];
 
 
+                        LocalMaps.Add(new FilePreview(FD.CreationTime.ToShortDateString(), FD.LastWriteTime.ToShortDateString(), MapFile.PreviewImage, MapFile.MapName, "" + MapFile.MapCreator, MapsRaw[i].Directory.FullName + "/" + MapsRaw[i].Name));
+                        file.Close();
+                    }
+
+                    catch (Exception)
+                    {
+
+                        Debug.LogError("file not loading, " + MapsRaw[i].FullName);
+                        throw;
+                    }                 
                 }
             }
 

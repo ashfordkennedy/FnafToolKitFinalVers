@@ -70,9 +70,10 @@ public class MapProgressData : ScriptableObject
 
     public void CompleteNight(MapSaveFile saveFile)
     {
+        if (saveFile != null){ 
         string mapID = saveFile.MapName + File.GetCreationTime(saveFile.Directory);
 
-       var IdMatch = MapProgressList.FirstOrDefault(m => m.mapID == mapID);
+        var IdMatch = MapProgressList.FirstOrDefault(m => m.mapID == mapID);
         if (IdMatch != null)
         {
             IdMatch.AdvanceNight();
@@ -83,6 +84,7 @@ public class MapProgressData : ScriptableObject
         }
 
         SaveProgress();
+    }
     }
 
 }

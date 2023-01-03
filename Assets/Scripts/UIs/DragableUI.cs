@@ -9,11 +9,21 @@ public class DragableUI : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDr
     [SerializeField] GameObject dragTarget;
     private Vector3 OriginalPos;
     private Vector2 LastMousePos;
+    [SerializeField] private bool ResetOnEnable = false;
     public void Awake()
     {
 
         Rtransform = dragTarget.GetComponent<RectTransform>();
         OriginalPos = Rtransform.position;
+    }
+
+
+    private void OnEnable()
+    {
+        if (ResetOnEnable)
+        {
+            Rtransform.position = OriginalPos;
+        }
     }
 
 

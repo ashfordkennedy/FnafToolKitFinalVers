@@ -28,6 +28,7 @@ public class ObjectActionsMenu : EditorMenuAbstract
 
     [SerializeField] TMP_Text SelectionTargetDisplay;
     [SerializeField] DecorObjectCatalogue decorCatalogue;
+    [SerializeField] GameObject TaskButton;
     private int targetActionIndex = -1;
     private void Awake()
     {
@@ -78,8 +79,6 @@ public class ObjectActionsMenu : EditorMenuAbstract
     {
         if(ActionSelectionTarget != null)
         {
-            //var actions = ActionSelectionTarget.GetObjectActions();
-
             int tagCount = actions.Count -1;
             for (int i = 0; i < ListingButtons.Count; i++)
             {
@@ -111,7 +110,7 @@ public class ObjectActionsMenu : EditorMenuAbstract
                 break;
         }
 
-        //RefreshActionList();
+        RefreshTargetActionList();
     }
 
 

@@ -169,6 +169,11 @@ public class ContextMenu : MonoBehaviour
                 RoomEditorMouse.Instance.ChangeMouseMode(3);
                     break;
 
+            case ContextMenuActions.SelectRoom:
+                var room = target.GetComponentInParent<RoomController>();
+                EditorController.Instance.NewRoomSelectHandler(room);
+
+                break;
 
                 case ContextMenuActions.WallDefault:
                 target.GetComponent<WallComponent>().SetWallType(WallType.Blank);
@@ -331,7 +336,7 @@ public enum ContextMenuActions
 {
     Select, EraseCell, NewCell, NewRoom, RoomList, WallDefault,
     WallDoor, WallLeftDoor, WallCenterDoor, WallRightDoor, Transform, Swatch, Waypoint, Light, Animatronic, Delete, ClassicPlayer,
-    ButtonPanel
+    ButtonPanel, SelectRoom
         
 };
 

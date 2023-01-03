@@ -40,7 +40,7 @@ public class NightAIController : MonoBehaviour
         {
 
 
-           yield return new WaitForSeconds(target.Agression);
+           yield return new WaitForSeconds(target.Aggression);
 
             //check AI level
             if(AiLevelCheck(target.AiLevel) == true)

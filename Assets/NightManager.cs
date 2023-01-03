@@ -6,6 +6,13 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using System;
 using UnityEngine.Rendering;
+
+[System.Serializable]
+public class NightEvent : UnityEvent<int>
+{
+
+}
+
 public class NightManager : MonoBehaviour
 {
 
@@ -13,6 +20,7 @@ public class NightManager : MonoBehaviour
 
     public List<NightSettings> nightSettings;
 
+    public NightEvent NightSetup = new NightEvent();
     [SerializeField] private VolumeProfile backupVolume;
     [SerializeField] private VolumeProfile sceneVolume;
 
@@ -90,8 +98,8 @@ public class NightManager : MonoBehaviour
     /// Starts the night
     /// </summary>
     public void BeginNight()
-    {    
-
+    {
+        NightSetup.Invoke(CurrentNight);
         powerLoss = 0f;
         UpdatePowerDisplay();
         StartCoroutine(PowerProcessing());
@@ -106,7 +114,7 @@ public class NightManager : MonoBehaviour
         StopCoroutine(PowerProcessing());
         print("ended night");
         var mapFile = SaveDataHandler.SaveHandler.SaveData.SelectedFile;
-        if(mapFile != null)
+        if(mapFile.Directory != "")
         {
             SaveDataHandler.SaveHandler.SaveData.mapProgressData.CompleteNight(mapFile);
         }
@@ -164,7 +172,7 @@ public class NightSettings
     public int endHour = 6;
     public float basePowerLoss = 0.05f;
     public float totalPower = 5f;
-    public SavableColour fogColor = new SavableColour(0,0,0);
+    public SavableColour fogColor = new SavableColour(Color.black);
     public float fogIntensity = -0.15f;
 
 
@@ -186,6 +194,7 @@ public class NightSettings
         this.endHour = 6;
         this.basePowerLoss = 0.05f;
         this.totalPower = 5f;
+        this.fogColor = new SavableColour(Color.black);
 
     }
 }

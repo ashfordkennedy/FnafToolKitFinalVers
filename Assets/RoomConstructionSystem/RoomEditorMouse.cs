@@ -404,14 +404,14 @@ public class RoomEditorMouse : MonoBehaviour
                 case 8:
 
                     
-                    EditorController.Instance.NewRoomSelectHandler(hit.transform.gameObject.GetComponent<RoomCell>().Room_Ctrl);
+                   //EditorController.Instance.NewRoomSelectHandler(hit.transform.gameObject.GetComponent<RoomCell>().Room_Ctrl);
                    // Target.Room_Ctrl.EditorHighlight();
 
                     break;
 
                 //wall
                 case 9:
-                    EditorController.Instance.NewRoomSelectHandler(hit.transform.gameObject.GetComponent<WallComponent>().Room_Cell.Room_Ctrl);
+                  //  EditorController.Instance.NewRoomSelectHandler(hit.transform.gameObject.GetComponent<WallComponent>().Room_Cell.Room_Ctrl);
                     break;
 
                     // decor Object

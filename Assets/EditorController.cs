@@ -221,11 +221,23 @@ public class EditorController : MonoBehaviour
         for (int i = 0; i < FileData.DecorList.Count; i++)
         {
             RecreateObjects(FileData.DecorList[i]);
+            print("recreating object " + FileData.DecorList[i].InternalName);
         }
 
         for (int i = 0; i < FileData.DecorList.Count; i++)
         {
-            RecreateObjectSettings(i, FileData.DecorList[i]);
+            print("recreating settings for " + FileData.DecorList[i].InternalName);
+            try
+            {
+                RecreateObjectSettings(i, FileData.DecorList[i]);
+            }
+            catch (Exception)
+            {
+                print("Error restoring settings for object " + FileData.DecorList[i].InternalName);
+                throw;
+            }
+           
+            
         }
 
 
@@ -282,51 +294,61 @@ public class EditorController : MonoBehaviour
     void RecreateObjectSettings(int ObjIndex, SavedObject savedObject)
     {
         DecorObject obj = MapDecor[ObjIndex];
-
+        try
+        {
             switch (savedObject.ObjectData.DataType)
             {
 
 
-            case ObjectSaveDataType.none:
+                case ObjectSaveDataType.none:
 
                     break;
 
-            case ObjectSaveDataType.Light:
-                  var L = obj as DecorLighting;
-                 var LSD = savedObject.ObjectData as LightSaveData;
-                 L.RestoreLightSave(LSD.lightData);
+                case ObjectSaveDataType.Light:
+                    print("Restoring light");
+                    var L = obj as DecorLighting;
+                    var LSD = savedObject.ObjectData as LightSaveData;
+                    print(LSD.lightData.Print());
+                    L.RestoreLightSave(LSD.lightData);
                     break;
 
-            case ObjectSaveDataType.Waypoint:
-                print("waypoint seting up");
+                case ObjectSaveDataType.Waypoint:
+                    print("waypoint seting up");
 
 
-                var W = obj as AnimatronicWaypoint;
+                    var W = obj as AnimatronicWaypoint;
 
-                WaypointSaveData WSD = savedObject.ObjectData as WaypointSaveData;
-                W.RestoreWaypointData(WSD);
-                break;
+                    WaypointSaveData WSD = savedObject.ObjectData as WaypointSaveData;
+                    W.RestoreWaypointData(WSD);
+                    break;
 
-            case ObjectSaveDataType.Animatronic:
-                print("restoringAnimatronic");
-                var A = obj as EditorAnimatronic;
-                AnimatronicData ASD = savedObject.ObjectData as AnimatronicData;
-                A.RestoreAnimatronicData(ASD);
-                break;
+                case ObjectSaveDataType.Animatronic:
+                    print("restoring Animatronic");
+                    var A = obj as EditorAnimatronic;
+                    AnimatronicData ASD = savedObject.ObjectData as AnimatronicData;
+                    A.RestoreAnimatronicData(ASD);
+                    break;
 
-            case ObjectSaveDataType.ClassicStart:
-                var Cs = obj as DecorClassicStart;
-                ClassicStartData CSD = savedObject.ObjectData as ClassicStartData;
-                Cs.RestoreObjectData(CSD);
-                break;
+                case ObjectSaveDataType.ClassicStart:
+                    var Cs = obj as DecorClassicStart;
+                    ClassicStartData CSD = savedObject.ObjectData as ClassicStartData;
+                    Cs.RestoreObjectData(CSD);
+                    break;
 
-            case ObjectSaveDataType.ButtonSwitch:
-                var button = obj as DecorButton;
-                ButtonSaveData BSD = savedObject.ObjectData as ButtonSaveData;
-                button.RestoreObjectSave(BSD);
-                break;
+                case ObjectSaveDataType.ButtonSwitch:
+                    var button = obj as DecorButton;
+                    ButtonSaveData BSD = savedObject.ObjectData as ButtonSaveData;
+                    button.RestoreObjectSave(BSD);
+                    break;
 
             }
+        }
+        catch (Exception)
+        {
+            print("failed to restore object settings");
+            throw null;
+        }
+            
         }
 
 

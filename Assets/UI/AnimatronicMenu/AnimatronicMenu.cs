@@ -24,14 +24,20 @@ public class AnimatronicMenu : EditorMenuAbstract
     private int _selectedNight = 0;
 
     [SerializeField] Gradient SliderHues;
-    [SerializeField] Text AIText;
-    [SerializeField] Slider AI;
+    [SerializeField] Slider AISlider;
 
-    [SerializeField] Text AggressionText;
+    private int aILevel;
+
     [SerializeField] Slider Aggression;
 
-    [SerializeField] Text UnusedText;
     [SerializeField] Slider UnusedSlider;
+
+    public int AILevel { get => aILevel;
+
+        set { aILevel = value;
+            targetAnimatronic.AiLevelData[_selectedNight] = value;
+        }    
+    }
 
     public void Awake()
     {
@@ -54,18 +60,18 @@ public class AnimatronicMenu : EditorMenuAbstract
 
 
         NightDisplay.text = "Night " + (_selectedNight + 1);
+        AISlider.value = (targetAnimatronic.AiLevelData[_selectedNight]);
        // UpdateDisplay();
     }
 
     public void UpdateAiSlider(Slider slider)
     {
-        AIText.text = "AI Level - " + slider.value;
-       // targetAnimatronic
+        AILevel = (int)slider.value;
     }
 
     public void UpdateAggressionSlider(Slider slider)
     {
-        AIText.text = "Aggression - " + slider.value;
+
     }
 
     public void ToggleWaypointLineRenderer()
@@ -84,6 +90,7 @@ public class AnimatronicMenu : EditorMenuAbstract
     public override void OpenMenu()
     {
         ClearWaypointMenu();
+        SetTargetNight(0);
         base.OpenMenu();
         WaypointMenu.SetActive(true);
         ConditionMenu.SetActive(false);

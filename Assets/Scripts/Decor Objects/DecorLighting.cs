@@ -70,21 +70,17 @@ public class DecorLighting : DecorObject
 
       //  LightSaveData Savedata = savedata as LightSaveData;
         
-
-      LightData lightData = savedata;
         print("processing light data");
-        print("new lighting is " + lightData.Colour.ToColor());
-        print("old lighting is " + lightData.Colour);
 
-        SetIntensity(lightData.Intensity);
-        SetVolume(lightData.Volume);
-        SetRange(lightData.Range);
+        SetIntensity(savedata.Intensity);
+        SetVolume(savedata.Volume);
+        SetRange(savedata.Range);
 
-        Color lightcolour = lightData.Colour.ToColor();
+        Color lightcolour = savedata.Colour.ToColor();
         SetColour(lightcolour);
-        LightToggle(lightData.active);
-        SetOnStartActive(lightData.activeOnStart);
-        SetPowerValue(lightData.Power);
+        LightToggle(savedata.active);
+        SetOnStartActive(savedata.activeOnStart);
+        SetPowerValue(savedata.Power);
        
     }
 
@@ -179,6 +175,13 @@ public class SavableColour
     float G;
     float B;
 
+    public SavableColour()
+    {
+        R = 0;
+        G = 0;
+        B = 0;
+    }
+
     public SavableColour(float r, float g, float b)
     {
         this.R = r;
@@ -223,22 +226,6 @@ public class LightData
 
 
 
-    public LightData(float intensity, float volume, Color colour)
-    {
-        this.Intensity = intensity;
-        this.Volume = volume;
-        this.Colour = SavableColour.ToSavableColour(colour);
-        this.Range = 10f;
-    }
-
-    public LightData(float intensity, float volume, Color colour,float range)
-    {
-        this.Intensity = intensity;
-        this.Volume = volume;
-        this.Colour = SavableColour.ToSavableColour(colour);
-        this.Range = range;
-    }
-
     public LightData(float intensity, float volume, Color colour, float range, float power, bool activeonstart, bool active)
     {
         this.Intensity = intensity;
@@ -248,6 +235,11 @@ public class LightData
         this.active = active;
         this.activeOnStart = activeonstart;
         this.Power = power;
+    }
+
+    public string Print()
+    {
+        return $"Light data|| intensity = {this.Intensity} || volume = {this.Volume}";
     }
 
 }

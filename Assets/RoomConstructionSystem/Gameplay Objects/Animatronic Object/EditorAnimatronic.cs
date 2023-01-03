@@ -121,6 +121,12 @@ public class EditorAnimatronic : DecorObject
 
     }
 
+
+    /// <summary>
+    /// Switch between default idle animation and given waypoint pose.
+    /// </summary>
+    /// <param name="newState"></param>
+    /// <param name="poseId"></param>
     public void PreviewPoseToggle(bool newState, int poseId)
     {
         AnimationClip clip;
@@ -140,6 +146,11 @@ public class EditorAnimatronic : DecorObject
         }
     }
 
+    /// <summary>
+    /// Switch between default editor position and preview waypoint position
+    /// </summary>
+    /// <param name="newState"></param>
+    /// <param name="waypointId"></param>
     public void PreviewPositionToggle(bool newState, int waypointId)
     {
         switch (newState)

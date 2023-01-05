@@ -1037,7 +1037,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c2cdcd7678ac9c6438cc4726f0a21555, type: 2}
+  - {fileID: 2100000, guid: 012cd7413b8470d41a47de3174fd0bdc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   _skinRenderer: {fileID: 5649708892455358098}
   endoType: 1
   AiLevel: 0
-  Agression: 0
+  Aggression: 0
   nextWaypointId: 0
   animations: {fileID: 11400000, guid: 1c352f6238c2d4b4d97630c6d5053ead, type: 2}
   animatior: {fileID: 6838517777672852780}

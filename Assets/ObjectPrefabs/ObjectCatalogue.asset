@@ -652,7 +652,7 @@ MonoBehaviour:
       - {fileID: -7873942043540418534, guid: 81df308683271954aa96298814a5054a, type: 3}
       material:
       - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
-      - {fileID: 2100000, guid: f005cf719d2c2aa46b82b16bdf4225f9, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
       Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
         type: 3}
     - mesh:
@@ -694,6 +694,167 @@ MonoBehaviour:
     Price: 0
     Object: {fileID: 3684227171895972299, guid: 41f3b71623f419f4e94170d396af4953,
       type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8
+  - name: Stage Edge 2x2
+    InternalName: StageEdge_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 3195865282360704332, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 5869948151669055239, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2468792744474103011, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -1226174921894717133, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 7164655493894976869, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8501176196965665192, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 edge piece for a modular stage.
+    Price: 0
+    Object: {fileID: 6264834031318829750, guid: dc2ef87250db0d647abe801e9df1fb31,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8
+  - name: Stage Stairs 2x2
+    InternalName: StageStairs_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 8157927455959770041, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8916354155539093714, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 5724623087160036882, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2900006735473090032, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 2453408298618809730, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2053933553123193136, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 edge piece for a modular stage.
+    Price: 0
+    Object: {fileID: 3519041422234927525, guid: 1a4fcf52c4901c343839768b736be599,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8
+  - name: Stage Curve 2x2
+    InternalName: StageCurve_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -4463703412823983758, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 1388446007571206504, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -4977305219073875819, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8515773593786766118, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2875296621329957448, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2616620877858758084, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 curve piece for a modular stage.
+    Price: 0
+    Object: {fileID: 122582902242493917, guid: 9e65b5b640d5a8e42b6809112d31fd71, type: 3}
     Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
       type: 3}
     ObjectId: 13

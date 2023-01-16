@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: TestWaypoint
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: TestWaypoint
+  InternalName: TestWaypoint
+  editorTab: 1
+  Swatches: []
+  Description: A waypoint is used by an animatronic  to guide it through your level.
+    once placed, open the AI panel and add it to your animatronics waypoint list.
+    Rename and recolour them to keep better track of them.
+  Price: 0
+  Object: {fileID: 6000325760919330383, guid: 0efd6e5ea6771d5468e76cb35117e46a, type: 3}
+  Menusprite: {fileID: -8595885172875719181, guid: 1cbf10f8760899d439ce4f1b1f78891f,
+    type: 3}

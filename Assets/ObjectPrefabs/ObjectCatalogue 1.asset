@@ -1,0 +1,861 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e460cb6eee3ee4ca1c77a261ab8d64, type: 3}
+  m_Name: ObjectCatalogue 1
+  m_EditorClassIdentifier: 
+  MapObjects:
+  - name: Single Door Frame
+    InternalName: DoorFrameS
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -9114569545279496563, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -4166873286958404892, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: -4273173492629405059, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 4538071979409934993, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: -8616738908015670947, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -8846001930093049075, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: -1166360663385761441, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: For those times you just have to walk through walls.
+    Price: 0
+    Object: {fileID: 5713514186938435922, guid: 059642d52f8db8440aef4373ed37b741,
+      type: 3}
+    Menusprite: {fileID: 3147117153359372007, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 0
+    DecorTabType: 48
+  - name: Double Door Frame
+    InternalName: DoorFrameD
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 4392409502609750270, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -202864718535673320, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: -4273173492629405059, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 5080816217068189989, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: -8616738908015670947, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 4860059574449780103, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+      material:
+      - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}
+      Swatch: {fileID: -1166360663385761441, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: For those times you need to walk through two walls at once, the
+      double door frame has you covered.
+    Price: 0
+    Object: {fileID: 5176445745756884931, guid: 947be072ca8077245985823dcdaf0845,
+      type: 3}
+    Menusprite: {fileID: -7592173143594474155, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 1
+    DecorTabType: 0
+  - name: Chair
+    InternalName: Chair
+    editorTab: 0
+    Swatches: []
+    Description: Now who could imagine throwing away such tresure? Sure it may not
+      be brand new, but its newish, questionable stains aside, it will do the job...
+      assuming the ply wood under the cushion holds up.
+    Price: 55
+    Object: {fileID: 6173634612015991037, guid: 86e5ee7a338bd2e4c81dbca9f7ee2900,
+      type: 3}
+    Menusprite: {fileID: -8894057469729715593, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 2
+    DecorTabType: 0
+  - name: Sofa
+    InternalName: Sofa
+    editorTab: 0
+    Swatches: []
+    Description: Reclaimed from the finest and least guarded dumpster in town. The
+      design boasts a two seated layout that epitomises its own slightly damp variation
+      on classic comfort.
+    Price: 75
+    Object: {fileID: 2346430645746858628, guid: 7a31cc28af7d12f4fbb8bae639bcda73,
+      type: 3}
+    Menusprite: {fileID: 3473067488844627539, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 3
+    DecorTabType: 0
+  - name: Light1
+    InternalName: Light1
+    editorTab: 0
+    Swatches: []
+    Description: This fixture will light up the room with its patented bulb technology.
+      Install today and make the world a brighter place.
+    Price: 25
+    Object: {fileID: 1258238290902238284, guid: 7ccd1bb790ced9e4dbc3819d0eba0c7b,
+      type: 3}
+    Menusprite: {fileID: -6533504416836700589, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 4
+    DecorTabType: 0
+  - name: Light2
+    InternalName: Light2
+    editorTab: 0
+    Swatches: []
+    Description: A decorative light fitting that will light up the place, fix your
+      marriage and contribute to reading literacy in youth.
+    Price: 25
+    Object: {fileID: 1814703315471707839, guid: a047e6d9a4a60d74a9bc1ed451774b92,
+      type: 3}
+    Menusprite: {fileID: -4878780369741212085, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 5
+    DecorTabType: 0
+  - name: Light3
+    InternalName: Light3
+    editorTab: 0
+    Swatches: []
+    Description: A decorative light fitting that will keep a room lit for as long
+      as you keep up paying the electricity bill.
+    Price: 25
+    Object: {fileID: 8091348325168217289, guid: e97945a7718f9864b811c58cd384b9f7,
+      type: 3}
+    Menusprite: {fileID: 5696811465416703826, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 6
+    DecorTabType: 0
+  - name: Poster1
+    InternalName: Poster1
+    editorTab: 0
+    Swatches: []
+    Description: Look at all this adorable fan art we found out back. You can buy
+      it back from us now for a very good price.
+    Price: 5
+    Object: {fileID: 1026470263247809899, guid: f350e21ed58ca7b4abed74ecadaab373,
+      type: 3}
+    Menusprite: {fileID: -2625536876281230515, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 8
+    DecorTabType: 0
+  - name: Wooden Desk
+    InternalName: DeskWood1
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -8417364657316478350, guid: 3198af888000b434ea971828a80851a0, type: 3}
+      material:
+      - {fileID: 2100000, guid: e5f76922d6ba28f48bf349509d1d669d, type: 2}
+      Swatch: {fileID: 4051917486004866227, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A preloved desk that oozes character (among other things)
+    Price: 100
+    Object: {fileID: 7601538977882554148, guid: 32f52c973ce3bf34bb06cb5f30853c22,
+      type: 3}
+    Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 7
+    DecorTabType: 0
+  - name: Security Door
+    InternalName: SecurityDoorS
+    editorTab: 1
+    Swatches:
+    - mesh:
+      - {fileID: -5669578324950131703, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -7861388294350234044, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -3987551372463510721, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 2415228095654314171, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 767311850430363741, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 4051917486004866227, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: Everyone thinks these doors became popular due to urban legends
+      of animatronics walking the halls, but are actually used to keep large crowds
+      of children at bay.
+    Price: 200
+    Object: {fileID: 7154609635976778908, guid: 5ad0e919727b3ac4e84669ccb3d67b2b,
+      type: 3}
+    Menusprite: {fileID: 720586757817451359, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 9
+    DecorTabType: 0
+  - name: Security Door M
+    InternalName: SecurityDoorM
+    editorTab: 1
+    Swatches:
+    - mesh:
+      - {fileID: 4929472661742525686, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -8596069669416039955, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -4798639728519163160, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 2415228095654314171, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 3586542200030130439, guid: 67b61d9d68f556449a8e96d6d0e8aed7, type: 3}
+      material:
+      - {fileID: 2100000, guid: c3990ef20f16d3d4fa2789322666c355, type: 2}
+      Swatch: {fileID: 4051917486004866227, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A reinforced, larger alternative to our small security Door. Able
+      to defend against large swarms of children.
+    Price: 250
+    Object: {fileID: 3978104147912041582, guid: 1e55e4944ae3c5147a882cf84b75658b,
+      type: 3}
+    Menusprite: {fileID: -1248516885935246668, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Party Table old
+    InternalName: PartyTableold
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -6241802139774706840, guid: c4f644c1a9f41c147b1f426a4eb33b05, type: 3}
+      material:
+      - {fileID: 2100000, guid: a4e294ab8b661564eac97c427cbd3b22, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 912512158777092351, guid: c4f644c1a9f41c147b1f426a4eb33b05, type: 3}
+      material:
+      - {fileID: 2100000, guid: a4e294ab8b661564eac97c427cbd3b22, type: 2}
+      Swatch: {fileID: 7688509101190830492, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -1109553569636687335, guid: c4f644c1a9f41c147b1f426a4eb33b05, type: 3}
+      material:
+      - {fileID: 2100000, guid: a4e294ab8b661564eac97c427cbd3b22, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -1895820585448979294, guid: c4f644c1a9f41c147b1f426a4eb33b05, type: 3}
+      material:
+      - {fileID: 2100000, guid: a4e294ab8b661564eac97c427cbd3b22, type: 2}
+      Swatch: {fileID: -5962460554400841175, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: 
+    Price: 0
+    Object: {fileID: 1966628850441017479, guid: 9bc432990baff354e8c07cd201a5e36b,
+      type: 3}
+    Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 10
+    DecorTabType: 0
+  - name: Pizza Ovens
+    InternalName: DoublePizzaOven
+    editorTab: 0
+    Swatches: []
+    Description: The final textured object before my modeling software llicense ran
+      out. Now available.
+    Price: 1000
+    Object: {fileID: 6160450313628683671, guid: 68b3ed6a58ec87843b32bcecc4e4769d,
+      type: 3}
+    Menusprite: {fileID: -3105660766707295509, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 12
+    DecorTabType: 0
+  - name: TestWaypoint
+    InternalName: TestWaypoint
+    editorTab: 1
+    Swatches: []
+    Description: A waypoint is used by an animatronic  to guide it through your level.
+      once placed, open the AI panel and add it to your animatronics waypoint list.
+      Rename and recolour them to keep better track of them.
+    Price: 0
+    Object: {fileID: 6000325760919330383, guid: 0efd6e5ea6771d5468e76cb35117e46a,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 1cbf10f8760899d439ce4f1b1f78891f,
+      type: 3}
+    ObjectId: 11
+    DecorTabType: 0
+  - name: Test Wolf
+    InternalName: A_TestWolf
+    editorTab: 2
+    Swatches:
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 8e3709d43313fae489e1fac2aa5ce4e0, type: 2}
+      - {fileID: 2100000, guid: 3d1994d78a2899043bda88f49f41eaa4, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 8e3709d43313fae489e1fac2aa5ce4e0, type: 2}
+      - {fileID: 2100000, guid: 7c1344bc536bb5f4c9c6652b90644bfa, type: 2}
+      Swatch: {fileID: 9122585162698332195, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 8e3709d43313fae489e1fac2aa5ce4e0, type: 2}
+      - {fileID: 2100000, guid: 82fa19aacde84214aa880fcfe45d80a9, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 8e3709d43313fae489e1fac2aa5ce4e0, type: 2}
+      - {fileID: 2100000, guid: a44274e92f43f364297ffe181c96ff78, type: 2}
+      Swatch: {fileID: 4051917486004866227, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 6433e77c29ecd2a4daf3dddfbc1efe28, type: 2}
+      - {fileID: 2100000, guid: 936d5e4602941aa4f9cc5fddf4943831, type: 2}
+      Swatch: {fileID: -1166360663385761441, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 4cd6c2b4dbf76ee4585a6d46ec85196d, type: 2}
+      - {fileID: 2100000, guid: a0d4f430c99c8754ca8d0915e89856e8, type: 2}
+      Swatch: {fileID: -2744437690667899921, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: Your friendly yet deadly testing companion.
+    Price: 3000
+    Object: {fileID: 990109296865506294, guid: ca6568d3596234243a2b1cd8fc07a3a9, type: 3}
+    Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 12
+    DecorTabType: 0
+  - name: V2.0 Test Wolf
+    InternalName: A_V2TestWolf
+    editorTab: 2
+    Swatches:
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: dce153b1658c0df4fa37e327d31f37c8, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: f55d19fc964bd3246bca8e57b226ba39, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 6465a6e9924c1c849a660f005272db41, type: 2}
+      Swatch: {fileID: 6135253547919058009, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: The updated, to scale test wolf animatronic
+    Price: 3000
+    Object: {fileID: 577787254487431382, guid: a8bacaa675ee40a44a413bc21b32679a, type: 3}
+    Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 12
+    DecorTabType: 0
+  - name: Buttons
+    InternalName: A_Buttons
+    editorTab: 2
+    Swatches:
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: dce153b1658c0df4fa37e327d31f37c8, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: f55d19fc964bd3246bca8e57b226ba39, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh: []
+      material:
+      - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+      - {fileID: 2100000, guid: 6465a6e9924c1c849a660f005272db41, type: 2}
+      Swatch: {fileID: 6135253547919058009, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: The updated, to scale test wolf animatronic
+    Price: 3000
+    Object: {fileID: 7796780186692685546, guid: fac884468be5bbf488e24bd0670d19b0,
+      type: 3}
+    Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 12
+    DecorTabType: 0
+  - name: Party Table Set
+    InternalName: PartyTableSet1
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 1296213217926153168, guid: b96dd956ba05f694da90558e30095022, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -5114604527481388052, guid: bb2becdfcbd8deb4785aea5d66731b21, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: 9122585162698332195, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A large table set. Perfect for birthday parties.
+    Price: 750
+    Object: {fileID: 399671260245430027, guid: 5dbea27c85ae5fe44a0760b73a9e8878, type: 3}
+    Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Party Chair
+    InternalName: PartyChair
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 8686528222514241960, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -1893704615187986667, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -5822752145351465670, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: 8478022480536008154, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8171178873453825639, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -4273173492629405059, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2126998929056305562, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -4015440459008951748, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -1960688806574530518, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -5962460554400841175, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -5676768734066987615, guid: 7cd48b377c390574d90dc4934aa9a03a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -5962460554400841175, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A simple chair.
+    Price: 50
+    Object: {fileID: 8579961789877602069, guid: 9b5e01a755e8cdd4a89285b8dfd38412,
+      type: 3}
+    Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Party Table
+    InternalName: PartyTable
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -4683095766586926991, guid: dac71109e07153d41ab39479d933088e, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -6852415328815062580, guid: dac71109e07153d41ab39479d933088e, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 6108303582122031670, guid: dac71109e07153d41ab39479d933088e, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -5962460554400841175, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 154139625323175907, guid: dac71109e07153d41ab39479d933088e, type: 3}
+      material:
+      - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+      Swatch: {fileID: -2445916719301150900, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A large table. Chairs sold seperately.
+    Price: 200
+    Object: {fileID: 5887959857089713867, guid: 55e10a2edd141484b83987d93784040e,
+      type: 3}
+    Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Kitchen Sink
+    InternalName: KitchenSink
+    editorTab: 0
+    Swatches: []
+    Description: A large table. Chairs sold seperately.
+    Price: 300
+    Object: {fileID: 5978911807619187680, guid: b4b00497a52b31b4487ac27501035b2c,
+      type: 3}
+    Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Kitchen Side
+    InternalName: KitchenSide
+    editorTab: 0
+    Swatches: []
+    Description: A large table. Chairs sold seperately.
+    Price: 300
+    Object: {fileID: 5255406529876249025, guid: 752dd3b2881232a46b28f7abac3c8ac5,
+      type: 3}
+    Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Pizza Box
+    InternalName: PizzaBox
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -1347572420451978442, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+      material:
+      - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -9190193321149907044, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+      material:
+      - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 9219317520594848566, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+      material:
+      - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 5285715577621127594, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+      material:
+      - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 1384183455004796823, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+      material:
+      - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -4370882993557611174, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+      material:
+      - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}
+      Swatch: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: The finest Pizza-like food and containers around.
+    Price: 0
+    Object: {fileID: 8445881539494725114, guid: 3e87cf99d9b17eb41bf7fe97280868f3,
+      type: 3}
+    Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Classic mode start
+    InternalName: ClassicModeStart
+    editorTab: 1
+    Swatches: []
+    Description: A marker determining where the player will sit during night mode
+      and the main camera rotation bounds
+    Price: 0
+    Object: {fileID: 7593692059289874572, guid: b6f0b80610e47c44eb3cb12025bb43ae,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 0
+  - name: Classic Two-Button Panel
+    InternalName: Fnaf1Button
+    editorTab: 1
+    Swatches: []
+    Description: A simple button set with two buttons.
+    Price: 0
+    Object: {fileID: 5819322043673823769, guid: 48dd1d6c98492d94c88e1722b2ff7dae,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 16
+  - name: Stage Piece 2x2
+    InternalName: Stage_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -7873942043540418534, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2957657089614427140, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 4906788420772745095, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -637767706497909906, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 1143468547762034536, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 398346386402954766, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 piece for a modular stage.
+    Price: 0
+    Object: {fileID: 3684227171895972299, guid: 41f3b71623f419f4e94170d396af4953,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8
+  - name: Stage Edge 2x2
+    InternalName: StageEdge_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 3195865282360704332, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 5869948151669055239, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2468792744474103011, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -1226174921894717133, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 7164655493894976869, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8501176196965665192, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 edge piece for a modular stage.
+    Price: 0
+    Object: {fileID: 6264834031318829750, guid: dc2ef87250db0d647abe801e9df1fb31,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8
+  - name: Stage Stairs 2x2
+    InternalName: StageStairs_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: 8157927455959770041, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8916354155539093714, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 5724623087160036882, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2900006735473090032, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 2453408298618809730, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2053933553123193136, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 edge piece for a modular stage.
+    Price: 0
+    Object: {fileID: 3519041422234927525, guid: 1a4fcf52c4901c343839768b736be599,
+      type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8
+  - name: Stage Curve 2x2
+    InternalName: StageCurve_2x2
+    editorTab: 0
+    Swatches:
+    - mesh:
+      - {fileID: -4463703412823983758, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 393a59c07ce491c4e9f5628906385c77, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 1388446007571206504, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 5bc968d5f8b00e54e90437d977c9fbd5, type: 2}
+      Swatch: {fileID: 3687037835674201399, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -4977305219073875819, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: -3951501716947224940, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: 8515773593786766118, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2875296621329957448, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    - mesh:
+      - {fileID: -2616620877858758084, guid: 81df308683271954aa96298814a5054a, type: 3}
+      material:
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      - {fileID: 2100000, guid: 02e8d07ebdfea5947a87cf2bf025cd38, type: 2}
+      Swatch: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+        type: 3}
+    Description: A 2x2 curve piece for a modular stage.
+    Price: 0
+    Object: {fileID: 122582902242493917, guid: 9e65b5b640d5a8e42b6809112d31fd71, type: 3}
+    Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+      type: 3}
+    ObjectId: 13
+    DecorTabType: 8

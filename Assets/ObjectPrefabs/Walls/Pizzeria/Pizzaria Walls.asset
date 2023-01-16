@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81407129bc3185488040ee16f3f4ab3, type: 3}
+  m_Name: Pizzaria Walls
+  m_EditorClassIdentifier: 
+  name: Pizzaria Walls
+  straightWalls:
+  - {fileID: 2981923460077995228, guid: 50c2dbeadccc601448b8c06f7f9caf7d, type: 3}
+  - {fileID: 0}
+  - {fileID: -7606731279154544920, guid: c7df9738c45547a43965986983f19619, type: 3}
+  - {fileID: 0}
+  - {fileID: 9192211942546686715, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  - {fileID: -7451594373935382060, guid: deef849200588ff4f8d07f7316fd5527, type: 3}
+  - {fileID: 4307330396871380184, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  leftCornerWalls:
+  - {fileID: 4514791037713318053, guid: 6c54014e3305fa841ae4f954588bcc4b, type: 3}
+  - {fileID: 0}
+  - {fileID: 3251871302722528567, guid: c18347901c6465f4bbad349908fd2d91, type: 3}
+  - {fileID: 0}
+  - {fileID: -4427968369599400116, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  - {fileID: -6636305900222771166, guid: 8b0d434b4f9191344be76efc28843046, type: 3}
+  - {fileID: -7154757612979374358, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  rightCornerWalls:
+  - {fileID: -5780895757903802693, guid: 98eac800d8bfa7a49acfa9488ade0a32, type: 3}
+  - {fileID: 0}
+  - {fileID: 3704431602791840696, guid: aa7ce3208f85c9e44bd10439cb599fe4, type: 3}
+  - {fileID: 0}
+  - {fileID: 5088946771822983610, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  - {fileID: 7717832348199713663, guid: 0800596b4971c9145995212741d9ad8d, type: 3}
+  - {fileID: -5920172079055744181, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  bothCornerWalls:
+  - {fileID: 2981923460077995228, guid: 50c2dbeadccc601448b8c06f7f9caf7d, type: 3}
+  - {fileID: 0}
+  - {fileID: -757919382261759820, guid: c18347901c6465f4bbad349908fd2d91, type: 3}
+  - {fileID: 0}
+  - {fileID: 5377089153631106841, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  - {fileID: -7065922142748445726, guid: abef6547d14c4454a89366a4ed11d31a, type: 3}
+  - {fileID: 8993726118549357953, guid: 5d980aee98ef6404084ab754489f4c92, type: 3}
+  InnerCorner: {fileID: 342923216075058365, guid: 28642d5f22cebe64893809a5e5e2ffdb,
+    type: 3}
+  Swatches:
+  - {fileID: 11400000, guid: 0e65712e3ddf5d44781dc69b387ea97e, type: 2}
+  - {fileID: 11400000, guid: f3060e2abc28b6f4f81a5aa47541b11d, type: 2}
+  - {fileID: 11400000, guid: ccac9db531efd0a4f891eefcb44119de, type: 2}

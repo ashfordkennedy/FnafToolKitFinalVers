@@ -16,6 +16,24 @@ public class CatalogueObject : ScriptableObject
     public int Price;
     public GameObject Object;
     public Sprite Menusprite;
-    //public int ObjectId;
+
+
+
+
+    public void SetData(MapObject target)
+    {
+        name = target.name;
+        InternalName = target.InternalName;
+        editorTab = target.editorTab;
+        Description = target.Description;
+        Price = target.Price;
+        Object = target.Object;
+        Menusprite = target.Menusprite;
+        CatalogueTags = target.DecorTabType;
+    }
+
+    
+
+
 
 }

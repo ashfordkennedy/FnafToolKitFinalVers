@@ -92,19 +92,19 @@ public class RoomCell : MonoBehaviour
 
 
             case WallState.Straight:
-                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].StraightWalls[(int)wall.Wall_Type], wallmat);
+                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].straightWalls[(int)wall.Wall_Type], wallmat);
                 break;
 
             case WallState.BothCorner:
-                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].BothCornerWalls[(int)wall.Wall_Type], wallmat);
+                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].bothCornerWalls[(int)wall.Wall_Type], wallmat);
                 break;
 
             case WallState.LeftCorner:
-                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].LeftCornerWalls[(int)wall.Wall_Type], wallmat);
+                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].leftCornerWalls[(int)wall.Wall_Type], wallmat);
                 break;
 
             case WallState.RightCorner:
-                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].RightCornerWalls[(int)wall.Wall_Type], wallmat);
+                wall.UpdateWallMesh(EditorController.Instance.WallSets[WallSet].rightCornerWalls[(int)wall.Wall_Type], wallmat);
                 break;
 
         }
@@ -117,7 +117,7 @@ public class RoomCell : MonoBehaviour
     /// <param name="CD"></param>
     public void ReconstructCell(CellSaveData CD, int WallSet, int wallSkin, int floorSet)
     {
-        Material mat = EditorController.Instance.WallSets[WallSet].MaterialSets[wallSkin].material;
+        Material mat = EditorController.Instance.WallSets[WallSet].Swatches[wallSkin].material;
 
 
         Walls[0].Wall_State = CD.NorthWall;

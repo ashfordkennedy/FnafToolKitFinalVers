@@ -52,10 +52,10 @@ public class RoomSettingsUI : EditorMenuAbstract
     {
         ClearSelectionTabs();
         if (EditorController.Instance.SelectedRoom != null) { 
-            for (int i = 0; i < EditorController.Instance.WallSets[EditorController.Instance.SelectedRoom.WallSet].MaterialSets.Count; i++)
+            for (int i = 0; i < EditorController.Instance.WallSets[EditorController.Instance.SelectedRoom.WallSet].Swatches.Count; i++)
             {
                 Button newWall = Instantiate(WallSetButtonPrefab, RoomDesignContainer.transform).GetComponent<Button>();
-                newWall.image.sprite = EditorController.Instance.WallSets[EditorController.Instance.SelectedRoom.WallSet].MaterialSets[i].Icon;
+                newWall.image.sprite = EditorController.Instance.WallSets[EditorController.Instance.SelectedRoom.WallSet].Swatches[i].icon;
                 newWall.gameObject.SetActive(true);
             }
 

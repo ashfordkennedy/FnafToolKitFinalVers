@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6eb93e32474774dbf8d0fcb436ba15, type: 3}
+  m_Name: PartyTableold_Swatch3
+  m_EditorClassIdentifier: 
+  Name: PartyTableold Swatch 3
+  swatchIcon: {fileID: -5962460554400841175, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+    type: 3}
+  meshes:
+  - {fileID: -1895820585448979294, guid: c4f644c1a9f41c147b1f426a4eb33b05, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a4e294ab8b661564eac97c427cbd3b22, type: 2}

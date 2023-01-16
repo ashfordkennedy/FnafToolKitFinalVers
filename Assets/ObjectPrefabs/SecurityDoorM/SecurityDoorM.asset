@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: SecurityDoorM
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Security Door M
+  InternalName: SecurityDoorM
+  editorTab: 1
+  Swatches:
+  - {fileID: 11400000, guid: a06f389d7f2a7764f839e6c94c9e8946, type: 2}
+  - {fileID: 11400000, guid: 830f26986383e7e4c8659fa23dceb30e, type: 2}
+  - {fileID: 11400000, guid: 28dba62b0e42a834ea2fb77803822ac3, type: 2}
+  - {fileID: 11400000, guid: 5de3731ecc78a594da8aeff8c040df18, type: 2}
+  Description: A reinforced, larger alternative to our small security Door. Able
+    to defend against large swarms of children.
+  Price: 250
+  Object: {fileID: 3978104147912041582, guid: 1e55e4944ae3c5147a882cf84b75658b, type: 3}
+  Menusprite: {fileID: -1248516885935246668, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

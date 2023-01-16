@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81407129bc3185488040ee16f3f4ab3, type: 3}
+  m_Name: Basic Walls
+  m_EditorClassIdentifier: 
+  name: Basic Walls
+  straightWalls:
+  - {fileID: 4552437975377105630, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: -622095770475823722, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: -7076279713473626614, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 7328266121522772381, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 1591438920227780027, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  leftCornerWalls:
+  - {fileID: -297958740777574039, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: 3799778477335172930, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: -6406239170127150083, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 140413321530072604, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: -2806608913732808043, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  rightCornerWalls:
+  - {fileID: 5046524442923221170, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: -7732751882001615542, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: 8212378005916949965, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 7341066081774449331, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 7928818665847459517, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  bothCornerWalls:
+  - {fileID: 6106488425871759650, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: 7377625065167891685, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 0}
+  - {fileID: -8577804931343543039, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: 929341970330719810, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  - {fileID: -4636182057987052491, guid: a9f0b19e2d78cb747ab3f3ea7e93052e, type: 3}
+  InnerCorner: {fileID: -2800384862413706410, guid: a9f0b19e2d78cb747ab3f3ea7e93052e,
+    type: 3}
+  Swatches:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

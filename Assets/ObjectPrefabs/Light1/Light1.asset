@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: Light1
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Light1
+  InternalName: Light1
+  editorTab: 0
+  Swatches: []
+  Description: This fixture will light up the room with its patented bulb technology.
+    Install today and make the world a brighter place.
+  Price: 25
+  Object: {fileID: 1258238290902238284, guid: 7ccd1bb790ced9e4dbc3819d0eba0c7b, type: 3}
+  Menusprite: {fileID: -6533504416836700589, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

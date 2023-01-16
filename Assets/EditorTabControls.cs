@@ -138,10 +138,10 @@ public class EditorTabControls : MonoBehaviour
             NewButton.image.sprite = editorObjects[i].Menusprite;
             NewButton.name = editorObjects[i].InternalName;
             NewButton.gameObject.SetActive(true);
-            //   editorObjects[i].ObjectId
-            // NewButton.onClick.AddListener(() => EditorController.Instance.PlaceObjectSetup(2));
 
-            butObj.GetComponent<Button>().onClick.AddListener(delegate { EditorController.Instance.PlaceObjectSetup(editorObjects[x].ObjectId); });
+
+           int id = DecorObjectCatalogue.instance.GetDecorObjectId(editorObjects[x]);
+            butObj.GetComponent<Button>().onClick.AddListener(delegate { EditorController.Instance.PlaceObjectSetup(id); });
             
         }
     }

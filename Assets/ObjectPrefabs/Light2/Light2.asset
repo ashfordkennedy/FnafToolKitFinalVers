@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: Light2
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Light2
+  InternalName: Light2
+  editorTab: 0
+  Swatches: []
+  Description: A decorative light fitting that will light up the place, fix your
+    marriage and contribute to reading literacy in youth.
+  Price: 25
+  Object: {fileID: 1814703315471707839, guid: a047e6d9a4a60d74a9bc1ed451774b92, type: 3}
+  Menusprite: {fileID: -4878780369741212085, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

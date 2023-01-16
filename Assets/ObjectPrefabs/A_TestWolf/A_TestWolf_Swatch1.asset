@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6eb93e32474774dbf8d0fcb436ba15, type: 3}
+  m_Name: A_TestWolf_Swatch1
+  m_EditorClassIdentifier: 
+  Name: A_TestWolf Swatch 1
+  swatchIcon: {fileID: 9122585162698332195, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+    type: 3}
+  meshes: []
+  materials:
+  - {fileID: 2100000, guid: 859cee08424652f4c8ce14ac1551510a, type: 2}
+  - {fileID: 2100000, guid: 8e3709d43313fae489e1fac2aa5ce4e0, type: 2}
+  - {fileID: 2100000, guid: 7c1344bc536bb5f4c9c6652b90644bfa, type: 2}

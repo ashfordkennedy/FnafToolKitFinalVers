@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: StageEdge_2x2
+  m_EditorClassIdentifier: 
+  CatalogueTags: 8
+  CatalogueTheme: 0
+  name: Stage Edge 2x2
+  InternalName: StageEdge_2x2
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: 59c2f792a5dbb2a4ababe8f7d3047596, type: 2}
+  - {fileID: 11400000, guid: 5687405e92be94b4baf514b2da60fc05, type: 2}
+  - {fileID: 11400000, guid: 390a59e1337b54b4292f2bb090b48da5, type: 2}
+  - {fileID: 11400000, guid: 3b84a1222c0280040b4fe0f82f45771d, type: 2}
+  - {fileID: 11400000, guid: 9aa84607af3f8be4692c650904002797, type: 2}
+  - {fileID: 11400000, guid: 5b610edd097c40c44b8e4ef22409afa4, type: 2}
+  Description: A 2x2 edge piece for a modular stage.
+  Price: 0
+  Object: {fileID: 6264834031318829750, guid: dc2ef87250db0d647abe801e9df1fb31, type: 3}
+  Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+    type: 3}

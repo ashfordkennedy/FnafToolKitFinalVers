@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: A_Buttons
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Buttons
+  InternalName: A_Buttons
+  editorTab: 2
+  Swatches:
+  - {fileID: 11400000, guid: 6699a1783b56272468a6f8c89f931f0d, type: 2}
+  - {fileID: 11400000, guid: 968771cc163682640b7d0febf0a4e8c9, type: 2}
+  - {fileID: 11400000, guid: d92026dd3a983c745ab53f70ac9b29a0, type: 2}
+  Description: The updated, to scale test wolf animatronic
+  Price: 3000
+  Object: {fileID: 7796780186692685546, guid: fac884468be5bbf488e24bd0670d19b0, type: 3}
+  Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

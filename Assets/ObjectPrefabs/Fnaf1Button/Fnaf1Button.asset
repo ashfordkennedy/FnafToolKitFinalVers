@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: Fnaf1Button
+  m_EditorClassIdentifier: 
+  CatalogueTags: 16
+  CatalogueTheme: 0
+  name: Classic Two-Button Panel
+  InternalName: Fnaf1Button
+  editorTab: 1
+  Swatches: []
+  Description: A simple button set with two buttons.
+  Price: 0
+  Object: {fileID: 5819322043673823769, guid: 48dd1d6c98492d94c88e1722b2ff7dae, type: 3}
+  Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+    type: 3}

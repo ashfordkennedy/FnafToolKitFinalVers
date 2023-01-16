@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: PartyTableSet1
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Party Table Set
+  InternalName: PartyTableSet1
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: e1da9e6682c973a409b86a9ce607c617, type: 2}
+  - {fileID: 11400000, guid: a81a14190095fae4a8bf1e4f371e54ab, type: 2}
+  Description: A large table set. Perfect for birthday parties.
+  Price: 750
+  Object: {fileID: 399671260245430027, guid: 5dbea27c85ae5fe44a0760b73a9e8878, type: 3}
+  Menusprite: {fileID: -4842568390458905036, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

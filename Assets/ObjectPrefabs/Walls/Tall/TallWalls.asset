@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81407129bc3185488040ee16f3f4ab3, type: 3}
+  m_Name: TallWalls
+  m_EditorClassIdentifier: 
+  name: TallWalls
+  straightWalls:
+  - {fileID: 2366798049430072703, guid: ba5e6bac1fd7637499c2e82ca3ede2d9, type: 3}
+  - {fileID: 0}
+  - {fileID: -4124288295833943198, guid: c36aee6bfd506084ba6f836397b93932, type: 3}
+  - {fileID: 0}
+  - {fileID: -8836113101640629372, guid: 9bd22b116364c3d45ae86ce176032152, type: 3}
+  - {fileID: 7813955108151025447, guid: 5744cb92d9d09a44fa157d0258189e7f, type: 3}
+  - {fileID: -8156951984245306272, guid: 280f569634cd2c84c848ce416c15d955, type: 3}
+  leftCornerWalls:
+  - {fileID: 9014847276061673363, guid: ba5e6bac1fd7637499c2e82ca3ede2d9, type: 3}
+  - {fileID: 0}
+  - {fileID: -71555580852494091, guid: c36aee6bfd506084ba6f836397b93932, type: 3}
+  - {fileID: 0}
+  - {fileID: -1183954392417408975, guid: 9bd22b116364c3d45ae86ce176032152, type: 3}
+  - {fileID: -1639525157161449182, guid: 5744cb92d9d09a44fa157d0258189e7f, type: 3}
+  - {fileID: -7556903032918860300, guid: 280f569634cd2c84c848ce416c15d955, type: 3}
+  rightCornerWalls:
+  - {fileID: 3956333040518552853, guid: ba5e6bac1fd7637499c2e82ca3ede2d9, type: 3}
+  - {fileID: 0}
+  - {fileID: -3889804479278997140, guid: c36aee6bfd506084ba6f836397b93932, type: 3}
+  - {fileID: 0}
+  - {fileID: -1994973512716800900, guid: 280f569634cd2c84c848ce416c15d955, type: 3}
+  - {fileID: 1360618834969432214, guid: 5744cb92d9d09a44fa157d0258189e7f, type: 3}
+  - {fileID: -1994973512716800900, guid: 280f569634cd2c84c848ce416c15d955, type: 3}
+  bothCornerWalls:
+  - {fileID: 8677620873784420525, guid: ba5e6bac1fd7637499c2e82ca3ede2d9, type: 3}
+  - {fileID: 0}
+  - {fileID: 5570340582516044732, guid: c36aee6bfd506084ba6f836397b93932, type: 3}
+  - {fileID: 0}
+  - {fileID: 1302486037922274998, guid: 9bd22b116364c3d45ae86ce176032152, type: 3}
+  - {fileID: 5067712043965774728, guid: 5744cb92d9d09a44fa157d0258189e7f, type: 3}
+  - {fileID: 3141631301176217142, guid: 280f569634cd2c84c848ce416c15d955, type: 3}
+  InnerCorner: {fileID: 816932673263525385, guid: ba5e6bac1fd7637499c2e82ca3ede2d9,
+    type: 3}
+  Swatches:
+  - {fileID: 11400000, guid: 849cfd62f048fdf4abb685d55bd882ec, type: 2}

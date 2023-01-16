@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: A_TestWolf
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Test Wolf
+  InternalName: A_TestWolf
+  editorTab: 2
+  Swatches:
+  - {fileID: 11400000, guid: 303bd02981c474e4c8abcb70c62e0f3d, type: 2}
+  - {fileID: 11400000, guid: a8b2337af27dd3b4dbee48167b701bc1, type: 2}
+  - {fileID: 11400000, guid: f36e7d6fa27b5e94fb6f2b46b8d6baf4, type: 2}
+  - {fileID: 11400000, guid: 37908c13caa23e7468d339061cd220ab, type: 2}
+  - {fileID: 11400000, guid: 606e46f4b40d83b40888cc381f456eff, type: 2}
+  - {fileID: 11400000, guid: 87604871bc13ad84e948b898d8eedab9, type: 2}
+  Description: Your friendly yet deadly testing companion.
+  Price: 3000
+  Object: {fileID: 990109296865506294, guid: ca6568d3596234243a2b1cd8fc07a3a9, type: 3}
+  Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

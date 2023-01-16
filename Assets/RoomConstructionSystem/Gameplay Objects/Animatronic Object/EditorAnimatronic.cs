@@ -410,7 +410,7 @@ public class WaypointCondition
 
     }
 
-    public bool CheckCondition(/*DecorObject target, waypointConditionSetting condition*/)
+    public bool CheckCondition()
     {
 
 

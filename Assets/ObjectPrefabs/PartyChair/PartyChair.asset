@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: PartyChair
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Party Chair
+  InternalName: PartyChair
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: dea695127d6a9d94298fca51c3840468, type: 2}
+  - {fileID: 11400000, guid: 86ab7420b0c92da479c37e6429d537cf, type: 2}
+  - {fileID: 11400000, guid: dca57775c416bfb488c585ce8d867fd9, type: 2}
+  - {fileID: 11400000, guid: 887f3a66f7099f24cb58e7b0eb1dd3ec, type: 2}
+  - {fileID: 11400000, guid: 8f2d850f037f83746b21ecfa26ca88e2, type: 2}
+  - {fileID: 11400000, guid: 703412ded8189d844bd9f86bb9927ecc, type: 2}
+  - {fileID: 11400000, guid: 6741f20dc987e6f46971386710b36f13, type: 2}
+  Description: A simple chair.
+  Price: 50
+  Object: {fileID: 8579961789877602069, guid: 9b5e01a755e8cdd4a89285b8dfd38412, type: 3}
+  Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

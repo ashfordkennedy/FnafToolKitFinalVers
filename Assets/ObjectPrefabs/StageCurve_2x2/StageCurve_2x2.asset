@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: StageCurve_2x2
+  m_EditorClassIdentifier: 
+  CatalogueTags: 8
+  CatalogueTheme: 0
+  name: Stage Curve 2x2
+  InternalName: StageCurve_2x2
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: 78eba725e2ef1eb45971caf39ea07196, type: 2}
+  - {fileID: 11400000, guid: 213092cbd7017da46b806c0cb496da06, type: 2}
+  - {fileID: 11400000, guid: eb3e327d2ee153d43884ce47c4b95e89, type: 2}
+  - {fileID: 11400000, guid: 8b6e49684b8dd974ab946793b36c53d3, type: 2}
+  - {fileID: 11400000, guid: 354d4f3a70af1aa49939e180b94629a0, type: 2}
+  - {fileID: 11400000, guid: 77c0b531b443bb24aa89efeff0a6839d, type: 2}
+  Description: A 2x2 curve piece for a modular stage.
+  Price: 0
+  Object: {fileID: 122582902242493917, guid: 9e65b5b640d5a8e42b6809112d31fd71, type: 3}
+  Menusprite: {fileID: -8595885172875719181, guid: 416fa67ef9cf5be4b9a7ffc605d47271,
+    type: 3}

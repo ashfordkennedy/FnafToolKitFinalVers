@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: DoorFrameS
+  m_EditorClassIdentifier: 
+  CatalogueTags: 48
+  CatalogueTheme: 0
+  name: Single Door Frame
+  InternalName: DoorFrameS
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: 254527f8ab5616a4ba9f4861e5d6cc70, type: 2}
+  - {fileID: 11400000, guid: c5bdbeeffd7ab474ca28dc0b68b8f6a1, type: 2}
+  - {fileID: 11400000, guid: c256a1424d469724dae44ad4abfcc6aa, type: 2}
+  - {fileID: 11400000, guid: ceab9eca9498a8345b03b0cee4f2bffe, type: 2}
+  Description: For those times you just have to walk through walls.
+  Price: 0
+  Object: {fileID: 5713514186938435922, guid: 059642d52f8db8440aef4373ed37b741, type: 3}
+  Menusprite: {fileID: 3147117153359372007, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

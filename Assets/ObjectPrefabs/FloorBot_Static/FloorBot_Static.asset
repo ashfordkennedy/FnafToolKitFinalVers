@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: FloorBot_Static
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Floor Sign Bot
+  InternalName: FloorBot_Static
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: 31794f76d9602724d8a1d26e40e53795, type: 2}
+  - {fileID: 11400000, guid: 69a56886b172c034eacd42587cc9803a, type: 2}
+  - {fileID: 11400000, guid: e3267625808130744802fc3fefa5f6ef, type: 2}
+  - {fileID: 11400000, guid: f65379dcba173244cab74d1d4b1c778e, type: 2}
+  Description: As part of the Fazbear Merchandise Initiative, any and all restaurant
+    equipment must be suitably themed to not take away from the guest experience.
+  Price: 5000
+  Object: {fileID: 1886777403401611779, guid: 24a3d803892647743b6449c300a6b114, type: 3}
+  Menusprite: {fileID: -4273173492629405059, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+    type: 3}

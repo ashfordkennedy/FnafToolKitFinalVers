@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: A_V2TestWolf
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: V2.0 Test Wolf
+  InternalName: A_V2TestWolf
+  editorTab: 2
+  Swatches:
+  - {fileID: 11400000, guid: af3caa86b0d724a43bf6c7ad10da0fb6, type: 2}
+  - {fileID: 11400000, guid: 0f80a49ccbbe173479d4594fa1895ac7, type: 2}
+  - {fileID: 11400000, guid: 84f77df00a6f7b446a9bc9a18a53d844, type: 2}
+  Description: The updated, to scale test wolf animatronic
+  Price: 3000
+  Object: {fileID: 577787254487431382, guid: a8bacaa675ee40a44a413bc21b32679a, type: 3}
+  Menusprite: {fileID: -5842902199554455464, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

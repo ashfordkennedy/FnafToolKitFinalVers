@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: SecurityDoorS
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Security Door
+  InternalName: SecurityDoorS
+  editorTab: 1
+  Swatches:
+  - {fileID: 11400000, guid: b6eed385d3c5e7a4e90e8715dc7fd482, type: 2}
+  - {fileID: 11400000, guid: 412c04fde813f794e9a741221988bbec, type: 2}
+  - {fileID: 11400000, guid: 23937ead54e3ce24d823a909b3f22da6, type: 2}
+  - {fileID: 11400000, guid: 957db3468780a294e849f6d16a3120ac, type: 2}
+  Description: Everyone thinks these doors became popular due to urban legends of
+    animatronics walking the halls, but are actually used to keep large crowds of
+    children at bay.
+  Price: 200
+  Object: {fileID: 7154609635976778908, guid: 5ad0e919727b3ac4e84669ccb3d67b2b, type: 3}
+  Menusprite: {fileID: 720586757817451359, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

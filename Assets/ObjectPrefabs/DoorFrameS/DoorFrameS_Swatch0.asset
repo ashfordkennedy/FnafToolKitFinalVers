@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6eb93e32474774dbf8d0fcb436ba15, type: 3}
+  m_Name: DoorFrameS_Swatch0
+  m_EditorClassIdentifier: 
+  Name: DoorFrameS Swatch 0
+  swatchIcon: {fileID: 1401443619804592042, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+    type: 3}
+  meshes:
+  - {fileID: -9114569545279496563, guid: 276e6f1c3f15e4f48897567f11ae8487, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 213c5e67e3de33345a5f7518a248d76e, type: 2}

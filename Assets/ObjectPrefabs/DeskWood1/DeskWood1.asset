@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: DeskWood1
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Wooden Desk
+  InternalName: DeskWood1
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: 7129ae0d6bffb71478ba6962b2848fb9, type: 2}
+  Description: A preloved desk that oozes character (among other things)
+  Price: 100
+  Object: {fileID: 7601538977882554148, guid: 32f52c973ce3bf34bb06cb5f30853c22, type: 3}
+  Menusprite: {fileID: -5967723925376488046, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

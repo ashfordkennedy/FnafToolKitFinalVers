@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d462d629cd6c34e9c03ee8011713f6, type: 3}
+  m_Name: PizzeriaSL
+  m_EditorClassIdentifier: 
+  name: Circus Baby
+  notes: 
+  material: {fileID: 2100000, guid: 59d2545d20bf1a747902eca26c5296c0, type: 2}
+  icon: {fileID: -7945067142710625774, guid: 9ef8a222b4a90a146b3db69408b6d2b1, type: 3}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: PizzaBox
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Pizza Box
+  InternalName: PizzaBox
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: 063fb0dc945f18544bb154995d55e7b5, type: 2}
+  - {fileID: 11400000, guid: 871af076c02b77f4c80267c7bf7dbe31, type: 2}
+  - {fileID: 11400000, guid: d0d05c00e910399499b64507880625e4, type: 2}
+  - {fileID: 11400000, guid: a0c427fccb58ad44ebe96a5f029cf4b7, type: 2}
+  - {fileID: 11400000, guid: 1393deaf15bba404eb3efd81fd5cca23, type: 2}
+  - {fileID: 11400000, guid: 09ca60e016fb1d24399ac55243b19842, type: 2}
+  Description: The finest Pizza-like food and containers around.
+  Price: 0
+  Object: {fileID: 8445881539494725114, guid: 3e87cf99d9b17eb41bf7fe97280868f3, type: 3}
+  Menusprite: {fileID: 953937541953608028, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

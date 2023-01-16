@@ -8,8 +8,9 @@ using ObjectActionEvents;
 public enum EditorMouseMode {Build,Erase,NewRoom,Select, Wall, Window, Door, Off, DoorCenter, DoorLeft, DoorRight,waypointSelect,ObjectSelect,ActionSelect }
 public class EditorController : MonoBehaviour
 {
+    
     public static EditorController Instance;
-    public List<WallSet> WallSets;
+    public List<WallMeshSet> WallSets;
     public List<BuildSetMaterials> Floors;
     public List<RoomController> Rooms;
     [Space]
@@ -38,8 +39,6 @@ public class EditorController : MonoBehaviour
 
     public List<ObjectActionIndex> ObjectActions = new List<ObjectActionIndex>
     {   
-        new ObjectActionIndex("SetGlobalPower","Set Global Power", ObjectActionType.SetFloat),
-        new ObjectActionIndex("SetGlobalPower","Set Global Power", ObjectActionType.SetFloat),
         new ObjectActionIndex("SetGlobalPower","Set Global Power", ObjectActionType.SetFloat),
         new ObjectActionIndex("SetLightOn","Light On/Off", ObjectActionType.SetBool)
         };    
@@ -283,7 +282,7 @@ public class EditorController : MonoBehaviour
             if (newObj.Swatch != 0)
             {
                 print("loading swatch");
-                obj.SwatchSwap(Catalogue.MapObjects[objectID].Swatches[newObj.Swatch].mesh, Catalogue.MapObjects[objectID].Swatches[newObj.Swatch].material, newObj.Swatch);
+                obj.SwatchSwap(Catalogue.MapObjects[objectID].Swatches[newObj.Swatch].meshes, Catalogue.MapObjects[objectID].Swatches[newObj.Swatch].materials, newObj.Swatch);
             }
 
             obj.ObjectSetup();

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6fe32514b2fd469978b5fc3ff64c7, type: 3}
+  m_Name: DoorFrameD
+  m_EditorClassIdentifier: 
+  CatalogueTags: 0
+  CatalogueTheme: 0
+  name: Double Door Frame
+  InternalName: DoorFrameD
+  editorTab: 0
+  Swatches:
+  - {fileID: 11400000, guid: a7b95eceaacc0974ab30a81f3d34e940, type: 2}
+  - {fileID: 11400000, guid: 26986b72a8d37884fb306fba484f6ac2, type: 2}
+  - {fileID: 11400000, guid: 827f3a92993640744bd5f4e5dadf1115, type: 2}
+  - {fileID: 11400000, guid: 349d0aafaa7790d41a2269c43ee58511, type: 2}
+  Description: For those times you need to walk through two walls at once, the double
+    door frame has you covered.
+  Price: 0
+  Object: {fileID: 5176445745756884931, guid: 947be072ca8077245985823dcdaf0845, type: 3}
+  Menusprite: {fileID: -7592173143594474155, guid: 2c2b2c445270da34c9dfc8dfd3105359,
+    type: 3}

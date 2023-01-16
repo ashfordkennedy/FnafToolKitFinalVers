@@ -54,7 +54,7 @@ public class SwatchUI : EditorMenuAbstract
         {
 
             Toggle NewSwatch = Instantiate(SwatchObjectPrefab, Content).GetComponent<Toggle>();
-            NewSwatch.image.sprite = Catalogue.MapObjects[ObjectID].Swatches[i].Swatch;         
+            NewSwatch.image.sprite = Catalogue.MapObjects[ObjectID].Swatches[i].swatchIcon;         
             NewSwatch.gameObject.SetActive(true);
         }
     }
@@ -77,7 +77,7 @@ public class SwatchUI : EditorMenuAbstract
             {
                 print("settingswatch");
                 AudioManager.Audio_M.PlayUIClick();
-                target.SwatchSwap(Catalogue.MapObjects[objectID].Swatches[newswatch].mesh, Catalogue.MapObjects[objectID].Swatches[newswatch].material,newswatch);
+                target.SwatchSwap(Catalogue.MapObjects[objectID].Swatches[newswatch].meshes, Catalogue.MapObjects[objectID].Swatches[newswatch].materials,newswatch);
 
 
             }

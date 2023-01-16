@@ -8,19 +8,16 @@ public class DecorSwatch : ScriptableObject
 
     public string Name;
     public Sprite swatchIcon;
-    public List<Mesh> meshes;
-    public List<Material> materials;
+    public Mesh[] meshes;
+    public Material[] materials;
+    
 
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetData(ObjectSwatch target, string name)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Name = name;
+        swatchIcon = target.Swatch;
+        meshes = target.mesh;
+        materials = target.material;
     }
 }

@@ -36,7 +36,7 @@ public class DecorationMenu : MainBarTab
                 GameObject newButton = Instantiate(decorButtonPrefab, container);
                 Button button = newButton.GetComponent<Button>();
 
-                MapObject itemData = objectCatalogue.MapObjects[i];
+                CatalogueObject itemData = objectCatalogue.MapObjects[i];
                 newButton.name = "" + i;
                 (button.targetGraphic as Image).sprite = itemData.Menusprite;
                 newButton.SetActive(true);
@@ -51,7 +51,7 @@ public class DecorationMenu : MainBarTab
        GameObject newButton = Instantiate(decorButtonPrefab, container);
         Button button = newButton.GetComponent<Button>();
 
-       MapObject itemData = objectCatalogue.MapObjects[itemIndex];
+        CatalogueObject itemData = objectCatalogue.MapObjects[itemIndex];
         newButton.name = "" + itemIndex;
         (button.targetGraphic as Image).sprite = itemData.Menusprite;
 

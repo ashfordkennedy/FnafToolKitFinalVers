@@ -14,12 +14,14 @@ public enum DecorType {Door = 1,Window = 2,Seating = 4,Surface = 8,Wall = 16,Lig
 public class DecorObjectCatalogue : ScriptableObject
 {
 
+    public static DecorObjectCatalogue instance;
     [Header("Map Object Settings")]
-    public List<MapObject> MapObjects;
+    public List<CatalogueObject> MapObjects;
     public Dictionary<string, int> ObjectDictionary = new Dictionary<string, int>();
 
     public void WriteDictionary()
     {
+        instance = this;
         if (ObjectDictionary.Count > 0)
         {
             ObjectDictionary.Clear();
@@ -48,8 +50,13 @@ public class DecorObjectCatalogue : ScriptableObject
         {
             return "Decoration";
         }
+    }
 
-
+    public int GetDecorObjectId(CatalogueObject target)
+    {
+        int id = -1;
+        ObjectDictionary.TryGetValue(target.InternalName, out id);     
+        return id;
     }
 
 

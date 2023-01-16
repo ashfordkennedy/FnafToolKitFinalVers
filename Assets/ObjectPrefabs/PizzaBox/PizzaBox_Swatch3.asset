@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6eb93e32474774dbf8d0fcb436ba15, type: 3}
+  m_Name: PizzaBox_Swatch3
+  m_EditorClassIdentifier: 
+  Name: PizzaBox Swatch 3
+  swatchIcon: {fileID: 5582578818221366319, guid: 7bd2415a5b41f344a8aacf3b57f7b216,
+    type: 3}
+  meshes:
+  - {fileID: 5285715577621127594, guid: 291e3b09b62bc264687ab7026f4a724d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a49c623e0ee82be418d3db753a3b1969, type: 2}

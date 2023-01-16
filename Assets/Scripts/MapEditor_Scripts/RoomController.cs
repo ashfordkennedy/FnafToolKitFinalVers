@@ -101,7 +101,7 @@ public class RoomController : MonoBehaviour
         WallFormatter(x, y, 3);
 
         CornerFormatter(x, y);
-        RoomCells[x, y].UpdateMaterial(EditorController.Instance.WallSets[WallSet].MaterialSets[WallSkin].material, EditorController.Instance.Floors[FloorSet].material);
+        RoomCells[x, y].UpdateMaterial(EditorController.Instance.WallSets[WallSet].Swatches[WallSkin].material, EditorController.Instance.Floors[FloorSet].material);
         CameraMapGenerator.instance.DrawCell(new Vector2Int(x, y), RoomCells[x, y]);
     }
 
@@ -139,7 +139,7 @@ public class RoomController : MonoBehaviour
 
                     CornerFormatter(x, y);
 
-                    RoomCells[x, y].UpdateMaterial(EditorController.Instance.WallSets[WallSet].MaterialSets[WallSkin].material, EditorController.Instance.Floors[FloorSet].material);
+                    RoomCells[x, y].UpdateMaterial(EditorController.Instance.WallSets[WallSet].Swatches[WallSkin].material, EditorController.Instance.Floors[FloorSet].material);
 
                     CameraMapGenerator.instance.DrawCell(new Vector2Int(x, y), RoomCells[x, y]);
                 }
@@ -181,38 +181,38 @@ public class RoomController : MonoBehaviour
 
         // L+ R = 3 / L = 1 / R = 2 / none = 0
         int wallType = ((int)RoomCells[x, y].Walls[WallDirection].Wall_Type);
-        WallSet wallMeshSet = EditorController.Instance.WallSets[WallSet];
+        WallMeshSet wallMeshSet = EditorController.Instance.WallSets[WallSet];
 
         switch (ComparisonSum)
         {
                 //none
             case 0:
                 RoomCells[x, y].Walls[WallDirection].Wall_State = WallState.Straight;
-                WallMesh = wallMeshSet.StraightWalls[wallType];
+                WallMesh = wallMeshSet.straightWalls[wallType];
                 break;
 
                 //right
             case 2:
                 RoomCells[x, y].Walls[WallDirection].Wall_State = WallState.RightCorner;
-                WallMesh = wallMeshSet.RightCornerWalls[wallType];
+                WallMesh = wallMeshSet.rightCornerWalls[wallType];
                 break;
 
                 //left
             case 1:
                 RoomCells[x, y].Walls[WallDirection].Wall_State = WallState.LeftCorner;
-                WallMesh = wallMeshSet.LeftCornerWalls[wallType];
+                WallMesh = wallMeshSet.leftCornerWalls[wallType];
                 break;
 
 
                 //both
             case 3:
                 RoomCells[x, y].Walls[WallDirection].Wall_State = WallState.BothCorner;            
-                WallMesh = wallMeshSet.BothCornerWalls[wallType];
+                WallMesh = wallMeshSet.bothCornerWalls[wallType];
                 break;
         }
 
 
-        Material WallMat = wallMeshSet.MaterialSets[WallSkin].material;
+        Material WallMat = wallMeshSet.Swatches[WallSkin].material;
         RoomCells[x, y].Walls[WallDirection].UpdateWallMesh(WallMesh, WallMat);
     }
 
@@ -437,7 +437,7 @@ public class RoomController : MonoBehaviour
                 // wall set
                 
                 mats[0] = Map_Editor.Floors[FloorSet].material;
-                mats[1] = Map_Editor.WallSets[WallSet].MaterialSets[WallSkin].material;
+                mats[1] = Map_Editor.WallSets[WallSet].Swatches[WallSkin].material;
 
                 renderer.materials = mats;
                 renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;

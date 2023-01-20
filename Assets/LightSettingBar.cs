@@ -17,15 +17,15 @@ public class LightSettingBar : MonoBehaviour
         switch (_mode)
         {
             case settingMode.intensity:
-                LightSettingUI.Instance.UpdateIntensity(slider);
+              //  LightSettingUI.Instance.UpdateIntensity(slider);
                 break;
 
             case settingMode.range:
-                LightSettingUI.Instance.UpdateRange(slider);
+             //   LightSettingUI.Instance.UpdateRange(slider);
                 break;
 
             case settingMode.volume:
-                LightSettingUI.Instance.UpdateVolume(slider);
+             //   LightSettingUI.Instance.UpdateVolume(slider);
                 break;
         }
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d462d629cd6c34e9c03ee8011713f6, type: 3}
+  m_Name: TallWallDark
+  m_EditorClassIdentifier: 
+  name: Tall Wall Dark
+  notes: for tall walls
+  material: {fileID: 2100000, guid: 34a298c981ee1ed47b486f5a2c3e3cb5, type: 2}
+  icon: {fileID: 750301269224523215, guid: 9ef8a222b4a90a146b3db69408b6d2b1, type: 3}

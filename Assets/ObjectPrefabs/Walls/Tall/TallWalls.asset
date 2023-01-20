@@ -49,3 +49,5 @@ MonoBehaviour:
     type: 3}
   Swatches:
   - {fileID: 11400000, guid: 849cfd62f048fdf4abb685d55bd882ec, type: 2}
+  - {fileID: 11400000, guid: bd1fcc44e981acd4c9a69f1a2b355ed8, type: 2}
+  - {fileID: 11400000, guid: dec1316c9cfde9841b07bc1d0bbb6c10, type: 2}

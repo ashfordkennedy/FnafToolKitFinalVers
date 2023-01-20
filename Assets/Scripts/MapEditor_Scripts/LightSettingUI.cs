@@ -11,13 +11,19 @@ public class LightSettingUI : EditorMenuAbstract
     [SerializeField] Transform Content;
     public Color[] LightColourPresets;
     public DecorLighting TargetLight = null;
+    private int selectedLight = 0;
 
-    [SerializeField] Slider intensitySlider;
-    [SerializeField] Slider volumeSlider;
-    [SerializeField] Slider rangeSlider;
     [SerializeField] TMPro.TMP_InputField powerInput;
     [SerializeField] Toggle activeOnStartToggle;
     [SerializeField] Toggle enabledToggle;
+
+    [Header("Sliders")]
+    [SerializeField] Ext_Slider m_intensity;
+    [SerializeField] Ext_Slider m_volume;
+    [SerializeField] Ext_Slider m_range;
+    [SerializeField] Ext_Slider m_outerRange;
+    [SerializeField] Ext_Slider m_innerRange;
+    [SerializeField] Ext_Slider m_radius;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -51,9 +57,17 @@ public class LightSettingUI : EditorMenuAbstract
 
     private void MenuSetup()
     {
-        intensitySlider.SetValueWithoutNotify(TargetLight._intensity);
-        volumeSlider.SetValueWithoutNotify(TargetLight._volume);
-        rangeSlider.SetValueWithoutNotify(TargetLight._range);
+        
+
+        m_intensity.SetValueWithoutNotify(TargetLight._intensity);
+
+        m_volume.SetValueWithoutNotify(TargetLight._volume);
+
+        m_range.SetValueWithoutNotify(TargetLight._range);
+
+       
+
+        
         powerInput.SetTextWithoutNotify("" + TargetLight._powerDrain);
         activeOnStartToggle.SetIsOnWithoutNotify(TargetLight._activeOnStart);
         enabledToggle.SetIsOnWithoutNotify(TargetLight._active);
@@ -115,7 +129,7 @@ public class LightSettingUI : EditorMenuAbstract
 
     }
 
-    public void UpdateIntensity(Slider slider)
+    public void UpdateIntensity(Ext_Slider slider)
     {
         if (TargetLight != null)
         {
@@ -137,7 +151,7 @@ public class LightSettingUI : EditorMenuAbstract
         }
     }
 
-    public void UpdateVolume(Slider slider)
+    public void UpdateVolume(Ext_Slider slider)
     {
         if (TargetLight != null)
         {
@@ -159,7 +173,7 @@ public class LightSettingUI : EditorMenuAbstract
     }
 
 
-    public void UpdateRange(Slider slider)
+    public void UpdateRange(Ext_Slider slider)
     {
         if (TargetLight != null)
         {

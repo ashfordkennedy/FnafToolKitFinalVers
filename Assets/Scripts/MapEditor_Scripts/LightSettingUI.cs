@@ -211,9 +211,9 @@ public class LightSettingUI : EditorMenuAbstract
     {
         TargetLight = targetObject;
 
-        intensitySlider.value = TargetLight._intensity;
-        volumeSlider.value = TargetLight._volume;
-        rangeSlider.value = TargetLight._range;
+        m_intensity.value = TargetLight._intensity;
+       m_volume.value = TargetLight._volume;
+        m_range.value = TargetLight._range;
         activeOnStartToggle.isOn = TargetLight._activeOnStart;
         enabledToggle.isOn = TargetLight._active;
         powerInput.text = "" + TargetLight._powerDrain;

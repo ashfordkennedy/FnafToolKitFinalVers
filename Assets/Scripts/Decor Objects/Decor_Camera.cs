@@ -8,7 +8,7 @@ public class Decor_Camera : DecorObject
     public Camera camera;
 
 
-
+    
 
 
     public override void EditorSelect(Material SelectMaterial)
@@ -70,6 +70,8 @@ public class Decor_Camera : DecorObject
             camera.enabled = false;
         }
     }
+
+
 
 
 }

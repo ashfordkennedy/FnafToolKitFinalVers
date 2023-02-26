@@ -275,6 +275,12 @@ public class ContextMenu : MonoBehaviour
                 ButtonMenu.instance.OpenMenu();
                 break;
 
+            case ContextMenuActions.Camera:
+                var camTarget = target.GetComponent<Decor_Camera>();
+                CameraMenu.instance.SetTarget(camTarget);
+                CameraMenu.instance.OpenMenu();
+                break;
+
         }
         
 
@@ -288,8 +294,7 @@ public class ContextMenu : MonoBehaviour
         switch (target.decorType)
         {
             // basic decor
-            case DecorObjectType.Basic:
-                
+            case DecorObjectType.Basic:               
                 MenuSet = 2;
                 break;
 
@@ -318,6 +323,10 @@ public class ContextMenu : MonoBehaviour
                 MenuSet = 7;
                 break;
 
+            case DecorObjectType.Camera:
+                MenuSet = 8;
+                break;
+
         }
 
         return MenuSet;
@@ -336,7 +345,7 @@ public enum ContextMenuActions
 {
     Select, EraseCell, NewCell, NewRoom, RoomList, WallDefault,
     WallDoor, WallLeftDoor, WallCenterDoor, WallRightDoor, Transform, Swatch, Waypoint, Light, Animatronic, Delete, ClassicPlayer,
-    ButtonPanel, SelectRoom
+    ButtonPanel, SelectRoom, Camera
         
 };
 

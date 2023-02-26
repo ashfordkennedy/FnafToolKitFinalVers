@@ -8,6 +8,9 @@ public class CameraMenu : EditorMenuAbstract
     public static CameraMenu instance;
     [SerializeField] private Decor_Camera targetCamera;
     [SerializeField] private TMP_InputField _nameField;
+    [SerializeField] RenderTexture previewTexture;
+
+
     private void Awake()
     {
         instance = this;
@@ -25,7 +28,15 @@ public class CameraMenu : EditorMenuAbstract
     }
 
     public void ToggleCameraPreview(Toggle toggle){
-    targetCamera.camera.enabled = toggle.isOn; 
+    targetCamera.camera.enabled = toggle.isOn;
+        if (targetCamera.camera.enabled)
+        {
+            targetCamera.SetRenderTexture(previewTexture);
+        }
+        else
+        {
+
+        }
     
     }
 

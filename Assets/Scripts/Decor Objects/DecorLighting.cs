@@ -10,8 +10,8 @@ public class DecorLighting : DecorObject
     public float _volume { get; private set; } = 5f;
     public float _range { get; private set; } = 65f;
     public Color _color { get; private set; }
-    private HDAdditionalLightData lightData;
-    [SerializeField] private Light light;
+    private HDAdditionalLightData[] lightData;
+    [SerializeField] private Light[] light;
 
     public bool _active { get; private set; } = true;
     public bool _activeOnStart { get; private set; } = true;
@@ -53,7 +53,7 @@ public class DecorLighting : DecorObject
     public override void ObjectSetup()
     {
        base.ObjectSetup();
-       lightData = this.GetComponentInChildren<HDAdditionalLightData>();
+       lightData = this.GetComponentsInChildren<HDAdditionalLightData>();
     }
 
     public override SavedObject CompileObjectData()
@@ -112,32 +112,30 @@ public class DecorLighting : DecorObject
     }
 
 
-    public void SetIntensity(float intensity)
+    public void SetIntensity(float intensity, int Id = 0)
     {
         _intensity = intensity;
-        lightData.intensity = intensity;
-        light.intensity = intensity;
+        light[Id].intensity = intensity;
 
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume(float volume, int Id = 0)
     {
         _volume = volume;
-        lightData.volumetricDimmer = volume;
+        lightData[Id].volumetricDimmer = volume;
         
     }
 
-    public void SetRange(float range)
+    public void SetRange(float range, int Id = 0)
     {
         _range = range;
-        lightData.range = range;
-        light.range = range;
+        lightData[Id].range = range;
     }
 
-    public void LightToggle(bool active)
+    public void LightToggle(bool active, int Id = 0)
     {
         _active = active;
-        light.enabled = active;
+        lightData[Id].gameObject.GetComponent<Light>().enabled = active;
     }
 
     public void SetOnStartActive(bool active)
@@ -148,11 +146,10 @@ public class DecorLighting : DecorObject
     {
         _powerDrain = value;
     }
-    public void SetColour(Color value)
+    public void SetColour(Color value, int Id = 0)
     {
         _color = value;
-        lightData.color = value;
-        light.color = value;
+        lightData[Id].color = value;
     }
 
 
@@ -211,6 +208,8 @@ public class SavableColour
     }
 
 }
+
+
 
 
 [System.Serializable]

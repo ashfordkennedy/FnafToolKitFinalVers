@@ -99,7 +99,7 @@ TextureImporter:
       213: 7197331348565939316
     second: WallSetImages_31
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -120,6 +120,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -158,6 +159,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -173,6 +175,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -868,6 +894,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      WallSetImages_25: 4025854197686266024
+      WallSetImages_18: -5371568203155776220
+      WallSetImages_24: -6916756268978667482
+      WallSetImages_31: 7197331348565939316
+      WallSetImages_11: 9096253488135259100
+      WallSetImages_7: -9200792463080109308
+      WallSetImages_28: 6517864581883017767
+      WallSetImages_19: -1020374517546279716
+      WallSetImages_15: -7053425607498226474
+      WallSetImages_20: 4677400707909156443
+      WallSetImages_0: -6197513847633543602
+      WallSetImages_22: 4347126439255909713
+      WallSetImages_1: -7945067142710625774
+      WallSetImages_21: -7407729896763513784
+      WallSetImages_16: -9146773467108900141
+      WallSetImages_2: -4907276070903016692
+      WallSetImages_12: -1327619234165461870
+      WallSetImages_10: 2297200379570740922
+      WallSetImages_29: 2424096519305342130
+      WallSetImages_6: 8529348436928904634
+      WallSetImages_27: -8363024234385123500
+      WallSetImages_17: -2375240069449091704
+      WallSetImages_14: -2803496345152623889
+      WallSetImages_13: -1908017242689422211
+      WallSetImages_9: 5986941064475408142
+      WallSetImages_23: -4791710898145247123
+      WallSetImages_3: 434186645169693272
+      WallSetImages_4: 750301269224523215
+      WallSetImages_26: 6830511043435290985
+      WallSetImages_5: 4859444348240693749
+      WallSetImages_8: -7293001652761869109
+      WallSetImages_30: 6317964216004552569
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

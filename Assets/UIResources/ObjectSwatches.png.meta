@@ -195,7 +195,7 @@ TextureImporter:
       213: -7564163685604379271
     second: ObjectSwatches_63
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -215,6 +215,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -224,11 +226,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -246,10 +248,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -265,6 +271,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1632,6 +1662,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ObjectSwatches_18: -735587110024294
+      ObjectSwatches_41: -2536440405872663522
+      ObjectSwatches_32: -8616738908015670947
+      ObjectSwatches_29: -1166360663385761441
+      ObjectSwatches_38: -2921556179069711839
+      ObjectSwatches_45: 2332306437253073603
+      ObjectSwatches_34: 3711195949587027305
+      ObjectSwatches_55: -7267050756943256001
+      ObjectSwatches_2: -4772348983414613186
+      ObjectSwatches_6: -2744437690667899921
+      ObjectSwatches_19: -4015440459008951748
+      ObjectSwatches_35: -80530503880334146
+      ObjectSwatches_47: -5187715550797216399
+      ObjectSwatches_11: -7481366902819968417
+      ObjectSwatches_3: -5962460554400841175
+      ObjectSwatches_62: 1138502108575365604
+      ObjectSwatches_46: 3445966342479217547
+      ObjectSwatches_14: 2415228095654314171
+      ObjectSwatches_53: 4189120566615686538
+      ObjectSwatches_15: 2173308644620393726
+      ObjectSwatches_23: 3004271075666485494
+      ObjectSwatches_0: 5582578818221366319
+      ObjectSwatches_28: 8478022480536008154
+      ObjectSwatches_58: 9073626825244308288
+      ObjectSwatches_52: 2135790479863874976
+      ObjectSwatches_61: 3482802171160170207
+      ObjectSwatches_8: -2474241034314988269
+      ObjectSwatches_63: -7564163685604379271
+      ObjectSwatches_44: 2112801614326421360
+      ObjectSwatches_16: 7688509101190830492
+      ObjectSwatches_22: 265276731950088929
+      ObjectSwatches_21: -8113664613730448369
+      ObjectSwatches_12: -2445916719301150900
+      ObjectSwatches_26: -3951501716947224940
+      ObjectSwatches_20: -6480021812503829192
+      ObjectSwatches_42: -8834344392885297432
+      ObjectSwatches_5: 4418297780509105647
+      ObjectSwatches_24: 4051917486004866227
+      ObjectSwatches_33: 6130712616295379163
+      ObjectSwatches_50: -1148305731884414063
+      ObjectSwatches_4: 1401443619804592042
+      ObjectSwatches_31: 6135253547919058009
+      ObjectSwatches_40: -8381746210749342750
+      ObjectSwatches_49: 6197778641414679220
+      ObjectSwatches_60: -6390875231031962976
+      ObjectSwatches_48: -2320811207184231722
+      ObjectSwatches_27: -5229980748851925062
+      ObjectSwatches_13: 9122585162698332195
+      ObjectSwatches_56: 8933270210222920176
+      ObjectSwatches_39: 37501999054885228
+      ObjectSwatches_25: 133677847753723722
+      ObjectSwatches_57: 6964125955788301953
+      ObjectSwatches_7: -4273173492629405059
+      ObjectSwatches_10: -3296175032064176287
+      ObjectSwatches_54: 1205212823480300611
+      ObjectSwatches_30: 3687037835674201399
+      ObjectSwatches_36: -8174343433329801617
+      ObjectSwatches_9: 8701134846690571476
+      ObjectSwatches_59: 1150550088862074569
+      ObjectSwatches_17: 4043210975284919850
+      ObjectSwatches_51: 3170617513371425321
+      ObjectSwatches_37: -8086709088009268570
+      ObjectSwatches_1: -8028826165447973672
+      ObjectSwatches_43: 4366606674418656907
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -195,7 +195,7 @@ TextureImporter:
       213: 2457134037251358024
     second: ItemIcons_63
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -216,6 +216,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -254,6 +255,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -281,6 +283,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1648,6 +1662,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ItemIcons_28: -3431913835630608980
+      ItemIcons_18: -7345946025972467205
+      ItemIcons_14: -5842902199554455464
+      ItemIcons_10: -4842568390458905036
+      ItemIcons_11: -3105660766707295509
+      ItemIcons_20: 3094008053702901747
+      ItemIcons_62: -1320251526982641551
+      ItemIcons_31: 4975384925081559013
+      ItemIcons_42: -7018573273323473656
+      ItemIcons_49: -250225623858434234
+      ItemIcons_41: -1650688339538392404
+      ItemIcons_1: 3147117153359372007
+      ItemIcons_5: -5967723925376488046
+      ItemIcons_39: -6533716539154049248
+      ItemIcons_3: -7592173143594474155
+      ItemIcons_35: 5438312395279195978
+      ItemIcons_15: 7506760709680993122
+      ItemIcons_24: 2640395719582048957
+      ItemIcons_61: 6717464137214682084
+      ItemIcons_23: 8311713138642966698
+      ItemIcons_38: 1986296004449142334
+      ItemIcons_13: 953937541953608028
+      ItemIcons_47: 7432767969994302030
+      ItemIcons_27: -5732125812286019609
+      ItemIcons_60: -5750565149156488202
+      ItemIcons_32: -493458924309653395
+      ItemIcons_43: 6301803937814606859
+      ItemIcons_2: -8894057469729715593
+      ItemIcons_19: -6415591163451318786
+      ItemIcons_53: 7386561568189411039
+      ItemIcons_57: -5698134435532524555
+      ItemIcons_48: 4624074015424311400
+      ItemIcons_30: -6478937877116430893
+      ItemIcons_34: 3389066699366966841
+      ItemIcons_58: 5853652168350006293
+      ItemIcons_56: -2486364337795148286
+      ItemIcons_21: 4485671024239268621
+      ItemIcons_46: -7038530020113373393
+      ItemIcons_55: 5883689396703704859
+      ItemIcons_0: 720586757817451359
+      ItemIcons_50: -6399464212213112874
+      ItemIcons_44: -1046590365481955713
+      ItemIcons_6: 5696811465416703826
+      ItemIcons_7: -4878780369741212085
+      ItemIcons_16: 2914712580936739885
+      ItemIcons_63: 2457134037251358024
+      ItemIcons_37: 5515465600577183289
+      ItemIcons_22: -4096776817054910068
+      ItemIcons_25: -2717887072172314169
+      ItemIcons_29: -2342853039104874792
+      ItemIcons_59: -6558426263126599468
+      ItemIcons_54: -3341302780416434502
+      ItemIcons_36: 1755687457907425252
+      ItemIcons_8: -6533504416836700589
+      ItemIcons_52: 3182275047451492204
+      ItemIcons_9: -2625536876281230515
+      ItemIcons_45: 5994545156203960988
+      ItemIcons_17: -4449493570454279411
+      ItemIcons_4: 3473067488844627539
+      ItemIcons_26: -6534635922982847424
+      ItemIcons_33: 5662269339373340117
+      ItemIcons_12: -1248516885935246668
+      ItemIcons_40: -8520786044570866996
+      ItemIcons_51: 8937932116742523818
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

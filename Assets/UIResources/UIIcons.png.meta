@@ -51,7 +51,7 @@ TextureImporter:
       213: -3866600083933914117
     second: UIIcons_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -137,6 +139,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -496,6 +510,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      UIIcons_11: -5520046502972198064
+      UIIcons_3: 3348504753944899761
+      UIIcons_6: 491898524318299003
+      UIIcons_15: -3866600083933914117
+      UIIcons_5: -8438255427374472468
+      UIIcons_1: 4203800354458237952
+      UIIcons_9: -6243470720854746089
+      UIIcons_10: -1951921989709124723
+      UIIcons_8: 5998916925971351198
+      UIIcons_13: -9138502099956824432
+      UIIcons_7: -1780097797848123532
+      UIIcons_14: 8258309971714131339
+      UIIcons_12: -2821187130960347676
+      UIIcons_4: 6657812553101276700
+      UIIcons_2: -2087600672365536857
+      UIIcons_0: -2364175295978695568
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -65,8 +65,7 @@ public class LightSettingUI : EditorMenuAbstract
 
         m_range.SetValueWithoutNotify(TargetLight._range);
 
-       
-
+       //
         
         powerInput.SetTextWithoutNotify("" + TargetLight._powerDrain);
         activeOnStartToggle.SetIsOnWithoutNotify(TargetLight._activeOnStart);

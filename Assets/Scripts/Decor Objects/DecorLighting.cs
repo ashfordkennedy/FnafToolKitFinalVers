@@ -107,7 +107,7 @@ public class DecorLighting : DecorObject
 
         if(_activeOnStart == true)
         {
-
+            // start power drain
         }
     }
 

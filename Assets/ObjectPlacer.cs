@@ -67,7 +67,13 @@ public class ObjectPlacer : EditorMenuAbstract
         _freePlacement = false;
         PlaceObjects();
         transformGizmo.position = target.gameObject.transform.position;
+
+
+        // Rotation values mess up if not properly set
         placementContainer.position = target.gameObject.transform.position;
+        placementContainer.rotation = target.gameObject.transform.rotation;
+
+
         AddToSelected(target);
         TransformMenu.instance.SetSelectCounter();
     }

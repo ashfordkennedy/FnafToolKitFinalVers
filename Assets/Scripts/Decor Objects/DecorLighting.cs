@@ -13,9 +13,7 @@ public class DecorLighting : DecorObject
     private HDAdditionalLightData[] lightData;
     [SerializeField] private Light[] light;
 
-    public bool _active { get; private set; } = true;
-    public bool _activeOnStart { get; private set; } = true;
-    public float _powerDrain { get; private set; } = 0f;
+    public DecorExt_Power powerSettings = new DecorExt_Power();
 
 
     [SerializeField] static DecorLighting()
@@ -58,7 +56,8 @@ public class DecorLighting : DecorObject
 
     public override SavedObject CompileObjectData()
     {
-        var lightData = new LightData(_intensity, _volume, _color,_range,_powerDrain,_activeOnStart,_active);
+        Debug.LogWarning("please refactor light saving methods");
+       var lightData = new LightData(_intensity, _volume, _color,_range,powerSettings._powerDrain, powerSettings._activeOnStart, powerSettings._active);
         SavedLight Data = new SavedLight(InternalName,SwatchID, new LightSaveData(ObjectSaveDataType.Light,lightData), new SavedTransform(this.transform));
         return Data;
     }
@@ -79,8 +78,8 @@ public class DecorLighting : DecorObject
         Color lightcolour = savedata.Colour.ToColor();
         SetColour(lightcolour);
         LightToggle(savedata.active);
-        SetOnStartActive(savedata.activeOnStart);
-        SetPowerValue(savedata.Power);
+        powerSettings.SetOnStartActive(savedata.activeOnStart);
+        powerSettings.SetPowerValue(savedata.Power);
        
     }
 
@@ -102,10 +101,10 @@ public class DecorLighting : DecorObject
         SetVolume(_volume);
         SetRange(_range);
         SetColour(_color);
-        LightToggle(_activeOnStart);       
-        SetPowerValue(_powerDrain);
+        LightToggle(powerSettings._activeOnStart);
+        powerSettings.SetPowerValue(powerSettings._powerDrain);
 
-        if(_activeOnStart == true)
+        if(powerSettings._activeOnStart == true)
         {
             // start power drain
         }
@@ -134,18 +133,12 @@ public class DecorLighting : DecorObject
 
     public void LightToggle(bool active, int Id = 0)
     {
-        _active = active;
+        powerSettings.SetActive(active);
         lightData[Id].gameObject.GetComponent<Light>().enabled = active;
     }
 
-    public void SetOnStartActive(bool active)
-    {
-        _activeOnStart = active;
-    }
-    public void SetPowerValue(float value)
-    {
-        _powerDrain = value;
-    }
+
+
     public void SetColour(Color value, int Id = 0)
     {
         _color = value;

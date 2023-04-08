@@ -27,7 +27,8 @@ public class LightSettingUI : EditorMenuAbstract
     // Start is called before the first frame update
     private void Awake()
     {
-        GenerateLightSwatches();
+        //Light swatches being phased out due to color menu
+        //GenerateLightSwatches();
         Instance = this;
     }
 

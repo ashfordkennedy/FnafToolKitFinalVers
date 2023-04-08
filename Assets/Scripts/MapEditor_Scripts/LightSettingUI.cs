@@ -66,11 +66,11 @@ public class LightSettingUI : EditorMenuAbstract
 
         m_range.SetValueWithoutNotify(TargetLight._range);
 
-       //
-        
-        powerInput.SetTextWithoutNotify("" + TargetLight._powerDrain);
-        activeOnStartToggle.SetIsOnWithoutNotify(TargetLight._activeOnStart);
-        enabledToggle.SetIsOnWithoutNotify(TargetLight._active);
+        //
+        Debug.LogWarning("The power value code needs to be removed and properly intergrated into the power menu");
+        powerInput.SetTextWithoutNotify("" + TargetLight.powerSettings._powerDrain);
+        activeOnStartToggle.SetIsOnWithoutNotify(TargetLight.powerSettings._activeOnStart);
+        enabledToggle.SetIsOnWithoutNotify(TargetLight.powerSettings._active);
     }
    
 
@@ -101,18 +101,15 @@ public class LightSettingUI : EditorMenuAbstract
 
 
     /// <summary>
-    /// Menu function to enable/diable the light
+    /// Menu function to enable/disable the light
     /// </summary>
     /// <param name="toggle"></param>
     public void ToggleLight(Toggle toggle)
     {
+        // needs multilight support
         TargetLight.LightToggle(toggle.isOn);
     }
 
-    public void SetLightStartActive(Toggle toggle)
-    {
-        TargetLight.SetOnStartActive(toggle.isOn);
-    }
 
 
 

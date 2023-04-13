@@ -174,7 +174,9 @@ public class NightSettings
     public float totalPower = 5f;
     public SavableColour fogColor = new SavableColour(Color.black);
     public float fogIntensity = -0.15f;
+    private int totalHours;
 
+    public int TotalHours { get => totalHours; set => totalHours = value; }
 
     public NightSettings(int starthour = 12, int endhour = 6, float basepowerloss = 0.05f, float totalpower = 5f, float hourLength = 30f, Color fogColor = new Color(), float fogIntensity = -0.15f)
     {
@@ -197,4 +199,7 @@ public class NightSettings
         this.fogColor = new SavableColour(Color.black);
 
     }
+
+
+
 }

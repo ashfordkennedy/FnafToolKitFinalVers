@@ -6,16 +6,17 @@ using UnityEngine.Rendering.HighDefinition;
 public class LightSettingUI : EditorMenuAbstract
 {
     public static LightSettingUI Instance;
-    [SerializeField] GameObject LightSwatchPrefab;
     [SerializeField] GameObject LightSettingCanvas;
     [SerializeField] Transform Content;
-    public Color[] LightColourPresets;
     public DecorLighting TargetLight = null;
     private int selectedLight = 0;
 
     [SerializeField] TMPro.TMP_InputField powerInput;
     [SerializeField] Toggle activeOnStartToggle;
     [SerializeField] Toggle enabledToggle;
+
+
+    float outerAngle;
 
     [Header("Sliders")]
     [SerializeField] Ext_Slider m_intensity;
@@ -24,11 +25,36 @@ public class LightSettingUI : EditorMenuAbstract
     [SerializeField] Ext_Slider m_outerRange;
     [SerializeField] Ext_Slider m_innerRange;
     [SerializeField] Ext_Slider m_radius;
+
+    //method replacement
+    public float targetIntensity { get => TargetLight._intensity; set => TargetLight._intensity = value; }
+    public float targetVolume { get => TargetLight._volume; set => TargetLight._volume = value; }
+    public float targetRange { get => TargetLight._range; set => TargetLight._range = value; }
+
+    public float targetInnerAngle { get => TargetLight._InnerAngle; set => TargetLight._InnerAngle = value; }
+    public float targetOuterAngle { get => TargetLight._OuterAngle; set => TargetLight._OuterAngle = value; }
+    public float targetRadius { get => TargetLight._radius; set => TargetLight._radius = value; }
+    
+
+
+    /// <summary>
+    /// light default values
+    /// </summary>
+    public float DefaultIntensity { get => TargetLight.defaultIntensity; set => TargetLight.defaultIntensity = value; }
+    public float DefaultVolume { get => TargetLight.defaultVolume; set => TargetLight.defaultVolume = value; }
+    public float DefaultRange { get => TargetLight.defaultRange; set => TargetLight.defaultRange = value; }
+
+    public Color DefaultColor { get => TargetLight.defaultColor; set => TargetLight.defaultColor = value; }
+
+    public float DefaultInnerAngle { get => TargetLight.defaultinnerAngle; set => TargetLight.defaultinnerAngle = value; }
+    public float DefaultOuterAngle { get => TargetLight.defaultOuterAngle; set => TargetLight.defaultOuterAngle = value; }
+    public float DefaultRadius { get => TargetLight.defaultRadius; set => TargetLight.defaultRadius = value; }
+
+
+
     // Start is called before the first frame update
     private void Awake()
     {
-        //Light swatches being phased out due to color menu
-        //GenerateLightSwatches();
         Instance = this;
     }
 
@@ -66,26 +92,15 @@ public class LightSettingUI : EditorMenuAbstract
 
         m_range.SetValueWithoutNotify(TargetLight._range);
 
-        //
-        Debug.LogWarning("The power value code needs to be removed and properly intergrated into the power menu");
+        
+        Debug.LogWarning("The power value code needs to be removed and properly integrated into the power menu");
+        /*
         powerInput.SetTextWithoutNotify("" + TargetLight.powerSettings._powerDrain);
         activeOnStartToggle.SetIsOnWithoutNotify(TargetLight.powerSettings._activeOnStart);
         enabledToggle.SetIsOnWithoutNotify(TargetLight.powerSettings._active);
+        */
     }
-   
-
-
-
-    /// <summary>
-    /// Used To set the target lights colour to a given preset.
-    /// </summary>
-    /// <param name="ColourPresetID">The UI objects sibling index to access correct preset in LightColourPresets array</param>
-    public void SetLightColour(GameObject ColourToggle){
-        if (TargetLight != null) {
-            AudioManager.Audio_M.PlayUIClick();
-            TargetLight.SetColour(LightColourPresets[ColourToggle.transform.GetSiblingIndex()]);
-        }
-        }
+ 
 
     public void OpenColorPicker()
     {
@@ -96,7 +111,8 @@ public class LightSettingUI : EditorMenuAbstract
 
     public void RecieveColorSelectorColour()
     {
-        TargetLight.SetColour(ColourSelector.instance.tempColour);
+        TargetLight._color = ColourSelector.instance.tempColour;
+        TargetLight.defaultColor = ColourSelector.instance.tempColour;
     }
 
 
@@ -112,98 +128,6 @@ public class LightSettingUI : EditorMenuAbstract
 
 
 
-
-    public void UpdateIntensity(InputField InputField)
-    {
-        float value;
-        if (TargetLight != null && float.TryParse( InputField.text, out value) == true)
-        {
-            Mathf.Clamp(value,0, 20);
-            InputField.text = "" + value;
-
-            TargetLight.SetIntensity(value);
-        }
-
-    }
-
-    public void UpdateIntensity(Ext_Slider slider)
-    {
-        if (TargetLight != null)
-        {
-            TargetLight.SetIntensity(slider.value);           
-        }
-
-    }
-
-
-
-
-
-    public void UpdateVolume(InputField InputField)
-    {
-        float value;
-        if (TargetLight != null && float.TryParse(InputField.text, out value) == true)
-        {
-            TargetLight.SetVolume(value);
-        }
-    }
-
-    public void UpdateVolume(Ext_Slider slider)
-    {
-        if (TargetLight != null)
-        {
-            TargetLight.SetVolume(slider.value);           
-        }
-
-    }
-
-    public void UpdatePower(TMPro.TMP_InputField iField)
-    {
-        float value;
-        if (TargetLight != null && float.TryParse(iField.text, out value) == true)
-        {
-            Mathf.Clamp(value, -10, 10);
-            iField.text = "" + value;
-            TargetLight.SetPowerValue(value);
-        }
-
-    }
-
-
-    public void UpdateRange(Ext_Slider slider)
-    {
-        if (TargetLight != null)
-        {
-            TargetLight.SetRange(slider.value);
-        }
-    }
-
-    public void UpdateRange(InputField iField)
-    {
-        float value;
-        if (TargetLight != null && float.TryParse(iField.text, out value) == true)
-        {
-            Mathf.Clamp(value, 0, 20);
-            iField.text = "" + value;
-            TargetLight.SetRange(value);
-
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void SetTargetLight(DecorLighting targetObject)
     {
         TargetLight = targetObject;
@@ -211,22 +135,15 @@ public class LightSettingUI : EditorMenuAbstract
         m_intensity.value = TargetLight._intensity;
        m_volume.value = TargetLight._volume;
         m_range.value = TargetLight._range;
-        activeOnStartToggle.isOn = TargetLight._activeOnStart;
-        enabledToggle.isOn = TargetLight._active;
-        powerInput.text = "" + TargetLight._powerDrain;
+
+
+
+       // activeOnStartToggle.isOn = TargetLight._activeOnStart;
+       // enabledToggle.isOn = TargetLight._active;
+       // powerInput.text = "" + TargetLight._powerDrain;
 
 
         //  this.TargetLight = targetObject.GetComponentInChildren<Light>();
         // this.TargetLightHD = targetObject.GetComponentInChildren<HDAdditionalLightData>();
-    }
-
-    public void GenerateLightSwatches()
-    {
-        for (int i = 0; i < LightColourPresets.Length; i++)
-        {
-            Toggle NewSwatch = Instantiate(LightSwatchPrefab, Content).GetComponent<Toggle>();
-            NewSwatch.image.color = LightColourPresets[i];
-            NewSwatch.gameObject.SetActive(true);
-        }
     }
 }

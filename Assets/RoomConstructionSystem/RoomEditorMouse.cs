@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
@@ -53,7 +54,7 @@ public class RoomEditorMouse : MonoBehaviour
     public ObjectTransformController TransformController;
     [SerializeField] ToggleGroup buildToolToggleGroup;
 
-
+  //  public UnityEvent<T> TargetSelectHandler = new UnityEvent<T>();
     /// <summary>
     /// tempTarget is storage for objects containing a class you wish to set a target of
     /// </summary>
@@ -352,17 +353,6 @@ public class RoomEditorMouse : MonoBehaviour
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

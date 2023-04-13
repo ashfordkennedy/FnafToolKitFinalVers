@@ -307,7 +307,6 @@ public class EditorController : MonoBehaviour
                     print("Restoring light");
                     var L = obj as DecorLighting;
                     var LSD = savedObject.ObjectData as LightSaveData;
-                    print(LSD.lightData.Print());
                     L.RestoreLightSave(LSD.lightData);
                     break;
 

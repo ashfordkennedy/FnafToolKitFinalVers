@@ -6,12 +6,39 @@ using ObjectActionEvents;
 public class DecorLighting : DecorObject
 {
 
-    public float _intensity {get; private set;} = 15f;
-    public float _volume { get; private set; } = 5f;
-    public float _range { get; private set; } = 65f;
-    public Color _color { get; private set; }
-    private HDAdditionalLightData[] lightData;
+    //Event slider system
+    public float _intensity { get => lightData[l].intensity; set => SetIntensity( value * 10);}
+    public float _volume { get => lightData[l].volumetricDimmer; set => lightData[l].volumetricDimmer = value; }
+    public float _range { get => lightData[l].range; set => lightData[l].range = value; }
+    public Color _color { get => lightData[l].color; set => lightData[l].color = value; }
+
+    public float _OuterAngle { get => lightData[l].lightAngle; set => lightData[l].SetSpotAngle(value); }
+    public float _InnerAngle { get => lightData[l].innerSpotPercent; set => lightData[l].innerSpotPercent = value; }
+    public float _radius { get => lightData[l].shapeRadius; set => lightData[l].shapeRadius = value; }
+
+
+
+    /// <summary>
+    /// properties used to modify the light default values. default values are used on map load so that previous nights setting changes are reverted. 
+    /// They are also used by the light setting panel in concert with the event slider system.
+    /// </summary>
+    #region map_editor_System
+    public float defaultIntensity { get => lightDefaults[l].intensity; set => lightDefaults[l].intensity = value * 10; }
+    public float defaultVolume { get => lightDefaults[l].volume; set => lightDefaults[l].volume = value; }
+    public float defaultRange { get => lightDefaults[l].range; set => lightDefaults[l].range = value; }
+    public Color defaultColor { get => lightDefaults[l].color.ToColor(); set => lightDefaults[l].color = SavableColour.ToSavableColour(value); }
+
+    public float defaultOuterAngle { get => lightDefaults[l].outerAngle; set => lightDefaults[l].outerAngle = value; }
+    public float defaultinnerAngle { get => lightDefaults[l].innerAngle; set => lightDefaults[l].innerAngle = value; }
+    public float defaultRadius { get => lightDefaults[l].radius; set => lightDefaults[l].radius = value; }
+
+    #endregion
+
+    public DecorLightStats[] lightDefaults;
+    public HDAdditionalLightData[] lightData;
     [SerializeField] private Light[] light;
+
+    public static int l = 0;
 
     public DecorExt_Power powerSettings = new DecorExt_Power();
 
@@ -19,12 +46,13 @@ public class DecorLighting : DecorObject
     [SerializeField] static DecorLighting()
     {
         ObjectActions = new List<ObjectActionIndex>
-    {   
+    {
         new ObjectActionIndex("SetLightIntensity","Set Intensity",ObjectActionType.SetFloat),
         new ObjectActionIndex("SetLightRange","Set Range",ObjectActionType.SetFloat),
         new ObjectActionIndex("SetLightVolume","Set Volume",ObjectActionType.SetFloat),
         new ObjectActionIndex("SetLightOn","Light On/Off",ObjectActionType.SetBool)
-        };
+        };        
+
     }
 
     public override List<ObjectActionIndex> GetObjectActions()
@@ -52,12 +80,13 @@ public class DecorLighting : DecorObject
     {
        base.ObjectSetup();
        lightData = this.GetComponentsInChildren<HDAdditionalLightData>();
+      
     }
 
     public override SavedObject CompileObjectData()
     {
         Debug.LogWarning("please refactor light saving methods");
-       var lightData = new LightData(_intensity, _volume, _color,_range,powerSettings._powerDrain, powerSettings._activeOnStart, powerSettings._active);
+       var lightData = new LightData(lightDefaults, new PowerData(powerSettings));
         SavedLight Data = new SavedLight(InternalName,SwatchID, new LightSaveData(ObjectSaveDataType.Light,lightData), new SavedTransform(this.transform));
         return Data;
     }
@@ -71,16 +100,24 @@ public class DecorLighting : DecorObject
         
         print("processing light data");
 
-        SetIntensity(savedata.Intensity);
-        SetVolume(savedata.Volume);
-        SetRange(savedata.Range);
+        lightDefaults = savedata.lightStats;
 
-        Color lightcolour = savedata.Colour.ToColor();
-        SetColour(lightcolour);
-        LightToggle(savedata.active);
-        powerSettings.SetOnStartActive(savedata.activeOnStart);
-        powerSettings.SetPowerValue(savedata.Power);
-       
+
+
+        for (int i = 0; i < lightDefaults.Length; i++)
+        {
+            var light = lightData[i];
+            var data = lightDefaults[i];
+            light.intensity = data.intensity;
+            light.volumetricDimmer = data.volume;
+            light.range = data.range;
+
+            light.SetSpotAngle(data.outerAngle, data.innerAngle);
+            light.range = data.range;
+            light.SetColor(data.color.ToColor());
+        }
+
+        powerSettings.LoadSettings(savedata.powerData);
     }
 
 
@@ -111,10 +148,19 @@ public class DecorLighting : DecorObject
     }
 
 
-    public void SetIntensity(float intensity, int Id = 0)
+    public void SetIntensity(float intensity)
     {
-        _intensity = intensity;
-        light[Id].intensity = intensity;
+        light[l].intensity = intensity;
+
+        if (light[l].intensity <= 0)
+        {
+            powerSettings.powerOff.Invoke();
+        }
+        else if (powerSettings._active == false)
+        {
+            powerSettings.powerOn.Invoke();
+        }
+            ;
 
     }
 
@@ -139,10 +185,10 @@ public class DecorLighting : DecorObject
 
 
 
-    public void SetColour(Color value, int Id = 0)
+    public void SetColour(Color value)
     {
         _color = value;
-        lightData[Id].color = value;
+        lightData[l].color = value;
     }
 
 
@@ -208,30 +254,40 @@ public class SavableColour
 [System.Serializable]
 public class LightData
 {
-    public float Intensity = 1f;
-    public float Volume = 1f;
-    public SavableColour Colour;
-    public float Range = 10;
-    public float Power = 0f;
-    public bool activeOnStart = true;
-    public bool active = true;
+    public DecorLightStats[] lightStats;
+    public PowerData powerData;
 
 
 
-    public LightData(float intensity, float volume, Color colour, float range, float power, bool activeonstart, bool active)
+    public LightData(DecorLightStats[] lightStats, PowerData powerData)
     {
-        this.Intensity = intensity;
-        this.Volume = volume;
-        this.Colour = new SavableColour(colour);
-        this.Range = range;
-        this.active = active;
-        this.activeOnStart = activeonstart;
-        this.Power = power;
+        this.lightStats = lightStats;
+        this.powerData = powerData;
     }
 
-    public string Print()
+   
+
+}
+
+
+[System.Serializable]
+public class DecorLightStats
+{
+    public float intensity = 0f;
+    public float range = 0f;
+    public float volume = 0f;
+    public SavableColour color = new SavableColour(Color.white);
+
+    public float outerAngle = 0f;
+    public float innerAngle = 0f;
+    public float radius = 0f;
+
+
+    public DecorLightStats(HDAdditionalLightData light)
     {
-        return $"Light data|| intensity = {this.Intensity} || volume = {this.Volume}";
+
+
     }
+
 
 }

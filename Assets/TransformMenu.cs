@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TransformMenu : EditorMenuAbstract
 {
     public static TransformMenu instance;
-    [SerializeField] Transform mousePlacementContainer;
+    [SerializeField] Transform container;
     [SerializeField] TMP_InputField _posXField;
     [SerializeField] TMP_InputField _posYField;
     [SerializeField] TMP_InputField _posZField;
@@ -14,6 +14,10 @@ public class TransformMenu : EditorMenuAbstract
     [SerializeField] TMP_InputField _rotXField;
     [SerializeField] TMP_InputField _rotYField;
     [SerializeField] TMP_InputField _rotZField;
+
+    public float SelectedXposition { get => container.position.x;  set => container.position = new Vector3(value, container.position.y,container.position.z);}
+    public float SelectedYposition { get => container.position.y; set => container.position = new Vector3(container.position.x, value, container.position.z); }
+    public float SelectedZposition { get => container.position.z; set => container.position = new Vector3(container.position.x, container.position.y, value); }
 
     [SerializeField] ToggleGroup _snapToggleGroup;
     [SerializeField] TMP_Text SelectionCounter;
@@ -39,7 +43,7 @@ public class TransformMenu : EditorMenuAbstract
     {
         base.OpenMenu();
         SetSelectCounter();
-        SetFields(mousePlacementContainer);
+        SetFields(container);
     }
 
     public void DeleteObjects()
@@ -68,35 +72,35 @@ public class TransformMenu : EditorMenuAbstract
             switch (tag)
             {
                 case "RX":
-                    tempValues = mousePlacementContainer.rotation.eulerAngles;
+                    tempValues = container.rotation.eulerAngles;
                     tempValues.x = newValue;
-                    mousePlacementContainer.rotation = Quaternion.Euler(tempValues);
+                    container.rotation = Quaternion.Euler(tempValues);
                     break;
                 case "RY":
-                    tempValues = mousePlacementContainer.rotation.eulerAngles;
+                    tempValues = container.rotation.eulerAngles;
                     tempValues.y = newValue;
-                    mousePlacementContainer.rotation = Quaternion.Euler(tempValues);
+                    container.rotation = Quaternion.Euler(tempValues);
                     break;
                 case "RZ":
-                    tempValues = mousePlacementContainer.rotation.eulerAngles;
+                    tempValues = container.rotation.eulerAngles;
                     tempValues.z = newValue;
-                    mousePlacementContainer.rotation = Quaternion.Euler(tempValues);
+                    container.rotation = Quaternion.Euler(tempValues);
                     break;
 
                 case "PX":
-                    tempValues = mousePlacementContainer.position;
+                    tempValues = container.position;
                     tempValues.x = newValue;
-                    mousePlacementContainer.position = tempValues;
+                    container.position = tempValues;
                     break;
                 case "PY":
-                    tempValues = mousePlacementContainer.position;
+                    tempValues = container.position;
                     tempValues.y = newValue;
-                    mousePlacementContainer.position = tempValues;
+                    container.position = tempValues;
                     break;
                 case "PZ":
-                    tempValues = mousePlacementContainer.position;
+                    tempValues = container.position;
                     tempValues.z = newValue;
-                    mousePlacementContainer.position = tempValues;
+                    container.position = tempValues;
                     break;
             }
 
@@ -138,13 +142,13 @@ public class TransformMenu : EditorMenuAbstract
 
     public void SetSelectCounter()
     {
-        SelectionCounter.text = string.Format("{0} OBJECTS SELECTED", mousePlacementContainer.childCount);
-        print(string.Format("{0} OBJECTS SELECTED", mousePlacementContainer.childCount));
+        SelectionCounter.text = string.Format("{0} OBJECTS SELECTED", container.childCount);
+        print(string.Format("{0} OBJECTS SELECTED", container.childCount));
     }
 
     public void CloneObject()
     {
         ObjectPlacer.instance.CloneObject();
-        SetFields(mousePlacementContainer);
+        SetFields(container);
     }
 }

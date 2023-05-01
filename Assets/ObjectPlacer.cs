@@ -31,6 +31,8 @@ public class ObjectPlacer : EditorMenuAbstract
 
     private Vector3 returnPosition = new Vector3();
     private Quaternion returnRotation = new Quaternion();
+
+    public float openTime;
     private void Awake()
     {
         instance = this;
@@ -54,6 +56,7 @@ public class ObjectPlacer : EditorMenuAbstract
     #region Menu_Methods
     public override void OpenMenu()
     {
+        openTime = Time.time;
         base.OpenMenu();
         playerInput.enabled = true;
         transformGizmo.gameObject.SetActive(true);
@@ -98,6 +101,7 @@ public class ObjectPlacer : EditorMenuAbstract
     /// <param name="target"></param>
     public void AddToSelected(DecorObject target)
     {
+
         target.EditorSelect(_selectedMaterial);
         if (target.transform.IsChildOf(placementContainer))
             {
@@ -122,26 +126,6 @@ public class ObjectPlacer : EditorMenuAbstract
         PlaceObjects();
         SpawnNewObject(cloneObject,true);
 
-    }
-
-
-
-    /// <summary>
-    /// called by the object menus to instantiate the selected object into the scene.
-    /// </summary>
-    /// <param name="target"></param>
-    public void SpawnNewObject(GameObject target)
-    {
-        Debug.LogWarning("This spawn method has not yet been configured to handle spawning while already active");
-        GameObject newobject = Instantiate(target, placementContainer);
-        newobject.transform.localPosition = Vector3.zero;
-        newobject.transform.rotation = this.transform.rotation;
-        newobject.layer = 2;
-        TransformMenu.instance.SetSelectCounter();
-        if (MenuOpen == false)
-        {
-            OpenMenu();
-        }
     }
 
 
@@ -277,7 +261,7 @@ public class ObjectPlacer : EditorMenuAbstract
     {
         print("On click has been pressed, over ui result = " + MouseOverUICheck());
         
-        if (placementContainer.childCount != 0 && _freePlacement == true && MouseOverUICheck() == false)
+        if (placementContainer.childCount != 0 && _freePlacement == true && MouseOverUICheck() == false && Time.time > openTime + 1f)
         {
             print("On click has been pressed");
            // PlaceObjects();

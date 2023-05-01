@@ -90,6 +90,13 @@ public class EditorController : MonoBehaviour
         // RoomSettingsUI.Instance.OpenRoomSettings(true);
     }
 
+    public RoomController RegisterNewRoom()
+    {
+
+
+        return null;
+    }
+
     public void DeRegisterRoom(RoomController Room)
     {
         Rooms.Remove(Room);

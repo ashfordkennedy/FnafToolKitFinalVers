@@ -406,7 +406,10 @@ public class RoomEditorMouse : MonoBehaviour
 
                     // decor Object
                 case 12:
-                  //  hit.transform.SendMessageUpwards("EditorSelect", null, SendMessageOptions.DontRequireReceiver);
+                   // hit.transform.SendMessageUpwards("EditorSelect", null, SendMessageOptions.DontRequireReceiver);
+
+                  var SelectTarget = hit.transform.GetComponentInParent<DecorObject>();
+                    ObjectPlacer.instance.AddToSelected(SelectTarget);
                     break;
 
 

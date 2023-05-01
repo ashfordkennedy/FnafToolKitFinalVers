@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ObjectTransformController : MonoBehaviour
 {
-    public static ObjectTransformController ObjectTransformGizmo;
+    public static ObjectTransformController instance;
 
     public bool menuOpen = false;
     public InputField[] PositionFields;
@@ -24,7 +24,7 @@ public class ObjectTransformController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        ObjectTransformGizmo = this;
+        instance = this;
         this.gameObject.SetActive(false);
         print("TransformGizmoSet");
     }
@@ -77,7 +77,7 @@ public class ObjectTransformController : MonoBehaviour
             case true:
                 TargetTransformObject = target;
                 this.gameObject.SetActive(true);
-                ObjectTransformController.ObjectTransformGizmo.transform.position = target.transform.position;
+                ObjectTransformController.instance.transform.position = target.transform.position;
                 UpdateTransformUI();
                 TransformUi.gameObject.SetActive(true);
                 break;
@@ -86,7 +86,7 @@ public class ObjectTransformController : MonoBehaviour
             case false:
               //  if (this.gameObject.activeInHierarchy == true)
                // {
-                    ObjectTransformController.ObjectTransformGizmo.gameObject.SetActive(false);
+                    ObjectTransformController.instance.gameObject.SetActive(false);
                     TargetTransformObject = null;
                     TransformUi.gameObject.SetActive(false);
                 SwatchUI.Instance.CloseMenu();

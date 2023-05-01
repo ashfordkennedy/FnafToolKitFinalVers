@@ -50,16 +50,16 @@ public class Animatronic : MonoBehaviour
 
     public void EditorSelect()
     {
-        ObjectTransformController.ObjectTransformGizmo.gameObject.SetActive(true);
+        ObjectTransformController.instance.gameObject.SetActive(true);
        // ObjectTransformController.ObjectTransformGizmo.TargetTransformObject = this;
-        ObjectTransformController.ObjectTransformGizmo.StartCoroutine("DisplayTransformUI", true);
+        ObjectTransformController.instance.StartCoroutine("DisplayTransformUI", true);
 
 
     }
 
     public void EditorDeselect()
     {
-        ObjectTransformController.ObjectTransformGizmo.StartCoroutine("DisplayTransformUI", false);
+        ObjectTransformController.instance.StartCoroutine("DisplayTransformUI", false);
 
 
     }

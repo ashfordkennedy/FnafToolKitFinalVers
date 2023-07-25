@@ -15,4 +15,9 @@ public class Editor_MouseMode_Select : MonoBehaviour, IMouseMode
     {
 
     }
+
+    public void ShiftLeftClick()
+    {
+
+    }
 }

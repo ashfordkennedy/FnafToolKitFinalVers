@@ -10,6 +10,8 @@ Material:
   m_Name: Z
   m_Shader: {fileID: -6465566751694194690, guid: cb603de9bde3d4743a31c1b887692886,
     type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ENABLE_FOG_ON_TRANSPARENT
   - _SURFACE_TYPE_TRANSPARENT
@@ -26,9 +28,14 @@ Material:
   - MOTIONVECTORS
   - TransparentDepthPrepass
   - TransparentDepthPostpass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_60ab722616a04163b2e1f8bb22dac016:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -144,6 +151,7 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _CoatMask: 0
+    - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -171,6 +179,7 @@ Material:
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
     - _EmissiveColorMode: 1
@@ -217,15 +226,15 @@ Material:
     - _SpecularOcclusionMode: 1
     - _SrcBlend: 1
     - _StencilRef: 0
-    - _StencilRefDepth: 0
+    - _StencilRefDepth: 1
     - _StencilRefDistortionVec: 4
     - _StencilRefGBuffer: 2
-    - _StencilRefMV: 32
+    - _StencilRefMV: 33
     - _StencilWriteMask: 6
-    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDepth: 9
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 40
+    - _StencilWriteMaskMV: 43
     - _SubsurfaceMask: 1
     - _SurfaceType: 1
     - _TexWorldScale: 1
@@ -250,6 +259,7 @@ Material:
     - _ZTestTransparent: 8
     - _ZWrite: 0
     m_Colors:
+    - Vector2_b2eac085aae1444e9013d470c38ac422: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0, g: 0.3158722, b: 1, a: 0.69803923}
@@ -279,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 12
+  version: 13
   hdPluginSubTargetMaterialVersions:
     m_Keys: []
     m_Values: 

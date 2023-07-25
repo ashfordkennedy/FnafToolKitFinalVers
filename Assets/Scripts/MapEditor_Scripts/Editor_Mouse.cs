@@ -13,7 +13,13 @@ public class Editor_Mouse : MonoBehaviour
     public UnityEvent LeftClick = new UnityEvent();
     public UnityEvent MiddleClick = new UnityEvent();
     public UnityEvent MouseUpdate = new UnityEvent();
+    public UnityEvent LeftClickHold = new UnityEvent();
+    public UnityEvent ShiftLeftClick = new UnityEvent();
+
+
+
     [SerializeField] Editor_Mousemode_Cell mousemode_Cell;
+    [SerializeField] Editor_MouseMode_Select mousemode_Select;
 
 
     public void Awake()
@@ -49,6 +55,17 @@ public class Editor_Mouse : MonoBehaviour
 
     }
 
+    void OnLeftClickDrag(InputValue value)
+    {
+        print("left drag input = " + value.Get<float>());
+
+    }
+
+    void OnShiftLeftClick(InputValue value)
+    {
+        ShiftLeftClick.Invoke();
+    }
+
 
 
     public void SetMouseMode (EditorMouseMode mouseMode)
@@ -58,7 +75,7 @@ public class Editor_Mouse : MonoBehaviour
         {
 
             case EditorMouseMode.Select:
-
+                mousemode_Select.RegisterModeEvents();
                 break;
 
             case EditorMouseMode.Build:

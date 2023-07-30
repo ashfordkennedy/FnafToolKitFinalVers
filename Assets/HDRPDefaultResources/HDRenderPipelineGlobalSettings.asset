@@ -85,9 +85,9 @@ MonoBehaviour:
   decalLayerName5: Decal Layer 5
   decalLayerName6: Decal Layer 6
   decalLayerName7: Decal Layer 7
-  shaderVariantLogLevel: 0
   lensAttenuationMode: 0
-  diffusionProfileSettingsList:
+  colorGradingSpace: 0
+  m_ObsoleteDiffusionProfileSettingsList:
   - {fileID: 11400000, guid: 65d3f250d35fc104b8f9d1476aa09878, type: 2}
   - {fileID: 11400000, guid: ec37097351b86d64e89fb794feb343de, type: 2}
   rendererListCulling: 0
@@ -95,10 +95,14 @@ MonoBehaviour:
   useDLSSCustomProjectId: 0
   supportProbeVolumes: 0
   supportRuntimeDebugDisplay: 1
+  autoRegisterDiffusionProfiles: 0
   apvScenesData:
     serializedBounds: []
     serializedHasVolumes: []
     serializedProfiles: []
     serializedBakeSettings: []
     serializedBakingSets: []
-  m_Version: 3
+    m_LightingScenario: Default
+  m_Version: 5
+  m_ShaderVariantLogLevel: 0
+  m_ExportShaderVariants: 1

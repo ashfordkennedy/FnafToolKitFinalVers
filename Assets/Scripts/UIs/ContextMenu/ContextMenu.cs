@@ -15,7 +15,7 @@ public class ContextMenu : MonoBehaviour
     public GameObject target;
     public RectTransform menuRoot;
     [SerializeField]public  List<ContextMenuActionSet> menuSets;
-    [SerializeField] private ContextMenuSelector _menuSelector;
+    [SerializeField] private ContextMenuSelector _contextMenuSelector;
     int targetMenuSet = 0;
     private DecorObject decorTarget = null;
 
@@ -43,11 +43,9 @@ public class ContextMenu : MonoBehaviour
 
 
 
-   public void OnRightClick(InputAction.CallbackContext context)
+   public void OnShiftRightClick()
     {
-
-        if (context.started)
-        {
+      
             print("Input detected by context menu, opening");
 
             DecorObject Dtarget = null;
@@ -76,8 +74,31 @@ public class ContextMenu : MonoBehaviour
                         targetMenuSet = 1;
                         break;
 
+
                     // decor
                     case 12:
+
+
+                        if (target.TryGetComponent<DecorObject>(out Dtarget) == false)
+                        {
+                            Dtarget = target.GetComponentInParent<DecorObject>();
+                        }
+
+                        /*
+                        if (target == null)
+                        {
+                           
+                        }
+                        */
+                        targetMenuSet = DecernObjectType(Dtarget);
+
+                        print("you hit a decor object ya knob. its set id is " + targetMenuSet);
+                        break;
+
+
+
+                    // decor SELECTED
+                    case 16:
                         
 
                         if (target.TryGetComponent<DecorObject>(out Dtarget) == false)
@@ -98,38 +119,30 @@ public class ContextMenu : MonoBehaviour
                 }
 
 
-                _menuSelector.OpenMenu(Input.mousePosition, menuSets[targetMenuSet], targetMenuSet);
+                _contextMenuSelector.OpenMenu(Input.mousePosition, menuSets[targetMenuSet], targetMenuSet);
             }
             else
             {
-                _menuSelector.OpenMenu(Input.mousePosition, menuSets[0], targetMenuSet);
+                _contextMenuSelector.OpenMenu(Input.mousePosition, menuSets[0], targetMenuSet);
             }
-        }
+        
+    }
 
-
-        else if (context.canceled)
+    public void OnShiftRightClickUp()
+    {
+        if (_contextMenuSelector.selectedPoint < menuSets[targetMenuSet].menuOptions.Count)
         {
-            if (_menuSelector.selectedPoint < menuSets[targetMenuSet].menuOptions.Count ) {
-                print("Selecting menu option");
-                string option = menuSets[targetMenuSet].internalName;
-                // string option = menuSets[targetMenuSet].menuOptions[_menuSelector.selectedPoint];
-                int id = menuSets[targetMenuSet].menuOptions[_menuSelector.selectedPoint];
-                SelectOption(menuOptions[id].ActionType);
-            }
-
-
-            _menuSelector.CloseMenu();
-            print("Input detected by context menu, closing");
-
+            print("Selecting menu option");
+            string option = menuSets[targetMenuSet].internalName;
+            // string option = menuSets[targetMenuSet].menuOptions[_menuSelector.selectedPoint];
+            int id = menuSets[targetMenuSet].menuOptions[_contextMenuSelector.selectedPoint];
+            SelectOption(menuOptions[id].ActionType);
         }
 
 
+        _contextMenuSelector.CloseMenu();
+        print("Input detected by context menu, closing");
 
-
-
-
-
-          
     }
 
     // Start is called before the first frame update
@@ -147,20 +160,25 @@ public class ContextMenu : MonoBehaviour
             {
                 case ContextMenuActions.Select:
                 RoomEditorMouse.Instance.ChangeMouseMode(3);
+                Editor_MouseMode_Default.instance.EnableMouseMode();
                     break;
 
                 case ContextMenuActions.EraseCell:
-                RoomEditorMouse.Instance.ChangeMouseMode(1);
-                    break;
+                // RoomEditorMouse.Instance.ChangeMouseMode(1);
+                Editor_Mousemode_Cell.instance.EnableMouseMode();
+                break;
 
 
                 case ContextMenuActions.NewCell:
-                RoomEditorMouse.Instance.ChangeMouseMode(0);
-                    break;
+                // RoomEditorMouse.Instance.ChangeMouseMode(0);
+                Editor_Mousemode_Cell.instance.EnableMouseMode();
+                break;
 
 
                 case ContextMenuActions.NewRoom:
-                RoomEditorMouse.Instance.ChangeMouseMode(2);
+                // RoomEditorMouse.Instance.ChangeMouseMode(2);
+                EditorController.Instance.SelectedRoom = null;
+                Editor_Mousemode_Cell.instance.EnableMouseMode();
                     break;
 
                 case ContextMenuActions.RoomList:

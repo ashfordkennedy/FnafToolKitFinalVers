@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4083889862234000984}
   - component: {fileID: 6030846754992458327}
   - component: {fileID: 6030846754992458328}
+  - component: {fileID: 5869057465286482476}
   m_Layer: 12
   m_Name: Sofa
   m_TagString: Untagged
@@ -30,9 +31,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -216.42938, y: -216.65445, z: 34.523277}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7750815193907409569
 MeshFilter:
@@ -53,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -91,9 +94,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2346430645746858628}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 18.821829, y: 8.024815, z: 9.7203455}
   m_Center: {x: 0, y: 0.0000009536745, z: 4.8599696}
 --- !u!114 &6030846754992458328
@@ -108,7 +119,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93b3fff82f30594882d1c2dbd3024df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
   decorType: 0
   InternalName: Sofa
   SwatchID: 0
   meshRenderer: {fileID: 4083889862234000984}
+--- !u!114 &5869057465286482476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346430645746858628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8919c332b57a6964bb5c4d3c65e67db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6030846754992458328}

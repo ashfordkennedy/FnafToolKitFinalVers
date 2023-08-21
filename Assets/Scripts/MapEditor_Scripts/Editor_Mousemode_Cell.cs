@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
+using System.Threading.Tasks;
+public class Editor_Mousemode_Cell : Editor_MouseMode_Abstract
 {
+
+    public static Editor_Mousemode_Cell instance = null;
+
     [Header("old Build Settings")]
 
     public GameObject RoomCellPrefab = null;
@@ -15,7 +19,7 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
     public Color BlockedColour;
     public Material SelectionMaterial;
     public ParticleSystem BuildParticles;
-    private float lastClicked = 3;
+    private float lastClicked = 0;
 
     [SerializeField] private Vector2Int currentCell = new Vector2Int();
 
@@ -26,11 +30,28 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
 
 
 
+
+    public void Awake()
+    {
+        instance = this;
+    }
+
+    
+    /// <summary>
+    /// Raycast and select the room currently under the mouse.
+    /// </summary>
+    public void SampleRoom()
+    {
+
+
+    }
+
+
     //assign to mouse move event
 
-        /// <summary>
-        /// Performs necessary checks for whether a cell can be constructed
-        /// </summary>
+    /// <summary>
+    /// Performs necessary checks for whether a cell can be constructed
+    /// </summary>
     public void CellCheck()
     {
         RaycastHit hit;
@@ -51,7 +72,7 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
             CellOccupied = (CellRegistry[cellInfo.ID.x, cellInfo.ID.y] != null);
             CellBuildingCursor.SetActive(true);
 
-            var Colour = (CellOccupied.Value) ? BuildableColour : BlockedColour;
+            var Colour = (CellOccupied.Value) ? BlockedColour : BuildableColour;
             SelectionMaterial.SetColor("_Color", Colour);
         }
 
@@ -63,9 +84,9 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
         }
     }
 
-    public void LeftClick()
+    public void BuildCell()
     {
-        if(CellRegistry[currentCell.x,currentCell.y] == null)
+        if(CellRegistry[currentCell.x,currentCell.y] == null && MouseOverUI() == false)// && lastClicked >= Time.time - 0.05f)
         {
             print("spawning the cell eventually");
 
@@ -92,10 +113,11 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
         }
     }
 
-    public void RightClick()
+    public void EraseCell()
     {
         print("trying to delete " + CellOccupied);
-        if (CellOccupied == true)// && lastClicked >= Time.time - 0.05f)
+       // await Task.Delay(1000);
+        if (CellOccupied == true && MouseOverUI() == false)// && lastClicked >= Time.time - 0.05f)
         {
             print("if cleared");
             lastClicked = Time.time;
@@ -127,20 +149,21 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
         return (Vector3Int.RoundToInt(new Vector3(x, y, z)), new Vector2Int((int)x /10, (int)z / 10));
     }
 
-    public void RegisterModeEvents()
+
+
+    public override void EnableMouseMode()
     {
-        Editor_Mouse.instance.LeftClick.AddListener(LeftClick);
-        Editor_Mouse.instance.MouseUpdate.AddListener(CellCheck);
-        Editor_Mouse.instance.RightClick.AddListener(RightClick);
+        base.EnableMouseMode();
+        Editor_Mouse.LeftClickHold.AddListener(BuildCell);
+        Editor_Mouse.MouseUpdate.AddListener(CellCheck);
+        Editor_Mouse.RightClick.AddListener(EraseCell);
+        print("MouseMode Changed to cell");
     }
-}
 
-
-public interface IMouseMode
-{
-
-    void RegisterModeEvents();
-
-
-
+    public override void DisableMouseMode()
+    {
+        Editor_Mouse.LeftClickHold.RemoveListener(BuildCell);
+        Editor_Mouse.MouseUpdate.RemoveListener(CellCheck);
+        Editor_Mouse.RightClick.RemoveListener(EraseCell);
+    }
 }

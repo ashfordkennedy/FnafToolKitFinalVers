@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Editor_MouseMode_Select : MonoBehaviour, IMouseMode
+public class Editor_MouseMode_Select : Editor_MouseMode_Abstract
 {
-    public void RegisterModeEvents()
+
+
+
+    public override void EnableMouseMode()
     {
-         
-       
+        base.EnableMouseMode();
     }
 
-
-    public void LeftClick()
+    public override void DisableMouseMode()
     {
-
-    }
-
-    public void ShiftLeftClick()
-    {
-
+        base.DisableMouseMode();
     }
 }

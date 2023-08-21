@@ -43,9 +43,9 @@ public class EditorAnimatronic : DecorObject
 
 
 
-    public override void EditorSelect(Material SelectMaterial)
+    public override void EditorSelect()
     {
-        base.EditorSelect(SelectMaterial);
+        base.EditorSelect();
         /*
         if (AnimatronicMenu.instance.MenuOpen == false)
         {

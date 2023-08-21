@@ -6,24 +6,59 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using System;
 using System.Threading.Tasks;
+using System.Threading;
 public class Editor_Mouse : MonoBehaviour
 {
     public static Editor_Mouse instance;
 
+    public static DecorObject highlightedObject;
+
     [SerializeField] Camera _targetCamera;
 
-    public static UnityEvent LeftClick = new UnityEvent();
-    public static UnityEvent RightClick = new UnityEvent();
-    public static UnityEvent ShiftClick = new UnityEvent();
-    public static UnityEvent MouseUpdate = new UnityEvent();
 
-    public UnityEvent LeftClickHold = new UnityEvent();
+    //left click
+    public static UnityEvent LeftClickUp = new UnityEvent();
+    public static UnityEvent LeftClick = new UnityEvent();
+    public static UnityEvent LeftClickDown = new UnityEvent();
+
+
+    // middle click
+    public static UnityEvent MiddleClickUp = new UnityEvent();
+    public static UnityEvent MiddleClick = new UnityEvent();
+    public static UnityEvent MiddleClickDown = new UnityEvent();
+
+    // right click
+    public static UnityEvent RightClickUp = new UnityEvent();
+    public static UnityEvent RightClick = new UnityEvent();
+    public static UnityEvent RightClickDown = new UnityEvent();
+
+
+
+    public static UnityEvent ShiftClick = new UnityEvent();
+
+
+
+    // shift click
     public UnityEvent ShiftLeftClick = new UnityEvent();
 
+
+    public static UnityEvent ShiftRightClickUp = new UnityEvent();
+    public static UnityEvent ShiftRightClick = new UnityEvent();
+    public static UnityEvent ShiftRightClickDown = new UnityEvent();
+
+    //Updates
+    public static UnityEvent LeftClickHold = new UnityEvent();
+    public static UnityEvent RightClickHold = new UnityEvent();
+
+    /// <summary>
+    /// called while mouse is moving
+    /// </summary>
+    public static UnityEvent MouseUpdate = new UnityEvent();
 
 
     [SerializeField] Editor_Mousemode_Cell mousemode_Cell;
     [SerializeField] Editor_MouseMode_Select mousemode_Select;
+
 
 
     public static UnityEvent Drag = new UnityEvent();
@@ -36,11 +71,21 @@ public class Editor_Mouse : MonoBehaviour
     [SerializeField] public static Vector2 MousePos;
 
     public float handOffset = 5f;
+
     private bool dragging = false;
+    private float ShiftHeld = 0;
+
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        Editor_MouseMode_Default.instance.EnableMouseMode();
+
+        ShiftRightClickDown.AddListener(ContextMenu.instance.OnShiftRightClick);
+        ShiftRightClickUp.AddListener(ContextMenu.instance.OnShiftRightClickUp);
     }
 
     // Update is called once per frame
@@ -101,18 +146,43 @@ public class Editor_Mouse : MonoBehaviour
         }
     }
 
-    void OnLeftClick(InputValue value)
-    {
-        LeftClick.Invoke();
-        print("Left click working");
-    }
-
+   
 
 
     void OnRightClick(InputValue value)
     {
-        RightClick.Invoke();
-        print("Right click working");
+
+        if (ShiftHeld != 1)
+        {
+            RightClick.Invoke();
+            print("Right click working");
+            switch (value.Get<float>())
+            {
+                case 1:
+                    RightClickDown.Invoke();
+                    break;
+
+                case 0:
+                    RightClickUp.Invoke();
+                    break;
+            }
+        }
+
+
+        else
+        {
+            ShiftRightClick.Invoke();
+            switch (value.Get<float>())
+            {
+                case 1:
+                    ShiftRightClickDown.Invoke();
+                    break;
+
+                case 0:
+                    ShiftRightClickUp.Invoke();
+                    break;
+            }
+        }
     }
 
     void OnPoint(InputValue value)
@@ -123,38 +193,99 @@ public class Editor_Mouse : MonoBehaviour
 
     void OnClick(InputValue value)
         {
-        LeftClick.Invoke();
-            print("click input");
-        
+
+
+        switch (ShiftHeld)
+        {
+            case 0:
+                LeftClick.Invoke();
+
+                switch (value.Get<float>())
+                {
+                    case 1:
+                        LeftClickDown.Invoke();
+                        break;
+
+                    case 0:
+                        LeftClickUp.Invoke();
+                        break;
+                }
+
+
+                break;
+
+            case 1:
+                ShiftLeftClick.Invoke();
+                break;
+
+
+
+
+        }
 
     }
 
-
-    void OnLeftClickDrag(InputValue value)
+    void OnMiddleClick(InputValue value)
     {
-        print("left drag input = " + value.Get<float>());
+        MiddleClick.Invoke();
+        switch (value.Get<float>())
+        {
+            case 1:
+                MiddleClickDown.Invoke();
+                break;
 
+            case 0:
+                MiddleClickUp.Invoke();
+                break;
+        }
+    }
+
+    float LeftClickDrag = 0;
+    async void OnLeftClickDrag(InputValue value)
+    {
+
+        if(ShiftHeld == 0){
+            print("left drag input = " + value.Get<float>());
+            LeftClickDrag = value.Get<float>();
+
+
+
+            while (LeftClickDrag != 0)
+            {
+                LeftClickHold.Invoke();
+                await Task.Delay(100);
+                await Task.Yield();
+            }
+        }
     }
 
     void OnShiftLeftClick(InputValue value)
     {
         ShiftLeftClick.Invoke();
+        print("shiftclick called");
     }
+
+    void OnShift(InputValue value)
+    {
+        ShiftHeld = value.Get<float>();
+        print("shift called " + value.Get<float>());
+    }
+
 
 
 
     public void SetMouseMode (EditorMouseMode mouseMode)
     {
-
+        UnassignMouseMode.Invoke();
         switch (mouseMode)
         {
 
             case EditorMouseMode.Select:
-                mousemode_Select.RegisterModeEvents();
+                mousemode_Select.EnableMouseMode();
                 break;
 
             case EditorMouseMode.Build:
-                mousemode_Cell.RegisterModeEvents();
+                mousemode_Cell.EnableMouseMode();
                 break;
 
         }

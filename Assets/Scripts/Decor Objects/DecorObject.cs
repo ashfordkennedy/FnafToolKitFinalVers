@@ -13,6 +13,7 @@ public enum DecorObjectType { Basic, Door, Light, Animatronic, Waypoint, Camera,
 
 public class DecorObject : MonoBehaviour
 {
+    public bool canInteract => EditorController.Instance.EditModeActive;
     public bool selected = false;
     public DecorObjectType decorType = DecorObjectType.Basic;
     public string InternalName;
@@ -60,15 +61,11 @@ public class DecorObject : MonoBehaviour
     }
 
 
-    public virtual void EditorSelect(Material SelectMaterial)
+    public virtual void EditorSelect()
     {
         if (selected == false)
         {
             selected = true;
-            Material[] newMaterialArray = meshRenderer.materials;
-            List<Material> newMaterials = newMaterialArray.ToList<Material>();
-            newMaterials.Add(SelectMaterial);
-            meshRenderer.materials = newMaterials.ToArray();
             print("OBJECT SELECTED");
         }
     }
@@ -77,11 +74,6 @@ public class DecorObject : MonoBehaviour
     {
 
         if (selected == true) {
-            Material[] newMaterialArray = meshRenderer.materials;
-            List<Material> newMaterials = newMaterialArray.ToList<Material>();
-            newMaterials.RemoveAt(newMaterials.Count - 1);
-            meshRenderer.materials = newMaterials.ToArray();
-            
             selected = false;
             print("OBJECT DESELECTED");
         }
@@ -135,6 +127,28 @@ public class DecorObject : MonoBehaviour
         EditorController.Instance.DeRegisterDecorObject(this);
 
     }
+
+
+
+    public void OnMouseEnter()
+    {
+        Editor_Mouse.highlightedObject = this;
+        this.gameObject.layer = 16;
+        print("highlighted");
+    }
+
+    public void OnMouseExit()
+    {
+        if(Editor_Mouse.highlightedObject == this)
+        {
+            this.gameObject.layer = 12;
+            Editor_Mouse.highlightedObject = null;
+        }
+    }
+
+
+
+
 }
 
 public enum ObjectSaveDataType {none,Light,Waypoint,Animatronic, ClassicStart, ButtonSwitch }

@@ -60,7 +60,7 @@ public class MeshWelder : MonoBehaviour
         Vector3[] weldedVertices = new Vector3[uniqueVertices.Count];
         Vector2[] weldedUVs = new Vector2[uniqueVertices.Count];
         uniqueVertices.Keys.CopyTo(weldedVertices, 0);
-        uniqueVertices.Values.CopyTo(weldedUVs, 0);
+       // uniqueVertices.Values.CopyTo(weldedUVs, 0);
         mesh.vertices = weldedVertices;
         mesh.uv = weldedUVs;
         mesh.triangles = triangles;

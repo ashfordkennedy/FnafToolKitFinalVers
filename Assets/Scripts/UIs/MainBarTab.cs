@@ -14,18 +14,17 @@ public abstract class MainBarTab : MonoBehaviour
 
     public void ToggleMenu(bool open)
     {
+        _isOpen = open;
         canvasGroup.interactable = open;
         canvasGroup.blocksRaycasts = open;
         switch (open)
         {
-            case true:
-                _isOpen = true;
+            case true:            
                 _animator.PlayOpenAnimation();
                 break;
 
             case false:
                 _animator.openAnimator.SetToStart();
-                _isOpen = false;
                 _animator.PlayCloseAnimation();
                 break;
         }
@@ -44,6 +43,7 @@ public abstract class MainBarTab : MonoBehaviour
                 break;
 
             case true:
+                _animator.openAnimator.SetToStart();
                 _animator.PlayCloseAnimation();
                 break;
         }

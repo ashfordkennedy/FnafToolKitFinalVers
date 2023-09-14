@@ -129,9 +129,9 @@ public class Editor_Mousemode_Cell : MonoBehaviour, IMouseMode
 
     public void RegisterModeEvents()
     {
-        Editor_Mouse.instance.LeftClick.AddListener(LeftClick);
-        Editor_Mouse.instance.MouseUpdate.AddListener(CellCheck);
-        Editor_Mouse.instance.RightClick.AddListener(RightClick);
+        Editor_Mouse.LeftClick.AddListener(LeftClick);
+        Editor_Mouse.MouseUpdate.AddListener(CellCheck);
+        Editor_Mouse.RightClick.AddListener(RightClick);
     }
 }
 

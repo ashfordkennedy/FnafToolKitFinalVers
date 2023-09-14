@@ -54,7 +54,6 @@ public class RoomEditorMouse : MonoBehaviour
     public ObjectTransformController TransformController;
     [SerializeField] ToggleGroup buildToolToggleGroup;
 
-  //  public UnityEvent<T> TargetSelectHandler = new UnityEvent<T>();
     /// <summary>
     /// tempTarget is storage for objects containing a class you wish to set a target of
     /// </summary>

@@ -302,7 +302,7 @@
                     "id": "51342d11-c5e9-4ed1-ad0b-e7ecfa6f9697",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -320,7 +320,7 @@
                     "id": "f78ca041-8032-458b-9667-e7746957d597",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -329,7 +329,7 @@
                     "id": "a15d81bc-d809-4154-9d57-8855572d0b44",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -374,8 +374,26 @@
                     "id": "631ab909-d96b-4637-a6f3-687656f2ef05",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.2,pressPoint=0.2)",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Shift",
+                    "type": "Value",
+                    "id": "b27f9a47-8605-419e-8f16-abe1ee92ec32",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "StartFirstPerson",
+                    "type": "Button",
+                    "id": "9e7996c4-73b9-442c-99ac-95d451597c9c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -994,6 +1012,61 @@
                     "action": "LeftClickDrag",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6b6e3c7-46c3-4ba1-808a-fe0a542aadf6",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Two Modifiers",
+                    "id": "f99a764a-eaa1-4cd0-8938-8fb36cc53b17",
+                    "path": "TwoModifiers",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartFirstPerson",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier1",
+                    "id": "e660a220-05b8-4339-ba19-b5f3707c59dc",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartFirstPerson",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "modifier2",
+                    "id": "1ff4198a-dfae-4e32-96f2-f1869a14d4f2",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartFirstPerson",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "b3383a28-4279-4449-ad76-d0bd4ec64d03",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartFirstPerson",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

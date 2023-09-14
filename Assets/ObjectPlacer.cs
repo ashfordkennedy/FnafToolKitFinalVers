@@ -102,7 +102,7 @@ public class ObjectPlacer : EditorMenuAbstract
     public void AddToSelected(DecorObject target)
     {
 
-        target.EditorSelect(_selectedMaterial);
+        target.EditorSelect();
         if (target.transform.IsChildOf(placementContainer))
             {
                 target.transform.SetParent(null);

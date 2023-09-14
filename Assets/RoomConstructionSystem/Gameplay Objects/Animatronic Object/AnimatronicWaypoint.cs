@@ -15,9 +15,9 @@ public class AnimatronicWaypoint : DecorObject
     public UnityEvent OnOccupiedEvent = new UnityEvent();
     public UnityEvent OnUnocupiedEvent = new UnityEvent();
 
-    public override void EditorSelect(Material SelectMaterial)
+    public override void EditorSelect()
     {
-        base.EditorSelect(SelectMaterial);
+        base.EditorSelect();
         WaypointSettingsPanel.Instance.SetTarget(this);
         WaypointSettingsPanel.Instance.OpenMenu();
 

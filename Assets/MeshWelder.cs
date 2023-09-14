@@ -9,7 +9,7 @@ using System.Linq;
 public class MeshWelder : MonoBehaviour
 {
     public float weldThreshold = 0.001f; // Adjust this value based on your requirements.
-
+    /*
     private void Start()
     {
         // Access the MeshFilter component
@@ -23,7 +23,8 @@ public class MeshWelder : MonoBehaviour
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
     }
-
+    */
+    /*
     private void WeldVertices(Mesh mesh)
     {
         Vector3[] vertices = mesh.vertices;
@@ -57,7 +58,7 @@ public class MeshWelder : MonoBehaviour
         }
 
         // Apply the welded vertices and UVs to the mesh
-        Vector3[] weldedVertices = new Vector3[uniqueVertices.Count];
+        Vector2[] weldedVertices = new Vector2[uniqueVertices.Count];
         Vector2[] weldedUVs = new Vector2[uniqueVertices.Count];
         uniqueVertices.Keys.CopyTo(weldedVertices, 0);
        // uniqueVertices.Values.CopyTo(weldedUVs, 0);
@@ -65,7 +66,7 @@ public class MeshWelder : MonoBehaviour
         mesh.uv = weldedUVs;
         mesh.triangles = triangles;
     }
-
+    */
     private int[] ReplaceVertexIndex(int[] triangles, int oldIndex, int newIndex)
     {
         for (int i = 0; i < triangles.Length; i++)

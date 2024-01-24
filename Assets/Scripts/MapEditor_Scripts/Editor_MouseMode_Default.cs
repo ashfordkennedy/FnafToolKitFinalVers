@@ -61,7 +61,7 @@ public class Editor_MouseMode_Default : Editor_MouseMode_Abstract
                     break;
 
                 case DecorObjectType.Waypoint:
-
+                    WaypointSettingsPanel.Instance.OpenMenu((AnimatronicWaypoint)targetObject);
                     break;
 
 
@@ -83,15 +83,17 @@ public class Editor_MouseMode_Default : Editor_MouseMode_Abstract
         base.EnableMouseMode();
         Editor_Mouse.RightClick.AddListener(OpenObjectMenu);
         Editor_Mouse.LeftClick.AddListener(PickUpObject);
-        
+        Editor_Mouse.ShiftRightClickDown.AddListener(ContextMenu.instance.OnShiftRightClick);
+        Editor_Mouse.ShiftRightClickUp.AddListener(ContextMenu.instance.OnShiftRightClickUp);
+
     }
 
     public override void DisableMouseMode()
     {
         Editor_Mouse.RightClick.RemoveListener(OpenObjectMenu);
         Editor_Mouse.LeftClick.RemoveListener(PickUpObject);
-        //Editor_Mouse.ShiftRightClickDown.RemoveListener(ContextMenu.instance.OnShiftRightClick);
-        //Editor_Mouse.ShiftRightClickUp.RemoveListener(ContextMenu.instance.OnShiftRightClickUp);
+        Editor_Mouse.ShiftRightClickDown.RemoveListener(ContextMenu.instance.OnShiftRightClick);
+        Editor_Mouse.ShiftRightClickUp.RemoveListener(ContextMenu.instance.OnShiftRightClickUp);
         base.DisableMouseMode();
     }
 }

@@ -165,5 +165,6 @@ public class Editor_Mousemode_Cell : Editor_MouseMode_Abstract
         Editor_Mouse.LeftClickHold.RemoveListener(BuildCell);
         Editor_Mouse.MouseUpdate.RemoveListener(CellCheck);
         Editor_Mouse.RightClick.RemoveListener(EraseCell);
+        CellBuildingCursor.SetActive(false);
     }
 }

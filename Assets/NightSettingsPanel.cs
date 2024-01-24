@@ -9,25 +9,35 @@ public class NightSettingsPanel : EditorMenuAbstract
 {
     public static NightSettingsPanel instance;
     private int _targetNight = 0;
-    public int targetNight { get { return _targetNight; } set { _targetNight = value; nightSettings = NightManager.instance.nightSettings[_targetNight]; } }
-    public List<Color> LightColours = new List<Color>();
+    public int targetNight { get { return _targetNight; } set { _targetNight = value; nightSettings = NightManager.instance.nightSettings[value]; } }
     NightSettings nightSettings = null;
+
+
+    /// <summary>
+    /// properties! use properties! no methods for updating 
+    /// </summary>
+    public int startHour { get => nightSettings.startHour; set { nightSettings.startHour = value; } }
+    public int endHour { get => nightSettings.endHour; set { nightSettings.endHour = value; } }
+    public float basePowerLoss { get => nightSettings.basePowerLoss; set => nightSettings.basePowerLoss = value; }
 
 
     [SerializeField] private VolumeProfile sceneVolume;
     [SerializeField] private Slider _lightIntensitySlider;
 
-    [SerializeField] Transform _lightColorContainer;
-
 
     [SerializeField]private TMP_Text _targetNightText;
 
+    
+
+
+    // sadly still needed for putting values on fields
     [SerializeField]private TMP_InputField _startHourInput;
     [SerializeField]private TMP_InputField _endHourInput;
     [SerializeField] private TMP_InputField _hourLengthInput;
 
     [SerializeField]private TMP_InputField _totalPowerInput;
     [SerializeField]private TMP_InputField _powerLossInput;
+    
 
     void Awake()
     {
@@ -38,13 +48,11 @@ public class NightSettingsPanel : EditorMenuAbstract
 
         _endHourInput.onEndEdit.AddListener(delegate { UpdateNightSetting(NightSetting.endhour, _endHourInput); });
         */
+        /*
         _totalPowerInput.onEndEdit.AddListener(delegate { UpdateNightSetting(NightSetting.totalpower, _totalPowerInput); });
 
         _powerLossInput.onEndEdit.AddListener(delegate { UpdateNightSetting(NightSetting.basepowerloss, _powerLossInput); });
-
-        ColourSetup(_lightColorContainer);
-
-
+        */
         targetNight = 0;
         UpdateDisplay();
         
@@ -52,13 +60,6 @@ public class NightSettingsPanel : EditorMenuAbstract
     }
 
 
-    private void ColourSetup(Transform Container)
-    {
-        foreach(Transform child in Container)
-        {
-            child.gameObject.GetComponent<Image>().color = (LightColours[child.GetSiblingIndex()]);
-        }
-    }
 
 
 
@@ -68,20 +69,19 @@ public class NightSettingsPanel : EditorMenuAbstract
     /// <param name="SwitchTotal"></param>
     public void SetTargetNight(int SwitchTotal)
     {
-        _targetNight += SwitchTotal;
+        targetNight += SwitchTotal;
 
-        if (_targetNight > 6)
+        if (targetNight > 6)
         {
-            _targetNight = 0;
+            targetNight = 0;
         }
-    if (_targetNight < 0)
+    if (targetNight < 0)
         {
-            _targetNight = 6;
+            targetNight = 6;
         }
 
 
         _targetNightText.text = "Night " + (_targetNight +1);
-        targetNight = _targetNight;
         UpdateDisplay();
     }
 
@@ -181,20 +181,19 @@ public class NightSettingsPanel : EditorMenuAbstract
 
     }
 
-    public void SetFogColor(Transform button)
+    public void SetFogColor(Color colour)
     {
-        int id = button.GetSiblingIndex();
-        nightSettings.fogColor = new SavableColour(LightColours[id]);
+        nightSettings.fogColor = new SavableColour(colour);
 
        if (sceneVolume.TryGet<Fog>(out var fog)){
-            fog.color.value = LightColours[id];
+            fog.color.value = colour;
         }
 
         if (sceneVolume.TryGet<GradientSky>(out var sky))
         {
-            sky.top.value = LightColours[id];
-            sky.middle.value = LightColours[id];
-            sky.bottom.value = LightColours[id];
+            sky.top.value = colour;
+            sky.middle.value = colour;
+            sky.bottom.value = colour;
         }
     }
 

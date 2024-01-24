@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-public class FileEditor : MonoBehaviour
+
+
+/// <summary>
+/// Generic file handler for less repetetive saves
+/// </summary>
+public class FileEditor
 {
 
 
@@ -13,12 +18,12 @@ public class FileEditor : MonoBehaviour
         FileStream file = File.Open(path, FileMode.Open);
         if (file.Length > 0)
         {
-            print("file contains data");
+        
             value = (T)bf.Deserialize(file);
         }
         else
         {
-            print("file empty");
+           
             value = default (T);
         }
         file.Close();

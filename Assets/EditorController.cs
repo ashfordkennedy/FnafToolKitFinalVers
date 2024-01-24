@@ -5,7 +5,7 @@ using System;
 using UnityEngine.UI;
 using ObjectActionEvents;
 
-public enum EditorMouseMode {Build,Erase,NewRoom,Select, Wall, Window, Door, Off, DoorCenter, DoorLeft, DoorRight,waypointSelect,ObjectSelect,ActionSelect }
+public enum EditorMouseMode {Default,Build,Erase,NewRoom,Select, Wall, Window, Door, Off, DoorCenter, DoorLeft, DoorRight,waypointSelect,ObjectSelect,ActionSelect }
 public class EditorController : MonoBehaviour
 {
     

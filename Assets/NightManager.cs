@@ -27,7 +27,7 @@ public class NightManager : MonoBehaviour
     public int CurrentNight = 0;
     public float HourLength = 90;
 
-
+    public static bool EditorMode = false;
 #region powerSettings
     public float powerLoss = 0;
     public float currentPower = 50;
@@ -61,17 +61,6 @@ public class NightManager : MonoBehaviour
 
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     /// <summary>
     /// Stops all processing of night logic
@@ -81,6 +70,12 @@ public class NightManager : MonoBehaviour
         StopCoroutine(PowerProcessing());
         print("ended night");
         ResetMap();
+    }
+
+
+    internal void FailNight()
+    {
+
     }
 
 
@@ -97,8 +92,9 @@ public class NightManager : MonoBehaviour
     /// <summary>
     /// Starts the night
     /// </summary>
-    public void BeginNight()
+    public void BeginNight(bool editorMode = false)
     {
+        EditorMode = editorMode;
         NightSetup.Invoke(CurrentNight);
         powerLoss = 0f;
         UpdatePowerDisplay();

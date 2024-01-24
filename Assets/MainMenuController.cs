@@ -22,6 +22,8 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]SaveDataScriptableObject SaveData;
     [SerializeField] Button[] NightButtons;
     [SerializeField] TMP_Text nightSelectText;
+
+    [SerializeField] NightSelectBar selectBar;
     private int selectedNight = 0;
 
 
@@ -41,12 +43,13 @@ public class MainMenuController : MonoBehaviour
         print(id);
 
 
-        var info = SaveData.LocalMaps[id];
+        FilePreview info = null; 
 
         switch (file_Type)
         {
             case FileType.Local:
                 LevelImage.sprite = ImageConversion.StringToSprite(SaveData.LocalMaps[id].PreviewImage);
+                info = SaveData.LocalMaps[id];
                 break;
 
             case FileType.Community:

@@ -53,16 +53,17 @@ public class MapProgressData : ScriptableObject
 
     public void LoadProgressFromFile()
     {
-        //  var file = File.Open(m_progressPath + "/LevelProgress", FileMode.Open);
-        // BinaryFormatter bf = new BinaryFormatter();
         FileEditor.RetrieveFileData<List<MapProgress>>(m_progressPath + "/LevelProgress", out MapProgressList);
-            //(List<MapProgress>)bf.Deserialize(file);
-            // file.Close();
+
     }
 
 
 
+    public int RetrieveMapProgess(string ID)
+    {
 
+        return 0;
+    }
 
 
 
@@ -86,13 +87,6 @@ public class MapProgressData : ScriptableObject
         SaveProgress();
     }
     }
-
-}
-
-[Serializable]
-public class MapProgressSaveData
-{
-
 
 }
 

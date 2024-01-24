@@ -7,7 +7,7 @@ public class DecorLighting : DecorObject
 {
 
     //Event slider system
-    public float _intensity { get => lightData[l].intensity; set => SetIntensity( value * 10);}
+    public float _intensity { get => lightData[l].intensity; set => SetIntensity(value,l);}
     public float _volume { get => lightData[l].volumetricDimmer; set => lightData[l].volumetricDimmer = value; }
     public float _range { get => lightData[l].range; set => lightData[l].range = value; }
     public Color _color { get => lightData[l].color; set => lightData[l].color = value; }
@@ -23,7 +23,7 @@ public class DecorLighting : DecorObject
     /// They are also used by the light setting panel in concert with the event slider system.
     /// </summary>
     #region map_editor_System
-    public float defaultIntensity { get => lightDefaults[l].intensity; set => lightDefaults[l].intensity = value * 10; }
+    public float defaultIntensity { get => lightDefaults[l].intensity; set => lightDefaults[l].intensity = value; }
     public float defaultVolume { get => lightDefaults[l].volume; set => lightDefaults[l].volume = value; }
     public float defaultRange { get => lightDefaults[l].range; set => lightDefaults[l].range = value; }
     public Color defaultColor { get => lightDefaults[l].color.ToColor(); set => lightDefaults[l].color = SavableColour.ToSavableColour(value); }
@@ -32,11 +32,16 @@ public class DecorLighting : DecorObject
     public float defaultinnerAngle { get => lightDefaults[l].innerAngle; set => lightDefaults[l].innerAngle = value; }
     public float defaultRadius { get => lightDefaults[l].radius; set => lightDefaults[l].radius = value; }
 
+    public int LightCount { get => lightData.Length; }
+
+    public string GetSubLightName(int x) => lightData[x].gameObject.name;
     #endregion
 
     public DecorLightStats[] lightDefaults;
     public HDAdditionalLightData[] lightData;
-    [SerializeField] private Light[] light;
+
+
+    
 
     public static int l = 0;
 
@@ -147,12 +152,12 @@ public class DecorLighting : DecorObject
         }
     }
 
-
-    public void SetIntensity(float intensity)
+    
+    public void SetIntensity(float intensity, int Id = 0)
     {
-        light[l].intensity = intensity;
+        lightData[Id].intensity = intensity;
 
-        if (light[l].intensity <= 0)
+        if (lightData[Id].intensity <= 0)
         {
             powerSettings.powerOff.Invoke();
         }
@@ -163,6 +168,7 @@ public class DecorLighting : DecorObject
             ;
 
     }
+    
 
     public void SetVolume(float volume, int Id = 0)
     {
@@ -285,7 +291,13 @@ public class DecorLightStats
 
     public DecorLightStats(HDAdditionalLightData light)
     {
-
+        this.intensity = light.intensity;
+        this.range = light.range;
+        this.volume = light.volumetricDimmer;
+        this.color = new SavableColour(light.color);
+        this.outerAngle = light.lightAngle;
+        this.innerAngle = light.innerSpotPercent;
+        this.radius = light.shapeRadius;
 
     }
 

@@ -14,6 +14,7 @@ public class Editor_Mouse : MonoBehaviour
     public static DecorObject highlightedObject;
 
     [SerializeField] Camera _targetCamera;
+    [SerializeField] PlayerInput playerInput;
 
 
     //left click
@@ -58,6 +59,7 @@ public class Editor_Mouse : MonoBehaviour
 
     [SerializeField] Editor_Mousemode_Cell mousemode_Cell;
     [SerializeField] Editor_MouseMode_Select mousemode_Select;
+    [SerializeField] Editor_MouseMode_Default mousemode_Default;
 
 
 
@@ -69,6 +71,18 @@ public class Editor_Mouse : MonoBehaviour
     [SerializeField] public static GameObject MouseTarget;
     [SerializeField] public static Vector3 MouseHitPos;
     [SerializeField] public static Vector2 MousePos;
+
+    [Space]
+    [Header("Camera Values")]
+    public Transform cameraContainer;
+    public Camera EditorCamera;
+    [SerializeField] float CameraTurnSpeed = 200;
+    [SerializeField] float CameraMoveSpeed = 1;
+    [SerializeField] float CameraScrollSpeed = 100;
+    Vector3 correctedMovement = new Vector3();
+    [Space]
+
+
 
     public float handOffset = 5f;
 
@@ -82,15 +96,22 @@ public class Editor_Mouse : MonoBehaviour
     }
     private void Start()
     {
-        Editor_MouseMode_Default.instance.EnableMouseMode();
+        mousemode_Default.EnableMouseMode();
+        
 
-        ShiftRightClickDown.AddListener(ContextMenu.instance.OnShiftRightClick);
-        ShiftRightClickUp.AddListener(ContextMenu.instance.OnShiftRightClickUp);
+        // ShiftRightClickDown.AddListener(ContextMenu.instance.OnShiftRightClick);
+        // ShiftRightClickUp.AddListener(ContextMenu.instance.OnShiftRightClickUp);
     }
 
     // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
+        MoveCamera(correctedMovement);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            mousemode_Default.EnableMouseMode();
+
+        }
     }
 
     private void OnDrag(InputValue value)
@@ -146,7 +167,7 @@ public class Editor_Mouse : MonoBehaviour
         }
     }
 
-   
+
 
 
     void OnRightClick(InputValue value)
@@ -187,12 +208,12 @@ public class Editor_Mouse : MonoBehaviour
 
     void OnPoint(InputValue value)
     {
-        
+
         MouseUpdate.Invoke();
     }
 
     void OnClick(InputValue value)
-        {
+    {
 
 
         switch (ShiftHeld)
@@ -244,7 +265,8 @@ public class Editor_Mouse : MonoBehaviour
     async void OnLeftClickDrag(InputValue value)
     {
 
-        if(ShiftHeld == 0){
+        if (ShiftHeld == 0)
+        {
             print("left drag input = " + value.Get<float>());
             LeftClickDrag = value.Get<float>();
 
@@ -274,7 +296,7 @@ public class Editor_Mouse : MonoBehaviour
 
 
 
-    public void SetMouseMode (EditorMouseMode mouseMode)
+    public void SetMouseMode(EditorMouseMode mouseMode)
     {
         UnassignMouseMode.Invoke();
         switch (mouseMode)
@@ -288,7 +310,29 @@ public class Editor_Mouse : MonoBehaviour
                 mousemode_Cell.EnableMouseMode();
                 break;
 
+            case EditorMouseMode.Default:
+                mousemode_Default.EnableMouseMode();
+                break;
         }
 
     }
+
+    public void OnMoveCamera(InputValue value)
+    {
+      
+        Vector2 movement = value.Get<Vector2>();
+
+        correctedMovement = new Vector3(movement.x, 0, movement.y);        
+    }
+
+    public void MoveCamera(Vector3 movement)
+    {
+        cameraContainer.Translate(correctedMovement * CameraMoveSpeed, Space.Self);
+
+
+        Vector3 optimisedPos = cameraContainer.transform.position;
+        optimisedPos.y = 0;
+        cameraContainer.transform.position = optimisedPos;
+    }
+
 }

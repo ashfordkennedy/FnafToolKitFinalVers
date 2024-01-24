@@ -24,7 +24,7 @@ public class EditorAnimatronic : DecorObject
 
 
     [Header("Animation")]
-    [SerializeField] AnimatronicAnimations animations;
+    [SerializeField] AnimatronicAnimationSet animations;
     [SerializeField] public Animator animatior;
     public AnimatorOverrideController OverrideController;
 
@@ -138,7 +138,7 @@ public class EditorAnimatronic : DecorObject
 
             case true:
 
-                clip = animations.AnimationSets[endoType].animations[poseId].animation;
+                clip = animations.animations[poseId].animation;
 
                 OverrideController["V2EndoTestPose"] = clip;
                 animatior.Play("PoseTest", 0);
@@ -300,7 +300,7 @@ public class EditorAnimatronic : DecorObject
 
         AnimationClip clip;
 
-                clip = animations.AnimationSets[endoType].animations[waypoint.condition.AnimationId].animation;
+                clip = animations.animations[waypoint.condition.AnimationId].animation;
                 OverrideController["V2EndoTestPose"] = clip;
                 animatior.Play("PoseTest", 0);
                 return true;
@@ -318,7 +318,7 @@ public class EditorAnimatronic : DecorObject
 
             AnimationClip clip;
 
-            clip = animations.AnimationSets[endoType].animations[waypoint.condition.AnimationId].animation;
+            clip = animations.animations[waypoint.condition.AnimationId].animation;
             OverrideController["V2EndoTestPose"] = clip;
             animatior.Play("PoseTest", 0);
             return true;

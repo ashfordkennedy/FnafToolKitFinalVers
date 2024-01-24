@@ -11,6 +11,11 @@ public class LightSettingUI : EditorMenuAbstract
     public DecorLighting TargetLight = null;
     private int selectedLight = 0;
 
+    public IndexHandler LightIndex = new IndexHandler();
+
+    [SerializeField] TMPro.TextMeshProUGUI SelectedLightName;
+
+
     [SerializeField] TMPro.TMP_InputField powerInput;
     [SerializeField] Toggle activeOnStartToggle;
     [SerializeField] Toggle enabledToggle;
@@ -25,6 +30,20 @@ public class LightSettingUI : EditorMenuAbstract
     [SerializeField] Ext_Slider m_outerRange;
     [SerializeField] Ext_Slider m_innerRange;
     [SerializeField] Ext_Slider m_radius;
+
+
+    public void NextLightIndex() { 
+        LightIndex.NextIndex();
+        MenuSetup();
+        ColourSelector.instance.CloseMenu();
+    }
+
+    public void PreviousLightIndex()
+    {
+        LightIndex.PreviousIndex();
+        MenuSetup();
+        ColourSelector.instance.CloseMenu();
+    }
 
     //method replacement
     public float targetIntensity { get => TargetLight._intensity; set => TargetLight._intensity = value; }
@@ -71,6 +90,10 @@ public class LightSettingUI : EditorMenuAbstract
         {
             case true:
                 TargetLight = target;
+                LightIndex.SetMaxIndexValue(TargetLight.LightCount - 1);
+                print("this is the fucking total lights " + TargetLight.LightCount);
+                LightIndex.SetcurrentIndex(0);
+
                 MenuSetup();
                 OpenMenu();
                 break;
@@ -84,8 +107,9 @@ public class LightSettingUI : EditorMenuAbstract
 
     private void MenuSetup()
     {
-        
-
+        DecorLighting.l = LightIndex.index;
+        print("index is now set to " + LightIndex.index);
+        SelectedLightName.text = TargetLight.GetSubLightName(LightIndex.index);
         m_intensity.SetValueWithoutNotify(TargetLight._intensity);
 
         m_volume.SetValueWithoutNotify(TargetLight._volume);

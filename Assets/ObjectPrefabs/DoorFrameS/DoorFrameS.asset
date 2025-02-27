@@ -22,6 +22,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5bdbeeffd7ab474ca28dc0b68b8f6a1, type: 2}
   - {fileID: 11400000, guid: c256a1424d469724dae44ad4abfcc6aa, type: 2}
   - {fileID: 11400000, guid: ceab9eca9498a8345b03b0cee4f2bffe, type: 2}
+  NewsSwatchs:
+  - m_AssetGUID: 254527f8ab5616a4ba9f4861e5d6cc70
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: c5bdbeeffd7ab474ca28dc0b68b8f6a1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: c256a1424d469724dae44ad4abfcc6aa
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: ceab9eca9498a8345b03b0cee4f2bffe
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   Description: For those times you just have to walk through walls.
   Price: 0
   Object: {fileID: 5713514186938435922, guid: 059642d52f8db8440aef4373ed37b741, type: 3}

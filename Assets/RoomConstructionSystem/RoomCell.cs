@@ -24,6 +24,8 @@ public class RoomCell : MonoBehaviour
     public WallComponent[] Walls;
     public Vector2Int CellID;
     private string _wallFormat = "";
+
+
     public List<MeshFilter> CompileWallMeshData()
     {
         List<MeshFilter> MergableMeshes = new List<MeshFilter>();
@@ -52,14 +54,12 @@ public class RoomCell : MonoBehaviour
 
     public void UpdateMaterial(Material NewWallMat, Material NewFloorMat)
     {
-        Walls[0].Renderer.material = NewWallMat;
-        Walls[1].Renderer.material = NewWallMat;
-        Walls[2].Renderer.material = NewWallMat;
-        Walls[3].Renderer.material = NewWallMat;
-        InnerCornerRenderers[0].material = NewWallMat;
-        InnerCornerRenderers[1].material = NewWallMat;
-        InnerCornerRenderers[2].material = NewWallMat;
-        InnerCornerRenderers[3].material = NewWallMat;
+
+        for (int i = 0; i < 4; i++)
+        {
+            Walls[i].Renderer.material = NewWallMat;
+            InnerCornerRenderers[i].material = NewWallMat;
+        }
         FloorRenderer.material = NewFloorMat;
     }
 

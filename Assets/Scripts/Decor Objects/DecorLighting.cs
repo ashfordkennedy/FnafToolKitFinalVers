@@ -26,7 +26,7 @@ public class DecorLighting : DecorObject
     public float defaultIntensity { get => lightDefaults[l].intensity; set => lightDefaults[l].intensity = value; }
     public float defaultVolume { get => lightDefaults[l].volume; set => lightDefaults[l].volume = value; }
     public float defaultRange { get => lightDefaults[l].range; set => lightDefaults[l].range = value; }
-    public Color defaultColor { get => lightDefaults[l].color.ToColor(); set => lightDefaults[l].color = SavableColour.ToSavableColour(value); }
+    public Color defaultColor { get => lightDefaults[l].color; set => lightDefaults[l].color = value; }
 
     public float defaultOuterAngle { get => lightDefaults[l].outerAngle; set => lightDefaults[l].outerAngle = value; }
     public float defaultinnerAngle { get => lightDefaults[l].innerAngle; set => lightDefaults[l].innerAngle = value; }
@@ -97,15 +97,15 @@ public class DecorLighting : DecorObject
     }
 
 
-    public void RestoreLightSave(LightData savedata)
-    {
-      // LightSaveData Savedata = new LightSaveData(ObjectSaveDataType.Light, new LightData(0, 0, new Color(0, 0, 0)));
 
-      //  LightSaveData Savedata = savedata as LightSaveData;
-        
+
+    public override void RestoreObjectData(ObjectSaveData ObjectData)
+    {
+        LightSaveData savedata = ObjectData as LightSaveData;
+
         print("processing light data");
 
-        lightDefaults = savedata.lightStats;
+        lightDefaults = savedata.lightData.lightStats;
 
 
 
@@ -119,11 +119,12 @@ public class DecorLighting : DecorObject
 
             light.SetSpotAngle(data.outerAngle, data.innerAngle);
             light.range = data.range;
-            light.SetColor(data.color.ToColor());
+            light.SetColor(data.color);
         }
 
-        powerSettings.LoadSettings(savedata.powerData);
+        powerSettings.LoadSettings(savedata.lightData.powerData);
     }
+
 
 
     public override void DestroyObject()
@@ -282,7 +283,7 @@ public class DecorLightStats
     public float intensity = 0f;
     public float range = 0f;
     public float volume = 0f;
-    public SavableColour color = new SavableColour(Color.white);
+    public Color color = Color.white;
 
     public float outerAngle = 0f;
     public float innerAngle = 0f;
@@ -294,7 +295,7 @@ public class DecorLightStats
         this.intensity = light.intensity;
         this.range = light.range;
         this.volume = light.volumetricDimmer;
-        this.color = new SavableColour(light.color);
+        this.color = light.color;
         this.outerAngle = light.lightAngle;
         this.innerAngle = light.innerSpotPercent;
         this.radius = light.shapeRadius;

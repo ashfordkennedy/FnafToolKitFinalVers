@@ -12,5 +12,7 @@ EditorBuildSettings:
     path: Assets/WallSystems.unity
     guid: ba692366333c23241b22a7831c2ce355
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 26323eca86409134a9d91944131e121b,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 0438b11480712c54280b8dd0b306da1d,
       type: 2}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &399671260245430027
+--- !u!1 &1026470263247809899
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1062913594572461489}
-  - component: {fileID: 4138774922306771476}
-  - component: {fileID: 2200877671896002270}
-  - component: {fileID: 1053608164145824072}
-  - component: {fileID: 2370899586007607049}
+  - component: {fileID: 4063822038764478328}
+  - component: {fileID: 4989599314297414990}
+  - component: {fileID: 1585855619493075383}
+  - component: {fileID: 9015973710766852565}
+  - component: {fileID: 254430980052794274}
   m_Layer: 12
-  m_Name: partytable1
+  m_Name: Poster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1062913594572461489
+--- !u!4 &4063822038764478328
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399671260245430027}
+  m_GameObject: {fileID: 1026470263247809899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 235.8648, y: 0.010000229, z: 134.60437}
+  m_LocalPosition: {x: -126.260925, y: -216.65445, z: 22.373276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4138774922306771476
+--- !u!33 &4989599314297414990
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399671260245430027}
-  m_Mesh: {fileID: 1296213217926153168, guid: b96dd956ba05f694da90558e30095022, type: 3}
---- !u!23 &2200877671896002270
+  m_GameObject: {fileID: 1026470263247809899}
+  m_Mesh: {fileID: 3506664961086855238, guid: 109e6c65a7164174ea1fbb7b4ea6e7f8, type: 3}
+--- !u!23 &1585855619493075383
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399671260245430027}
+  m_GameObject: {fileID: 1026470263247809899}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,10 +58,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f1f543dff79c7740bad963b508d76fd, type: 2}
+  - {fileID: 2100000, guid: 5e7e70c027e2b7844b09f72bb9efd388, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,32 +83,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1053608164145824072
+--- !u!114 &9015973710766852565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399671260245430027}
+  m_GameObject: {fileID: 1026470263247809899}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d93b3fff82f30594882d1c2dbd3024df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
   decorType: 0
-  InternalName: PartyTableSet1
+  InternalName: Poster1
   SwatchID: 0
-  meshRenderer: {fileID: 2200877671896002270}
---- !u!65 &2370899586007607049
+  meshRenderer: {fileID: 1585855619493075383}
+--- !u!65 &254430980052794274
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399671260245430027}
+  m_GameObject: {fileID: 1026470263247809899}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 28.868502, y: 14.55, z: 9.610521}
-  m_Center: {x: 0, y: -0.0000009536745, z: 4.8052607}
+  m_Size: {x: 9.459888, y: 11.19328, z: 0.42627892}
+  m_Center: {x: 0.00000023841858, y: 0.020324707, z: -0.21476127}

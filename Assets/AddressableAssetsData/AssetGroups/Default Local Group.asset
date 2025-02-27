@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0cdef80d7c37fc34082846ec3404ce7d
+  m_SerializeEntries:
+  - m_GUID: 254527f8ab5616a4ba9f4861e5d6cc70
+    m_Address: Assets/ObjectPrefabs/DoorFrameS/DoorFrameS_Swatch0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5bdbeeffd7ab474ca28dc0b68b8f6a1
+    m_Address: Assets/ObjectPrefabs/DoorFrameS/DoorFrameS_Swatch1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ceab9eca9498a8345b03b0cee4f2bffe
+    m_Address: Assets/ObjectPrefabs/DoorFrameS/DoorFrameS_Swatch3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c256a1424d469724dae44ad4abfcc6aa
+    m_Address: Assets/ObjectPrefabs/DoorFrameS/DoorFrameS_Swatch2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2fe955150ccc5942af2e04e5ce963d5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d1cb762687150774a92f724084feaa76, type: 2}
+    - {fileID: 11400000, guid: 3dd3a7a19061a524084f3780633f6b4a, type: 2}

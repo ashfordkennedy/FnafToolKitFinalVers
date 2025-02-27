@@ -9,6 +9,7 @@ public class SwatchUI : EditorMenuAbstract
     public Transform Content;
     public DecorObject target = null;
 
+    CatalogueObject catalogueObject; 
     [SerializeField] DecorObjectCatalogue Catalogue;
 
     private void Awake()
@@ -30,10 +31,12 @@ public class SwatchUI : EditorMenuAbstract
        // print("opening swatches");
         target = Target;
         int objectID = -1;
-       if(Catalogue.ObjectDictionary.TryGetValue(objectname, out objectID) == true)
+
+       catalogueObject = Catalogue.GetCatalogueData(objectname);
+       if(catalogueObject != null)
         {
             ///Item exists in the dictionary. Process swatches
-            ProcessSwatches(objectID);
+            ProcessSwatches(catalogueObject);
             base.OpenMenu();
         }       
     }
@@ -47,14 +50,14 @@ public class SwatchUI : EditorMenuAbstract
         target = null; 
     }
 
-    private void ProcessSwatches(int ObjectID)
+    private void ProcessSwatches(CatalogueObject catalogueObject)
     {       
 
-        for (int i = 0; i < Catalogue.MapObjects[ObjectID].Swatches.Count; i++)
+        for (int i = 0; i < catalogueObject.Swatches.Count; i++)
         {
 
             Toggle NewSwatch = Instantiate(SwatchObjectPrefab, Content).GetComponent<Toggle>();
-            NewSwatch.image.sprite = Catalogue.MapObjects[ObjectID].Swatches[i].swatchIcon;         
+            NewSwatch.image.sprite = catalogueObject.Swatches[i].swatchIcon;         
             NewSwatch.gameObject.SetActive(true);
         }
     }
@@ -72,21 +75,13 @@ public class SwatchUI : EditorMenuAbstract
             int newswatch = swatch.transform.GetSiblingIndex();
 
 
-            int objectID = -1;
-            if (Catalogue.ObjectDictionary.TryGetValue(target.InternalName, out objectID) == true)
-            {
+            if (catalogueObject != null)
                 print("settingswatch");
                 AudioManager.Audio_M.PlayUIClick();
-                target.SwatchSwap(Catalogue.MapObjects[objectID].Swatches[newswatch].meshes, Catalogue.MapObjects[objectID].Swatches[newswatch].materials,newswatch);
+                target.SwatchSwap(catalogueObject.Swatches[newswatch].meshes, catalogueObject.Swatches[newswatch].materials,newswatch);
 
 
             }
             // target.SwatchSwap()
         }
     }
-
-
-
-
-
-}

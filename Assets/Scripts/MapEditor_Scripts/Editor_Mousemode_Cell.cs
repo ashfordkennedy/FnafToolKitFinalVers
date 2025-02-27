@@ -104,6 +104,7 @@ public class Editor_Mousemode_Cell : Editor_MouseMode_Abstract
 
             else
             {
+                NewCell.transform.parent = SelectedRoom.transform;
                 //assign to current room
                 NewCell.CellInitialize();
             }

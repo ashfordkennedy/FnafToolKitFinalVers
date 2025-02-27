@@ -88,18 +88,18 @@ public class EditorAnimatronic : DecorObject
         return animatronic;
     }
 
-    /// <summary>
-    /// Used by the editor controller when loading save games back into the editor
-    /// </summary>
-    /// <param name="data"></param>
-    public void RestoreAnimatronicData(AnimatronicData data)
+
+    public override void RestoreObjectData(ObjectSaveData ObjectData)
     {
+        AnimatronicData data = ObjectData as AnimatronicData;
         AiLevelData = data.AiLevel;
         AggressionData = data.Aggression;
         waypoints = data.ConvertStoredWaypoints();
 
-
     }
+
+
+
 
     public override void SwatchSwap(Mesh[] mesh, Material[] mats, int swatchid)
     {

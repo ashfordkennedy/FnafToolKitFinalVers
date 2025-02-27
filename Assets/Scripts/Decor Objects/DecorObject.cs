@@ -129,6 +129,13 @@ public class DecorObject : MonoBehaviour
     }
 
 
+    public virtual void RestoreObjectData(ObjectSaveData ObjectData)
+    {
+
+
+    }
+
+
 
     public void OnMouseEnter()
     {

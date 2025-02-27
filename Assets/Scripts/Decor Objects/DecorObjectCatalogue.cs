@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using System.Linq;
 [Flags]
 public enum DecorTheme { }
 
@@ -17,62 +17,75 @@ public class DecorObjectCatalogue : ScriptableObject
     public static DecorObjectCatalogue instance;
     [Header("Map Object Settings")]
     public List<CatalogueObject> MapObjects;
-    public Dictionary<string, int> ObjectDictionary = new Dictionary<string, int>();
 
-    public void WriteDictionary()
+
+
+
+    public CatalogueObject GetCatalogueData(string internalName)
     {
-        instance = this;
-        if (ObjectDictionary.Count > 0)
-        {
-            ObjectDictionary.Clear();
-        }
+        var foundObject = MapObjects.First(n => n.InternalName == internalName);
+        return foundObject;
 
-
-        for (int i = 0; i < MapObjects.Count; i++)
-        {          
-            ObjectDictionary.Add(MapObjects[i].InternalName, i);
-
-        }
-        Debug.Log("dictionary written");
     }
-
 
 
 
     public string GetDecorObjectName(string internalName)
     {
-        int id = -1;
-       if(ObjectDictionary.TryGetValue(internalName,out id))
+       var foundObject = MapObjects.First(n => n.InternalName == internalName);
+
+
+       if(foundObject != null)
         {
-           return MapObjects[id].name;
+           return foundObject.name;
         }
         else
         {
-            return "Decoration";
+            return "Unnamed_Object";
         }
     }
 
     public int GetDecorObjectId(CatalogueObject target)
     {
         int id = -1;
-        ObjectDictionary.TryGetValue(target.InternalName, out id);     
+        // ObjectDictionary.TryGetValue(target.InternalName, out id);
+        Debug.Log("this method is redundant, get rid of all callers");
         return id;
     }
 
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    public GameObject GetObjectPrefab(string internalName)
     {
-        
+        var foundObject = MapObjects.First(n => n.InternalName == internalName);
+
+        if(foundObject != null)
+        {
+            return TryLoadPrefab(internalName);
+        }
+        return null;
     }
 
-    // Update is called once per frame
-    void Update()
+    private GameObject TryLoadPrefab(string internalName)
     {
-        
+        try
+        {
+            GameObject resource = Resources.Load<GameObject>("CatalogueObjects/" + internalName);
+            Debug.Log(resource.name);
+            Debug.Log("Loaded resource " + internalName);
+            return resource;
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Unable to load resource " + internalName);
+            return null;
+            throw;
+        }
     }
+
+    public void UnloadUnusedAssets()
+    {
+        Resources.UnloadUnusedAssets();
+        Debug.Log("Unloaded unused assets");
+    }
+
+
 }

@@ -46,7 +46,8 @@ public class EditorController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Catalogue.WriteDictionary();
+        Debug.LogAssertion("check for catalogue loading");
+        //Catalogue.WriteDictionary();
     }
 
     private void Start()
@@ -271,7 +272,9 @@ public class EditorController : MonoBehaviour
     void RecreateObjects(SavedObject newObj)
     {
         int objectID = -1;
-        if (Catalogue.ObjectDictionary.TryGetValue(newObj.InternalName, out objectID) == true)
+        GameObject prefab = Catalogue.GetObjectPrefab(newObj.InternalName);
+        CatalogueObject catalogueObject = Catalogue.GetCatalogueData(newObj.InternalName);
+        if (prefab != null)
         {
 
             var Pos = newObj.positionData;
@@ -279,7 +282,7 @@ public class EditorController : MonoBehaviour
             var rotation = new Vector3(Pos.XRot, Pos.YRot, Pos.ZRot);
             var scale = new Vector3(Pos.XScale, Pos.YScale, Pos.ZScale);
 
-            DecorObject obj = Instantiate(Catalogue.MapObjects[objectID].Object, null, true).GetComponent<DecorObject>();
+            DecorObject obj = Instantiate(prefab, null, true).GetComponent<DecorObject>();
             obj.transform.position = position;
             obj.transform.rotation = Quaternion.Euler(rotation);
             obj.transform.localScale = scale;
@@ -289,7 +292,8 @@ public class EditorController : MonoBehaviour
             if (newObj.Swatch != 0)
             {
                 print("loading swatch");
-                obj.SwatchSwap(Catalogue.MapObjects[objectID].Swatches[newObj.Swatch].meshes, Catalogue.MapObjects[objectID].Swatches[newObj.Swatch].materials, newObj.Swatch);
+
+               obj.SwatchSwap(catalogueObject.Swatches[newObj.Swatch].meshes, catalogueObject.Swatches[newObj.Swatch].materials, newObj.Swatch);
             }
 
             obj.ObjectSetup();
@@ -300,22 +304,15 @@ public class EditorController : MonoBehaviour
     void RecreateObjectSettings(int ObjIndex, SavedObject savedObject)
     {
         DecorObject obj = MapDecor[ObjIndex];
+
+        obj.RestoreObjectData(savedObject.ObjectData);
+
+
+
         try
         {
             switch (savedObject.ObjectData.DataType)
             {
-
-
-                case ObjectSaveDataType.none:
-
-                    break;
-
-                case ObjectSaveDataType.Light:
-                    print("Restoring light");
-                    var L = obj as DecorLighting;
-                    var LSD = savedObject.ObjectData as LightSaveData;
-                    L.RestoreLightSave(LSD.lightData);
-                    break;
 
                 case ObjectSaveDataType.Waypoint:
                     print("waypoint seting up");
@@ -327,12 +324,6 @@ public class EditorController : MonoBehaviour
                     W.RestoreWaypointData(WSD);
                     break;
 
-                case ObjectSaveDataType.Animatronic:
-                    print("restoring Animatronic");
-                    var A = obj as EditorAnimatronic;
-                    AnimatronicData ASD = savedObject.ObjectData as AnimatronicData;
-                    A.RestoreAnimatronicData(ASD);
-                    break;
 
                 case ObjectSaveDataType.ClassicStart:
                     var Cs = obj as DecorClassicStart;

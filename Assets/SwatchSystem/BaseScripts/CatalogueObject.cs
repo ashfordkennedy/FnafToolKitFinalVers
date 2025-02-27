@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+
 [CreateAssetMenu(fileName = "CatalogueObject", menuName = "DecorSystem/CatalogueObject", order = 1)]
 public class CatalogueObject : ScriptableObject
 {
@@ -12,6 +16,7 @@ public class CatalogueObject : ScriptableObject
     public string InternalName = "";
     public EditorTab editorTab = EditorTab.Decor;
     public List<DecorSwatch> Swatches;
+    public AssetReference[] NewsSwatchs;
     [TextArea] public string Description = "";
     public int Price;
     public GameObject Object;

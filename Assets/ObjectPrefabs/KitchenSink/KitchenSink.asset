@@ -18,6 +18,7 @@ MonoBehaviour:
   InternalName: KitchenSink
   editorTab: 0
   Swatches: []
+  NewsSwatchs: []
   Description: A large table. Chairs sold seperately.
   Price: 300
   Object: {fileID: 5978911807619187680, guid: b4b00497a52b31b4487ac27501035b2c, type: 3}
